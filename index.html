@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R G CAR GLASS WORRKS | Premium Auto Glass Solutions</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts: Montserrat (Headings) & Open Sans (Body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* --- FONTS --- */
+        /* Primary Body Font: Open Sans (Professional, Neutral, Legible) */
+        body {
+            font-family: "Open Sans", sans-serif;
+            overflow-x: hidden;
+            background: #f0f4f8;
+            color: #1a1a1a;
+        }
+
+        /* Headings & Emphasis Font: Montserrat (Attractive, Geometric, Bold) */
+        h1, h2, h3, h4, h5, h6, 
+        .font-orbitron, 
+        .font-heading, 
+        .font-bold,
+        button,
+        input,
+        select,
+        textarea,
+        th {
+            font-family: "Montserrat", sans-serif;
+        }
+
+        /* --- COLORS & TYPOGRAPHY --- */
+        .text-primary { color: #1a1a1a; }
+        .text-secondary { color: #4a4a4a; }
+
+        /* --- GLASSMORPHISM ENGINE --- */
+        .glass {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            color: #1a1a1a;
+        }
+
+        .glass-dark {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: #1a1a1a;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            color: #1a1a1a;
+            transition: all 0.4s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(255, 92, 0, 0.15);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes float3d {
+            0%, 100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+            25% { transform: translateY(-15px) rotateX(3deg) rotateY(3deg); }
+            50% { transform: translateY(-10px) rotateX(-2deg) rotateY(-2deg); }
+            75% { transform: translateY(-15px) rotateX(3deg) rotateY(3deg); }
+        }
+
+        .float-3d {
+            animation: float3d 8s ease-in-out infinite;
+        }
+
+        /* --- MAGIC NAV --- */
+        .magic-nav {
+            position: fixed;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .magic-nav.scrolled {
+            top: 10px;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .nav-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 92, 0, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-item:hover::before { left: 100%; }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #ff5c00, #ff8a33);
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-item:hover::after, .nav-item.active::after { width: 80%; }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #ff5c00 0%, #ff8a33 50%, #ffd700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            background: radial-gradient(circle at 50% 50%, #ffffff, #eef2f3);
+        }
+
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(100px, -50px) scale(1.2); }
+        }
+
+        /* Neon Glow */
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(255, 92, 0, 0.4),
+                        0 0 30px rgba(255, 92, 0, 0.2);
+        }
+
+        /* Tab Transitions */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .tab-content.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #ff5c00, #ff8a33);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #ff8a33, #ffd700); }
+        
+        /* Form Focus */
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #ff5c00;
+            box-shadow: 0 0 15px rgba(255, 92, 0, 0.2);
+        }
+
+        /* --- TOAST NOTIFICATION --- */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            z-index: 9999;
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            pointer-events: none;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        .toast-success { border-left: 4px solid #10b981; }
+        .toast-error { border-left: 4px solid #ef4444; }
+    </style>
+</head>
+<body class="text-gray-900">
+
+    <!-- Toast Notification Container -->
+    <div id="toast" class="toast toast-success">
+        <i class="fas fa-check-circle text-green-400"></i>
+        <span id="toast-msg">Operation Successful</span>
+    </div>
+
+    <!-- Animated Background with Blobs -->
+    <div class="animated-bg">
+        <div class="blob w-96 h-96 bg-orange-200 top-[-100px] left-[-100px]" style="animation-delay: 0s;"></div>
+        <div class="blob w-80 h-80 bg-yellow-200 top-[20%] right-[-50px]" style="animation-delay: 5s;"></div>
+        <div class="blob w-72 h-72 bg-orange-100 bottom-[-50px] left-[20%]" style="animation-delay: 10s;"></div>
+    </div>
+
+    <!-- Floating Action Buttons -->
+   <a href="tel:+919000563684" class="fixed bottom-24 right-6 z-50 bg-orange-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition duration-300 pulse-btn group">
+        <i class="fa-solid fa-phone text-2xl group-hover:rotate-12 transition"></i>
+    </a>
+    <a href="https://wa.me/919000563684" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300 pulse-btn group flex-col">
+        <i class="fa-brands fa-whatsapp text-3xl group-hover:rotate-12 transition"></i>
+    </a>
+
+    <!-- Magic Navigation -->
+    <nav class="magic-nav glass-dark rounded-full px-4 py-3 md:px-6">
+        <div class="flex items-center justify-between gap-4 md:gap-8">
+            <!-- Logo Section -->
+            <div class="flex items-center gap-3 cursor-pointer group" onclick="switchTab('home')">
+                <div class="w-12 h-12 rounded-full overflow-hidden bg-white border-2 border-orange-500 flex items-center justify-center neon-glow float-3d group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <img src="https://z-cdn-media.chatglm.cn/files/9d24ce01-ac10-4447-abd8-bf7a014a524f.png?auth_key=1869227923-397ea4e35ce5462cb7c1804721170666-0-e7d4883d60d7a9678703fa33172e1dc5" alt="R G CAR GLASS WORRKS Logo" class="w-full h-full object-cover">
+                </div>
+                <div class="hidden md:block leading-none">
+                    <div class="font-orbitron font-bold text-lg md:text-xl gradient-text">R G CAR GLASS</div>
+                    <div class="text-[8px] md:text-[9px] text-orange-600 font-bold tracking-[0.2em] uppercase leading-none mt-1">WORRKS</div>
+                </div>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center gap-4 md:gap-6">
+                <button onclick="switchTab('home')" class="nav-item active px-4 py-2 text-sm font-bold text-gray-700 hover:text-orange-600 uppercase tracking-wide transition-colors">Home</button>
+                <button onclick="switchTab('about')" class="nav-item px-4 py-2 text-sm font-bold text-gray-500 hover:text-orange-600 uppercase tracking-wide transition-colors">About</button>
+                <button onclick="switchTab('services')" class="nav-item px-4 py-2 text-sm font-bold text-gray-500 hover:text-orange-600 uppercase tracking-wide transition-colors">Services</button>
+                <button onclick="switchTab('gallery')" class="nav-item px-4 py-2 text-sm font-bold text-gray-500 hover:text-orange-600 uppercase tracking-wide transition-colors">Gallery</button>
+                <button onclick="switchTab('contact')" class="nav-item px-4 py-2 text-sm font-bold text-gray-500 hover:text-orange-600 uppercase tracking-wide transition-colors">Contact</button>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="hidden lg:flex items-center gap-3">
+                <button onclick="toggleAdminModal()" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-orange-100 transition-colors">
+                    <i class="fas fa-user-lock text-sm text-gray-600"></i>
+                </button>
+                <button onclick="openQuoteModal()" class="px-6 py-2 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-sm uppercase tracking-wide neon-glow hover:scale-105 transition-transform duration-300 shadow-lg">
+                    Get Quote
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button onclick="toggleMobileMenu()" class="lg:hidden w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-orange-100 transition-colors">
+                <i class="fas fa-bars text-gray-600"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 glass-dark z-[999] p-8 shadow-2xl transition-all duration-500 transform translate-x-full">
+        <div class="flex flex-col h-full justify-between">
+            <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-orange-100">
+                <i class="fas fa-times text-gray-600"></i>
+            </button>
+            
+            <div class="mt-8 mb-8 flex flex-col items-center">
+                <div class="w-20 h-20 rounded-full overflow-hidden bg-white border-2 border-orange-500 mb-2">
+                    <img src="https://z-cdn-media.chatglm.cn/files/9d24ce01-ac10-4447-abd8-bf7a014a524f.png?auth_key=1869227923-397ea4e35ce5462cb7c1804721170666-0-e7d4883d60d7a9678703fa33172e1dc5" alt="Logo" class="w-full h-full object-cover">
+                </div>
+                <h2 class="font-orbitron font-bold text-xl gradient-text">R G CAR GLASS</h2>
+                <span class="text-[9px] text-orange-600 font-bold tracking-[0.3em] uppercase">WORRKS</span>
+            </div>
+            
+            <div class="space-y-2">
+                <button onclick="switchTab('home'); toggleMobileMenu()" class="w-full text-left px-6 py-4 rounded-xl glass hover:bg-orange-500 hover:text-white transition-all font-bold">Home</button>
+                <button onclick="switchTab('about'); toggleMobileMenu()" class="w-full text-left px-6 py-4 rounded-xl glass hover:bg-orange-500 hover:text-white transition-all font-bold">About Us</button>
+                <button onclick="switchTab('services'); toggleMobileMenu()" class="w-full text-left px-6 py-4 rounded-xl glass hover:bg-orange-500 hover:text-white transition-all font-bold">Services</button>
+                <button onclick="switchTab('gallery'); toggleMobileMenu()" class="w-full text-left px-6 py-4 rounded-xl glass hover:bg-orange-500 hover:text-white transition-all font-bold">Gallery</button>
+                <button onclick="switchTab('contact'); toggleMobileMenu()" class="w-full text-left px-6 py-4 rounded-xl glass hover:bg-orange-500 hover:text-white transition-all font-bold">Contact</button>
+            </div>
+
+            <div class="space-y-3">
+                <button onclick="toggleAdminModal(); toggleMobileMenu()" class="w-full px-6 py-3 rounded-xl glass text-sm font-bold">Admin Login</button>
+                <button onclick="openQuoteModal(); toggleMobileMenu()" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold shadow-lg">Get Quote</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-28">
+
+        <!-- HOME TAB -->
+        <div id="tab-home" class="tab-content active">
+            <!-- Hero Section -->
+            <section class="min-h-[90vh] relative flex items-center justify-center overflow-hidden">
+                <div class="absolute inset-0 z-0">
+                    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover filter brightness-90">
+                    <div class="absolute inset-0 bg-gradient-to-r from-white/80 to-white/40"></div>
+                </div>
+
+                <div class="relative z-10 text-center px-4 max-w-6xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="inline-block px-6 py-2 rounded-full glass-dark mb-6 border border-orange-200">
+                        <span class="text-orange-600 font-bold text-sm uppercase tracking-widest">#1 Auto Glass Experts</span>
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 text-gray-900 leading-[0.9]">
+                        CRYSTAL CLEAR <br>
+                        <span class="gradient-text">VISION</span>
+                    </h1>
+                    
+                    <p class="text-xl md:text-2xl text-gray-700 mb-10 max-w-3xl mx-auto font-light">
+                        Premium windshield replacement, leak solutions, and precision glass fitting for all vehicles by <strong class="text-orange-600">R G CAR GLASS WORRKS</strong>.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button onclick="switchTab('contact')" class="px-10 py-4 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-lg uppercase tracking-widest neon-glow hover:scale-105 transition-all shadow-xl">
+                            Book Now
+                        </button>
+                        <button onclick="switchTab('services')" class="px-10 py-4 rounded-full glass-dark text-gray-800 font-bold text-lg uppercase tracking-widest hover:bg-white hover:shadow-xl transition-all border border-gray-200">
+                            Our Services
+                        </button>
+                    </div>
+                </div>
+
+                <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+                    <i class="fas fa-chevron-down text-orange-400 text-3xl"></i>
+                </div>
+            </section>
+
+            <!-- Features -->
+            <section class="py-24 px-4">
+                <div class="max-w-7xl mx-auto">
+                    <div class="text-center mb-16" data-aos="fade-up">
+                        <span class="text-orange-600 font-bold uppercase tracking-widest text-sm">Why Choose Us</span>
+                        <h2 class="text-4xl md:text-5xl font-bold mt-2 gradient-text">Excellence Guaranteed</h2>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="glass-card rounded-3xl p-10 relative overflow-hidden" data-aos="fade-up" data-aos-delay="0">
+                            <div class="w-20 h-20 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-6 mx-auto neon-glow">
+                                <i class="fas fa-bolt text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-center">Lightning Fast</h3>
+                            <p class="text-gray-600 text-center leading-relaxed">Same-day service for urgent repairs. We value your time as much as your safety.</p>
+                        </div>
+
+                        <div class="glass-card rounded-3xl p-10 relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                            <div class="w-20 h-20 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-6 mx-auto neon-glow">
+                                <i class="fas fa-shield-halved text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-center">Lifetime Warranty</h3>
+                            <p class="text-gray-600 text-center leading-relaxed">Premium OEM glass with lifetime workmanship guarantee. Safety is our priority.</p>
+                        </div>
+
+                        <div class="glass-card rounded-3xl p-10 relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                            <div class="w-20 h-20 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-6 mx-auto neon-glow">
+                                <i class="fas fa-tags text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-center">Best Pricing</h3>
+                            <p class="text-gray-600 text-center leading-relaxed">Transparent pricing with no hidden fees. Best value guaranteed in region.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ABOUT TAB -->
+        <div id="tab-about" class="tab-content">
+            <section class="py-24 px-4">
+                <div class="max-w-7xl mx-auto">
+                    <div class="grid lg:grid-cols-2 gap-16 items-center">
+                        <div data-aos="fade-right">
+                            <div class="glass-card rounded-3xl overflow-hidden float-3d">
+                                <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=1000&auto=format&fit=crop" class="w-full h-auto object-cover">
+                            </div>
+                        </div>
+                        
+                        <div data-aos="fade-left">
+                            <span class="text-orange-600 font-bold uppercase tracking-widest text-sm mb-2">About Us</span>
+                            <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Setting Industry Standards</h2>
+                            <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                                At <strong class="text-orange-600">R G CAR GLASS WORRKS</strong>, we don't just replace glass—we restore safety, clarity, and peace of mind. Located in Nehru Auto Nagar, Andhra Pradesh, we have built a reputation for precision and speed.
+                            </p>
+                            <p class="text-gray-600 mb-8 leading-relaxed">
+                                From a small workshop to region's premier automotive glass destination, our commitment remains unchanged: perfection in every installation.
+                            </p>
+
+                            <div class="grid grid-cols-2 gap-6 mb-8">
+                                <div class="glass-card p-6 rounded-2xl text-center">
+                                    <h3 class="text-4xl font-bold gradient-text mb-1">10+</h3>
+                                    <p class="text-gray-500 text-sm uppercase tracking-wide font-semibold">Years Experience</p>
+                                </div>
+                                <div class="glass-card p-6 rounded-2xl text-center">
+                                    <h3 class="text-4xl font-bold gradient-text mb-1">5000+</h3>
+                                    <p class="text-gray-500 text-sm uppercase tracking-wide font-semibold">Happy Clients</p>
+                                </div>
+                            </div>
+                            
+                            <button onclick="switchTab('contact')" class="px-8 py-4 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold uppercase tracking-widest neon-glow hover:scale-105 transition-all shadow-xl inline-flex items-center gap-2">
+                                Get In Touch <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- SERVICES TAB -->
+        <div id="tab-services" class="tab-content">
+            <section class="py-24 px-4">
+                <div class="max-w-7xl mx-auto">
+                    <div class="text-center mb-16" data-aos="fade-up">
+                        <span class="text-orange-600 font-bold uppercase tracking-widest text-sm">Our Services</span>
+                        <h2 class="text-4xl md:text-5xl font-bold mt-2 gradient-text">Complete Glass Solutions</h2>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="glass-card rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-3 transition-all duration-500" data-aos="fade-up" data-aos-delay="0">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-6 neon-glow">
+                                <i class="fas fa-car text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Windshield Replacement</h3>
+                            <p class="text-gray-600 text-sm mb-6 leading-relaxed">Premium OEM glass with high-grade polyurethane adhesives for perfect sealing.</p>
+                            <button onclick="switchTab('contact')" class="text-orange-500 font-bold text-sm uppercase tracking-wide hover:text-orange-400 transition flex items-center gap-2">
+                                Learn More <i class="fas fa-chevron-right text-xs"></i>
+                            </button>
+                        </div>
+
+                        <div class="glass-card rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-3 transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-6 neon-glow">
+                                <i class="fas fa-droplet-slash text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Leakage Repair</h3>
+                            <p class="text-gray-600 text-sm mb-6 leading-relaxed">Advanced diagnosis and sealing for water leaks in doors, roof, and channels.</p>
+                            <button onclick="switchTab('contact')" class="text-orange-500 font-bold text-sm uppercase tracking-wide hover:text-orange-400 transition flex items-center gap-2">
+                                Learn More <i class="fas fa-chevron-right text-xs"></i>
+                            </button>
+                        </div>
+
+                        <div class="glass-card rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-3 transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-6 neon-glow">
+                                <i class="fas fa-window-maximize text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Side & Rear Glass</h3>
+                            <p class="text-gray-600 text-sm mb-6 leading-relaxed">Precision cutting and fitting for all types of side windows and rear windshields.</p>
+                            <button onclick="switchTab('contact')" class="text-orange-500 font-bold text-sm uppercase tracking-wide hover:text-orange-400 transition flex items-center gap-2">
+                                Learn More <i class="fas fa-chevron-right text-xs"></i>
+                            </button>
+                        </div>
+
+                        <div class="glass-card rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-3 transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-6 neon-glow">
+                                <i class="fas fa-sun text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Sunroof Installation</h3>
+                            <p class="text-gray-600 text-sm mb-6 leading-relaxed">Professional sunroof glass replacement and installations with perfect sealing.</p>
+                            <button onclick="switchTab('contact')" class="text-orange-500 font-bold text-sm uppercase tracking-wide hover:text-orange-400 transition flex items-center gap-2">
+                                Learn More <i class="fas fa-chevron-right text-xs"></i>
+                            </button>
+                        </div>
+
+                        <div class="glass-card rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-3 transition-all duration-500" data-aos="fade-up" data-aos-delay="400">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-6 neon-glow">
+                                <i class="fas fa-truck-pickup text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Doorstep Service</h3>
+                            <p class="text-gray-600 text-sm mb-6 leading-relaxed">Can't come to us? We bring our expertise directly to your location.</p>
+                            <button onclick="switchTab('contact')" class="text-orange-500 font-bold text-sm uppercase tracking-wide hover:text-orange-400 transition flex items-center gap-2">
+                                Learn More <i class="fas fa-chevron-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- GALLERY TAB -->
+        <div id="tab-gallery" class="tab-content">
+            <section class="py-24 px-4">
+                <div class="max-w-7xl mx-auto">
+                    <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-6" data-aos="fade-up">
+                        <div>
+                            <span class="text-orange-600 font-bold uppercase tracking-widest text-sm">Our Work</span>
+                            <h2 class="text-4xl md:text-5xl font-bold mt-2 gradient-text">Project Gallery</h2>
+                        </div>
+                        <div class="flex gap-2 flex-wrap">
+                            <button onclick="filterGallery('all')" class="filter-btn active px-6 py-2 rounded-full glass-dark text-sm font-bold uppercase">All</button>
+                            <button onclick="filterGallery('cars')" class="filter-btn px-6 py-2 rounded-full glass-dark text-sm font-bold uppercase hover:bg-orange-100">Cars</button>
+                            <button onclick="filterGallery('auto')" class="filter-btn px-6 py-2 rounded-full glass-dark text-sm font-bold uppercase hover:bg-orange-100">Auto</button>
+                            <button onclick="filterGallery('busses')" class="filter-btn px-6 py-2 rounded-full glass-dark text-sm font-bold uppercase hover:bg-orange-100">Busses</button>
+                            <button onclick="filterGallery('machinery')" class="filter-btn px-6 py-2 rounded-full glass-dark text-sm font-bold uppercase hover:bg-orange-100">JCB</button>
+                        </div>
+                    </div>
+
+                    <div id="gallery-container" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Gallery items injected by JS -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- CONTACT TAB -->
+        <div id="tab-contact" class="tab-content">
+            <section class="py-24 px-4">
+                <div class="max-w-7xl mx-auto">
+                    <div class="text-center mb-12" data-aos="fade-up">
+                        <span class="text-orange-600 font-bold uppercase tracking-widest text-sm">Contact Us</span>
+                        <h2 class="text-4xl md:text-5xl font-bold mt-2 gradient-text">Book Your Service</h2>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-10">
+                        <!-- Appointment Form -->
+                        <div class="glass-card rounded-3xl p-8" data-aos="fade-right">
+                            <div class="text-center mb-8">
+                                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mx-auto mb-4 neon-glow">
+                                    <i class="fas fa-calendar-check text-white text-2xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold">Book Appointment</h3>
+                                <p class="text-gray-500 text-sm">Schedule your glass service with us</p>
+                            </div>
+
+                            <form onsubmit="handleAppointmentSubmit(event)" class="space-y-6">
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Full Name">
+                                    <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Phone Number">
+                                </div>
+                                <input type="email" name="email" class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Email Address">
+                                
+                                <div class="grid md:grid-cols-3 gap-4">
+                                    <input type="text" name="brand" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Vehicle Brand">
+                                    <input type="text" name="model" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Vehicle Model">
+                                    <input type="number" name="year" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Year">
+                                </div>
+
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <select name="service" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-gray-600">
+                                        <option value="">Select Service</option>
+                                        <option>Windshield Replacement</option>
+                                        <option>Leakage Repair</option>
+                                        <option>Side Glass</option>
+                                    </select>
+                                    <input type="date" name="date" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition">
+                                </div>
+
+                                <button type="submit" class="w-full py-4 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold uppercase tracking-widest neon-glow hover:scale-105 transition-all shadow-xl">
+                                    Confirm Booking
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Contact Info -->
+                        <div class="space-y-6" data-aos="fade-left">
+                            <div class="glass-card rounded-3xl p-8 flex items-start gap-6 hover:-translate-y-2 transition-transform duration-300">
+                                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center flex-shrink-0 neon-glow">
+                                    <i class="fas fa-map-location-dot text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-xl mb-2">Our Location</h4>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        Majid line, opp. Srinivasa Auto mobiles,<br>
+                                        Nehru Auto Nagar, N.H-7,<br>
+                                        Andhra Pradesh 518003
+                                    </p>
+                                    <a href="https://maps.app.goo.gl/UcvrQxCs3UKrzY9j9" target="_blank" class="text-orange-500 font-bold text-sm uppercase tracking-wide hover:text-orange-400 mt-2 inline-block">
+                                        Open in Maps <i class="fas fa-external-link-alt ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="glass-card rounded-3xl p-8 flex items-start gap-6 hover:-translate-y-2 transition-transform duration-300">
+                                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center flex-shrink-0 neon-glow">
+                                    <i class="fas fa-clock text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-xl mb-2">Working Hours</h4>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        Monday - Saturday: 9:00 AM - 7:00 PM<br>
+                                        Sunday: 9:00 AM - 2:00 PM
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <a href="tel:+919000563684" class="glass-card rounded-2xl p-6 flex flex-col items-center justify-center hover:bg-orange-500 hover:text-white transition-colors duration-300">
+                                    <i class="fas fa-phone text-3xl mb-3 text-gray-800"></i>
+                                    <span class="font-bold text-sm uppercase tracking-wide">Call Now</span>
+                                </a>
+                                <a href="https://wa.me/919000563684" target="_blank" class="glass-card rounded-2xl p-6 flex flex-col items-center justify-center hover:bg-green-500 hover:text-white transition-colors duration-300">
+                                    <i class="fab fa-whatsapp text-3xl mb-3 text-green-500"></i>
+                                    <span class="font-bold text-sm uppercase tracking-wide">WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MAP HOLDER SECTION -->
+            <section class="pb-24 px-4">
+                <div class="max-w-7xl mx-auto">
+                    <div class="glass-card rounded-3xl overflow-hidden h-96 relative shadow-2xl" data-aos="fade-up">
+                        <!-- Google Maps Embed -->
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.4753168778707!2d78.01281587365011!3d15.83159634575868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5e0ac47c7c1f9%3A0x59bdf15abe25fd21!2sR%20G%20CAR%20GLASS%20WORRKS!5e0!3m2!1sen!2sin!4v1769264461203!5m2!1sen!2sin"                              
+
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy">
+                        </iframe>
+                        
+                        <!-- Get Directions Button Overlay -->
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=Majid+line%2C+opp.+Srinivasa+Auto+mobiles%2C+Nehru+Auto+Nagar%2C+N.H-7%2C+Andhra+Pradesh+518003"
+                           target="_blank"
+                           class="absolute bottom-6 right-6 bg-white text-gray-800 px-6 py-3 rounded-xl shadow-lg hover:bg-orange-500 hover:text-white transition-all duration-300 font-bold text-sm uppercase tracking-wide flex items-center gap-2 z-10 hover:scale-105">
+                            <i class="fas fa-location-arrow"></i> Get Directions
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-16 px-4 glass-dark border-t border-gray-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden bg-white border-2 border-orange-500 flex items-center justify-center neon-glow">
+                            <img src="https://z-cdn-media.chatglm.cn/files/9d24ce01-ac10-4447-abd8-bf7a014a524f.png?auth_key=1869227923-397ea4e35ce5462cb7c1804721170666-0-e7d4883d60d7a9678703fa33172e1dc5" alt="R G CAR GLASS WORRKS Logo" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <div class="font-bold text-xl gradient-text">R G CAR GLASS</div>
+                            <div class="text-[9px] text-orange-600 font-bold tracking-[0.3em] uppercase leading-none mt-1">WORRKS</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Expert auto glass fitting works. Trusted by fleets and individual owners across Andhra Pradesh.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <a href="#" onclick="switchTab('home')" class="block hover:text-orange-500 transition">Home</a>
+                        <a href="#" onclick="switchTab('about')" class="block hover:text-orange-500 transition">About Us</a>
+                        <a href="#" onclick="switchTab('services')" class="block hover:text-orange-500 transition">Services</a>
+                        <a href="#" onclick="switchTab('gallery')" class="block hover:text-orange-500 transition">Gallery</a>
+                        <a href="#" onclick="switchTab('contact')" class="block hover:text-orange-500 transition">Contact</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <a href="#" onclick="switchTab('services')" class="block hover:text-orange-500 transition">Windshield Replacement</a>
+                        <a href="#" onclick="switchTab('services')" class="block hover:text-orange-500 transition">Leakage Repair</a>
+                        <a href="#" onclick="switchTab('services')" class="block hover:text-orange-500 transition">Side & Rear Glass</a>
+                        <a href="#" onclick="switchTab('services')" class="block hover:text-orange-500 transition">Sunroof Installation</a>
+                        <a href="#" onclick="switchTab('services')" class="block hover:text-orange-500 transition">Doorstep Service</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Connect</h4>
+                    <p class="text-gray-600 text-sm mb-4"><i class="fas fa-phone mr-2 text-orange-500"></i> +91 9000563684</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-orange-500 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-orange-500 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8 text-center text-gray-500 text-sm font-bold">
+                &copy; 2025 R G CAR GLASS WORRKS. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quote Modal -->
+    <div id="quote-modal" class="fixed inset-0 z-[999] hidden items-center justify-center">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeQuoteModal()"></div>
+        <div class="relative glass-card w-full max-w-2xl mx-4 rounded-3xl p-8" data-aos="zoom-in">
+            <button onclick="closeQuoteModal()" class="absolute top-4 right-4 w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-orange-500 hover:text-white transition">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3 class="text-3xl font-bold mb-1 gradient-text">Get Bulk Quote</h3>
+            <p class="text-gray-500 text-sm mb-6">Request a custom quote for your fleet or project</p>
+
+            <form onsubmit="handleBulkQuote(event)" class="space-y-4">
+                <!-- Row 1: Name & Mobile -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Company / Person Name</label>
+                        <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Ex: R G Transport">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Mobile Number</label>
+                        <input type="tel" name="mobile" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="+91 XXXXXXXXXX">
+                    </div>
+                </div>
+
+                <!-- Row 2: Email (Optional) & Required Date -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Email (Optional)</label>
+                        <input type="email" name="email" class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="email@example.com">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Required Date</label>
+                        <input type="date" name="date" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition">
+                    </div>
+                </div>
+
+                <!-- Row 3: Total Quantity (Min 3) & Location -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Total Quantity (Min 3)</label>
+                        <input type="number" name="quantity" min="3" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Min 3 units">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Location</label>
+                        <input type="text" name="location" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="City/Area">
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Glass Requirements</label>
+                    <textarea name="description" rows="4" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm" placeholder="Details: Truck Front/Windshield, Rear/Side Glass, Cutting Laminated Glass, Vehicle Name, Brand, Model Year..."></textarea>
+                </div>
+
+                <!-- Doorstep Service -->
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Required Doorstep Service?</label>
+                    <select name="doorstep" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-gray-700">
+                        <option value="no">No - Visit Workshop</option>
+                        <option value="yes">Yes - Doorstep Installation</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="w-full py-4 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold uppercase tracking-widest neon-glow hover:scale-105 transition-all shadow-xl mt-4">
+                    Send Quote Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Modal -->
+    <div id="admin-modal" class="fixed inset-0 z-[1000] hidden items-center justify-center">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-xl" onclick="toggleAdminModal()"></div>
+        <div class="relative glass-card w-full max-w-5xl mx-4 rounded-3xl h-[85vh] flex flex-col">
+            <div class="sticky top-0 glass-dark p-6 flex justify-between items-center rounded-t-3xl z-10">
+                <h3 class="text-2xl font-bold gradient-text">Admin Dashboard</h3>
+                <div class="flex gap-3">
+                    <button id="admin-logout-btn" onclick="handleAdminLogout()" class="hidden px-4 py-2 rounded-lg bg-red-500 text-white font-bold text-sm hover:bg-red-600 transition">Logout</button>
+                    <button onclick="toggleAdminModal()" class="text-gray-400 hover:text-white transition"><i class="fas fa-times text-xl"></i></button>
+                </div>
+            </div>
+            <div class="flex-grow p-6 overflow-y-auto">
+                <!-- Login View -->
+                <div id="admin-login-view" class="flex flex-col items-center justify-center h-full">
+                    <form onsubmit="handleAdminLogin(event)" class="w-full max-w-sm space-y-4">
+                        <input type="text" id="adminUser" class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Username">
+                        <input type="password" id="adminPass" class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Password">
+                        <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold uppercase tracking-widest neon-glow">Login</button>
+                    </form>
+                </div>
+
+                <!-- Dashboard View -->
+                <div id="admin-dashboard-view" class="hidden space-y-8">
+                    <!-- Add New Item Form -->
+                    <div class="bg-white/40 p-6 rounded-2xl border border-white/50">
+                        <h4 class="font-bold text-lg mb-4 text-gray-800">Add New Item</h4>
+                        <form onsubmit="handleAddGalleryItem(event)" class="space-y-4">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <input type="text" id="newItemTitle" required class="px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Title">
+                                <select id="newItemCategory" class="px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition">
+                                    <option value="cars">Cars</option>
+                                    <option value="auto">Auto</option>
+                                    <option value="busses">Busses</option>
+                                    <option value="trucks">Trucks</option>
+                                    <option value="machinery">Machinery</option>
+                                </select>
+                            </div>
+
+                            <!-- Media Source Toggle -->
+                            <div class="flex gap-4 mb-2">
+                                <label class="flex items-center gap-2 cursor-pointer p-2 rounded-lg hover:bg-white/50 transition">
+                                    <input type="radio" name="mediaSource" value="url" checked onchange="toggleMediaInput('url')" class="text-orange-500 focus:ring-orange-500">
+                                    <span class="font-bold text-sm">Paste Link (Image/Video)</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer p-2 rounded-lg hover:bg-white/50 transition">
+                                    <input type="radio" name="mediaSource" value="file" onchange="toggleMediaInput('file')" class="text-orange-500 focus:ring-orange-500">
+                                    <span class="font-bold text-sm">Upload Image</span>
+                                </label>
+                            </div>
+
+                            <!-- URL Input -->
+                            <div id="media-url-container">
+                                <input type="url" id="mediaUrl" class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="https://example.com/image.jpg">
+                            </div>
+
+                            <!-- File Input -->
+                            <div id="media-file-container" class="hidden">
+                                <div class="relative border-2 border-dashed border-orange-300 rounded-xl p-6 text-center hover:bg-orange-50/50 transition">
+                                    <input type="file" id="mediaFile" accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                                    <i class="fas fa-cloud-upload-alt text-3xl text-orange-400 mb-2"></i>
+                                    <p class="text-sm text-gray-600">Click to upload image (Max 2MB)</p>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-green-600 to-green-700 text-white font-bold uppercase tracking-widest neon-glow hover:scale-105 transition-all">
+                                Add to Gallery
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Existing Items List -->
+                    <div class="bg-white/50 rounded-xl overflow-hidden shadow-sm">
+                        <table class="w-full text-left">
+                            <thead class="bg-orange-100/50 text-gray-700 uppercase text-xs font-bold">
+                                <tr>
+                                    <th class="p-4 w-16">Preview</th>
+                                    <th class="p-4">Title</th>
+                                    <th class="p-4">Category</th>
+                                    <th class="p-4">Source Type</th>
+                                    <th class="p-4 text-right">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-gallery-list" class="divide-y divide-gray-200 text-sm">
+                                <!-- JS Populated -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 800 });
+
+        // --- TOAST NOTIFICATION SYSTEM ---
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const msgElement = document.getElementById('toast-msg');
+            
+            msgElement.innerText = message;
+            
+            toast.className = 'toast show';
+            if (type === 'error') {
+                toast.classList.add('toast-error');
+                toast.classList.remove('toast-success');
+                toast.querySelector('i').className = 'fas fa-exclamation-circle text-red-400';
+            } else {
+                toast.classList.add('toast-success');
+                toast.classList.remove('toast-error');
+                toast.querySelector('i').className = 'fas fa-check-circle text-green-400';
+            }
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // --- DATA & STORAGE ---
+        let galleryData = [];
+        function initData() {
+            const savedData = localStorage.getItem('rgGalleryData');
+            if (savedData) {
+                try {
+                    galleryData = JSON.parse(savedData);
+                } catch(e) {
+                    galleryData = [];
+                }
+            } 
+            if (!savedData || galleryData.length === 0) {
+                galleryData = [
+                    { id: 1, category: 'cars', src: 'https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=600', title: 'Sedan Windshield', type: 'image' },
+                    { id: 2, category: 'busses', src: 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?q=80&w=600', title: 'Bus Fleet Service', type: 'image' },
+                    { id: 3, category: 'machinery', src: 'https://images.unsplash.com/photo-1580901368919-7738efb0f87e?q=80&w=600', title: 'JCB Glass', type: 'image' },
+                    { id: 4, category: 'cars', src: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=600', title: 'Luxury Car', type: 'image' },
+                    { id: 5, category: 'cars', src: 'https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=600', title: 'Mirror Replacement', type: 'image' },
+                    { id: 6, category: 'machinery', src: 'https://images.unsplash.com/photo-1629904853716-644d5349926e?q=80&w=600', title: 'Heavy Truck', type: 'image' },
+                ];
+                saveData();
+            }
+        }
+
+        function saveData() {
+            localStorage.setItem('rgGalleryData', JSON.stringify(galleryData));
+        }
+
+        // --- NAV SCROLL EFFECT ---
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.magic-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // --- TABS ---
+        function switchTab(id) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.getElementById('tab-' + id).classList.add('active');
+            
+            document.querySelectorAll('.nav-item').forEach(btn => {
+                btn.classList.remove('active', 'text-gray-700');
+                btn.classList.add('text-gray-500');
+            });
+            const activeBtn = document.querySelector(`.nav-item[onclick="switchTab('${id}')"]`);
+            if (activeBtn) {
+                activeBtn.classList.add('active', 'text-gray-700');
+                activeBtn.classList.remove('text-gray-500');
+            }
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (!mobileMenu.classList.contains('translate-x-full')) {
+                toggleMobileMenu();
+            }
+        }
+
+        // --- MOBILE MENU ---
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('translate-x-full');
+        }
+
+        // --- GALLERY ---
+        function renderGallery(filter) {
+            const container = document.getElementById('gallery-container');
+            container.innerHTML = '';
+            
+            const filtered = filter === 'all' ? galleryData : galleryData.filter(item => item.category === filter);
+            
+            filtered.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.className = 'gallery-item h-72 rounded-2xl overflow-hidden relative group shadow-lg';
+                div.setAttribute('data-aos', 'fade-up');
+                div.setAttribute('data-aos-delay', index * 50);
+                
+                // Determine content based on type (Video or Image)
+                let mediaContent = '';
+                if(item.type === 'video') {
+                    mediaContent = `<video src="${item.src}" class="w-full h-full object-cover" controls></video>`;
+                } else {
+                    mediaContent = `<img src="${item.src}" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">`;
+                }
+
+                div.innerHTML = `
+                    ${mediaContent}
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <h4 class="text-white font-bold text-xl">${item.title}</h4>
+                            <p class="text-orange-400 text-xs uppercase tracking-widest font-bold mt-1">${item.category}</p>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function filterGallery(category) {
+            renderGallery(category);
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-gradient-to-r', 'from-orange-500', 'to-orange-600');
+            });
+            event.target.classList.add('active', 'bg-gradient-to-r', 'from-orange-500', 'to-orange-600');
+        }
+
+        // --- MODALS & ADMIN ---
+        function openQuoteModal() {
+            document.getElementById('quote-modal').classList.remove('hidden');
+            document.getElementById('quote-modal').classList.add('flex');
+        }
+
+        function closeQuoteModal() {
+            document.getElementById('quote-modal').classList.add('hidden');
+            document.getElementById('quote-modal').classList.remove('flex');
+        }
+
+        function toggleAdminModal() {
+            document.getElementById('admin-modal').classList.toggle('hidden');
+            document.getElementById('admin-modal').classList.toggle('flex');
+        }
+
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const user = document.getElementById('adminUser').value;
+            const pass = document.getElementById('adminPass').value;
+
+            if (user === 'admin' && pass === 'admin123') {
+                document.getElementById('admin-login-view').classList.add('hidden');
+                document.getElementById('admin-dashboard-view').classList.remove('hidden');
+                document.getElementById('admin-logout-btn').classList.remove('hidden');
+                renderAdminList();
+                showToast('Welcome back, Admin!');
+            } else {
+                showToast('Invalid Credentials', 'error');
+            }
+        }
+
+        function handleAdminLogout() {
+            document.getElementById('admin-dashboard-view').classList.add('hidden');
+            document.getElementById('admin-login-view').classList.remove('hidden');
+            document.getElementById('admin-logout-btn').classList.add('hidden');
+            document.getElementById('adminUser').value = '';
+            document.getElementById('adminPass').value = '';
+            showToast('Logged out successfully');
+        }
+
+        // --- MEDIA INPUT TOGGLE ---
+        function toggleMediaInput(type) {
+            const urlContainer = document.getElementById('media-url-container');
+            const fileContainer = document.getElementById('media-file-container');
+            
+            if (type === 'url') {
+                urlContainer.classList.remove('hidden');
+                fileContainer.classList.add('hidden');
+            } else {
+                urlContainer.classList.add('hidden');
+                fileContainer.classList.remove('hidden');
+            }
+        }
+
+        function handleAddGalleryItem(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('newItemTitle').value;
+            const category = document.getElementById('newItemCategory').value;
+            const mediaType = document.querySelector('input[name="mediaSource"]:checked').value;
+            
+            let finalSrc = '';
+            let finalType = 'image'; // Default
+
+            if (mediaType === 'url') {
+                finalSrc = document.getElementById('mediaUrl').value;
+                // Simple detection for video URLs
+                if (finalSrc.match(/\.(mp4|webm|ogg)$/i) || finalSrc.includes('youtube.com') || finalSrc.includes('vimeo.com')) {
+                    finalType = 'video';
+                }
+                if (!finalSrc) {
+                    showToast('Please enter a valid URL', 'error');
+                    return;
+                }
+            } else {
+                const fileInput = document.getElementById('mediaFile');
+                if (fileInput.files && fileInput.files[0]) {
+                    const file = fileInput.files[0];
+                    
+                    // Check file size (Limit to ~2MB to avoid LocalStorage quota errors)
+                    if (file.size > 2 * 1024 * 1024) {
+                        showToast('File too large! Max 2MB for uploads.', 'error');
+                        return;
+                    }
+
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const base64Image = e.target.result;
+                        finalSrc = base64Image;
+                        finalizeAdd(title, category, finalSrc, finalType);
+                    };
+                    reader.readAsDataURL(file);
+                    return; // Wait for reader
+                } else {
+                    showToast('Please select a file', 'error');
+                    return;
+                }
+            }
+
+            finalizeAdd(title, category, finalSrc, finalType);
+        }
+
+        function finalizeAdd(title, category, src, type) {
+            const newItem = {
+                id: Date.now(),
+                title: title,
+                category: category,
+                src: src,
+                type: type
+            };
+            
+            galleryData.unshift(newItem); // Add to top
+            saveData();
+            
+            // Update UI
+            renderGallery('all');
+            renderAdminList();
+            
+            // Reset Form
+            document.getElementById('newItemTitle').value = '';
+            document.getElementById('mediaUrl').value = '';
+            document.getElementById('mediaFile').value = '';
+            
+            showToast('Gallery item added successfully');
+        }
+
+        function renderAdminList() {
+            const list = document.getElementById('admin-gallery-list');
+            list.innerHTML = '';
+            
+            galleryData.forEach(item => {
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-orange-50 transition border-b border-gray-100 last:border-0';
+                
+                // Thumbnail
+                let thumb = '';
+                if(item.type === 'video') {
+                    thumb = '<div class="w-12 h-12 bg-gray-200 rounded flex items-center justify-center"><i class="fas fa-play text-gray-500"></i></div>';
+                } else {
+                    thumb = `<img src="${item.src}" class="w-12 h-12 object-cover rounded">`;
+                }
+
+                tr.innerHTML = `
+                    <td class="p-4">${thumb}</td>
+                    <td class="p-4 font-bold text-gray-700">${item.title}</td>
+                    <td class="p-4"><span class="bg-orange-100 text-orange-600 px-2 py-1 rounded text-xs uppercase font-bold">${item.category}</span></td>
+                    <td class="p-4 text-xs text-gray-500 uppercase">${item.type}</td>
+                    <td class="p-4 text-right">
+                        <button onclick="deleteItem(${item.id})" class="text-red-500 hover:text-red-700 bg-red-50 hover:bg-red-100 p-2 rounded-lg transition group" title="Delete Item">
+                            <i class="fas fa-trash-alt text-sm group-hover:scale-110 transition-transform"></i>
+                        </button>
+                    </td>
+                `;
+                list.appendChild(tr);
+            });
+        }
+
+        function deleteItem(id) {
+            if (confirm('Are you sure you want to delete this item?')) {
+                galleryData = galleryData.filter(item => item.id !== id);
+                saveData();
+                renderGallery('all');
+                renderAdminList();
+                showToast('Item deleted successfully');
+            }
+        }
+
+        // --- FORMS ---
+        function handleAppointmentSubmit(e) {
+            e.preventDefault();
+            showToast('Appointment booked successfully! We will contact you shortly.');
+            e.target.reset();
+        }
+
+        function handleBulkQuote(e) {
+            e.preventDefault();
+            // Simple validation example
+            const formData = new FormData(e.target);
+            const qty = parseInt(formData.get('quantity'));
+            
+            if(qty < 3) {
+                showToast('Minimum quantity must be 3', 'error');
+                return;
+            }
+
+            showToast('Bulk quote request sent! We will get back to you soon.');
+            closeQuoteModal();
+            e.target.reset();
+        }
+
+        // --- INIT ---
+        document.addEventListener('DOMContentLoaded', () => {
+            initData();
+            renderGallery('all');
+        });
+    </script>
+</body>
+</html>
