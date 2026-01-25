@@ -100,7 +100,7 @@
             top: 25px;
             left: 50%;
             transform: translateX(-50%);
-            z-index: 1000;
+            z-index: 1000; /* Nav z-index */
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             width: 90%;
             max-width: 1200px;
@@ -649,29 +649,28 @@
                 </div>
 
                 <!-- MAP HOLDER SECTION -->
-            <section class="pb-24 px-4">
-                <div class="max-w-7xl mx-auto">
-                    <div class="glass-card rounded-3xl overflow-hidden h-96 relative shadow-2xl" data-aos="fade-up">
-                        <!-- Google Maps Embed -->
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.4753168778707!2d78.01281587365011!3d15.83159634575868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5e0ac47c7c1f9%3A0x59bdf15abe25fd21!2sR%20G%20CAR%20GLASS%20WORRKS!5e0!3m2!1sen!2sin!4v1769264461203!5m2!1sen!2sin"                              
-
-                            width="100%"
-                            height="100%"
-                            style="border:0;"
-                            allowfullscreen=""
-                            loading="lazy">
-                        </iframe>
-                        
-                        <!-- Get Directions Button Overlay -->
-                        <a href="https://www.google.com/maps/dir/?api=1&destination=Majid+line%2C+opp.+Srinivasa+Auto+mobiles%2C+Nehru+Auto+Nagar%2C+N.H-7%2C+Andhra+Pradesh+518003"
+                <section class="pb-16 md:pb-24 px-4">
+                    <div class="max-w-7xl mx-auto">
+                        <div class="glass-card rounded-3xl md:rounded-3xl overflow-hidden h-64 md:h-96 relative shadow-2xl" data-aos="fade-up">
+                            <!-- Google Maps Embed -->
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.4753168778707!2d78.01281587365011!3d15.83159634575868!3m2!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1sen!2sin!4v1769264461203!5m2!1sen!2sin" 
+                                width="100%"
+                                height="100%"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy">
+                            </iframe>
+                            
+                            <!-- Get Directions Button Overlay -->
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=Majid+line%2C+opp.+Srinivasa+Auto+mobiles%2C+Nehru+Auto+Nagar%2C+N.H-7%2C+Andhra+Pradesh+518003"
                            target="_blank"
-                           class="absolute bottom-6 right-6 bg-white text-gray-800 px-6 py-3 rounded-xl shadow-lg hover:bg-orange-500 hover:text-white transition-all duration-300 font-bold text-sm uppercase tracking-wide flex items-center gap-2 z-10 hover:scale-105">
+                           class="absolute bottom-4 md:bottom-6 right-4 md:right-6 bg-white text-gray-800 px-6 py-3 rounded-lg shadow-lg hover:bg-orange-500 hover:text-white transition-all duration-300 font-bold text-sm uppercase tracking-wide flex items-center gap-2 z-10 hover:scale-105">
                             <i class="fas fa-location-arrow"></i> Get Directions
-                        </a>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                </div>
+                </section>
             </section>
         </div>
     </main>
@@ -739,18 +738,18 @@
     </footer>
 
     <!-- Quote Modal -->
-    <div id="quote-modal" class="fixed inset-0 z-[999] hidden items-center justify-center">
+    <!-- FIX: Changed z-index from 999 to 1100 to ensure it sits above the navigation bar (z-1000) -->
+    <div id="quote-modal" class="fixed inset-0 z-[1100] hidden items-center justify-center">
         <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeQuoteModal()"></div>
-        <!-- Adjusted: Width, Padding & Spacing for "Pretty Well" layout -->
         <div class="relative glass-card w-[95%] md:max-w-5xl mx-4 rounded-2xl md:rounded-3xl p-6 md:p-10" data-aos="zoom-in">
-            <button onclick="closeQuoteModal()" class="absolute top-4 right-4 md:right-6 w-8 h-8 md:w-10 md:h-10 rounded-full glass flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors duration-300">
+            <button onclick="closeQuoteModal()" class="absolute top-4 right-4 md:right-6 w-8 h-8 md:w-10 md:h-10 rounded-full glass flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors duration-300 z-20">
                 <i class="fas fa-times text-sm md:text-base"></i>
             </button>
             <h3 class="text-2xl md:text-3xl font-bold mb-1 md:mb-1 gradient-text">Get Bulk Quote</h3>
             <p class="text-gray-500 text-xs md:text-sm mb-4">Request a custom quote for your fleet or project</p>
 
             <form onsubmit="handleBulkQuote(event)" class="space-y-4 md:space-y-4">
-                <!-- MODIFIED: 2 cols on mobile, 4 cols on md+ -->
+                <!-- Group 1 -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                         <div>
@@ -761,21 +760,21 @@
                             <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Mobile Number</label>
                             <input type="tel" name="mobile" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="+91 XXXXXXXXXX">
                         </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Email (Optional)</label>
+                            <input type="email" name="email" class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="email@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Required Date</label>
+                            <input type="date" name="date" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base">
+                        </div>
+                    </div>
                 </div>
 
-                <!-- MODIFIED: 2 cols on mobile, 4 on md+ -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-                    <div>
-                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Email (Optional)</label>
-                        <input type="email" name="email" class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="email@example.com">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Required Date</label>
-                        <input type="date" name="date" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base">
-                    </div>
-                </div>
-
-                <!-- MODIFIED: 2 cols on mobile, 4 on md+ -->
+                <!-- Group 2 -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                     <div>
                         <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Total Quantity (Min 3)</label>
@@ -790,14 +789,14 @@
                 <!-- Description -->
                 <div>
                     <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Glass Requirements</label>
-                   <textarea name="description" rows="4" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="Details:Vehicle Name:,Brand:, Model Year:, Glasses: Front/Rear/Side Glass,...ects"></textarea>
+                    <textarea name="description" rows="4" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="Details:Vehicle Name:,Brand:, Model Year:, Glasses: Front/Rear/Side Glass,...ects"></textarea>
                 </div>
 
                 <!-- Doorstep Service -->
                 <div>
                     <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Required Doorstep Service?</label>
                     <select name="doorstep" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base">
-                        <option value="no">No</option>
+                        <option value="no">No-</option>
                         <option value="yes">Yes</option>
                     </select>
                 </div>
@@ -810,9 +809,9 @@
     </div>
 
     <!-- Admin Modal -->
-    <div id="admin-modal" class="fixed inset-0 z-[1000] hidden items-center justify-center">
+    <!-- FIX: Changed z-index from 1000 to 1100 to ensure it sits above the navigation bar (z-1000) -->
+    <div id="admin-modal" class="fixed inset-0 z-[1100] hidden items-center justify-center">
         <div class="absolute inset-0 bg-black/90 backdrop-blur-xl" onclick="toggleAdminModal()"></div>
-        <!-- ADJUSTED: Increased Width, Decreased Padding, Optimized Spacing for "Pretty Well" -->
         <div class="relative glass-card w-[95%] max-w-5xl mx-4 rounded-2xl md:rounded-3xl h-[85vh] md:h-[85vh] flex flex flex-col">
             <div class="sticky top-0 glass-dark p-4 md:p-6 flex justify-between items-center rounded-t-3xl z-10">
                 <h3 class="text-xl md:text-2xl font-bold gradient-text">Admin Dashboard</h3>
@@ -901,7 +900,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -1148,7 +1146,7 @@
                 id: Date.now(),
                 title: title,
                 category: category,
-                src: src,
+                src: finalSrc,
                 type: finalType
             };
             
@@ -1216,6 +1214,7 @@
 
         function handleBulkQuote(e) {
             e.preventDefault();
+            const formData = new FormData(e.target);
             if (formData.get('quantity').length === 0) {
                 showToast('Minimum quantity must be 3', 'error');
                 return;
@@ -1234,5 +1233,3 @@
     </script>
 </body>
 </html>
-
-
