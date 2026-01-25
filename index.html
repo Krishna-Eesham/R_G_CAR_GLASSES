@@ -676,27 +676,30 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-16 px-4 glass-dark border-t border-gray-200">
+    <footer class="py-16 px-4 glass-dark border-t border-gray-200 mt-auto">
         <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-4 gap-12">
-                <div>
-                    <div class="flex items-center gap-3 md:mb-6">
-                        <div class="w-12 h-12 md:w-12 md:h-12 rounded-full overflow-hidden bg-white border-2 border-orange-500 flex items-center justify-center neon-glow">
+            <!-- Grid: items-start ensures columns align to the top -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-start text-left">
+                
+                <!-- Brand Column -->
+                <div class="flex flex-col h-full">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden bg-white border-2 border-orange-500 flex items-center justify-center neon-glow flex-shrink-0">
                             <img src="https://z-cdn-media.chatglm.cn/files/9d24ce01-ac10-4447-abd8-bf7a014a524f.png?auth_key=1869227923-397ea4e35ce5462cb7c1804721170666-0-e7d4883d60d7a9678703fa33172e1dc5" alt="R G CAR GLASS WORRKS Logo" class="w-full h-full object-cover">
                         </div>
-                        <div>
-                            <div class="hidden md:block leading-none">
-                                <div class="font-orbitron font-bold text-xl gradient-text">R G CAR GLASS</div>
-                                <div class="text-[9px] text-orange-600 font-bold tracking-[0.3em] uppercase leading-none mt-1">WORRKS</div>
+                        <div class="leading-tight">
+                            <div class="font-orbitron font-bold text-lg gradient-text">R G CAR GLASS</div>
+                            <div class="text-[9px] text-orange-600 font-bold tracking-[0.3em] uppercase leading-none mt-1">WORRKS</div>
                         </div>
                     </div>
-                    <p class="hidden md:block text-gray-600 text-sm leading-relaxed">
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
                         Expert auto glass fitting works. Trusted by fleets and individual owners across Andhra Pradesh.
                     </p>
                 </div>
 
+                <!-- Quick Links Column -->
                 <div>
-                    <h4 class="font-bold mb-2 md:mb-4">Quick Links</h4>
+                    <h4 class="font-bold text-base md:text-lg mb-4 text-gray-800">Quick Links</h4>
                     <div class="space-y-2 text-sm text-gray-600">
                         <a href="#" onclick="switchTab('home')" class="block hover:text-orange-500 transition">Home</a>
                         <a href="#" onclick="switchTab('about')" class="block hover:text-orange-500 transition">About Us</a>
@@ -706,39 +709,40 @@
                     </div>
                 </div>
 
+                <!-- Services Column -->
                 <div>
-                    <h4 class="font-bold mb-2 md:mb-4">Services</h4>
+                    <h4 class="font-bold text-base md:text-lg mb-4 text-gray-800">Services</h4>
                     <div class="space-y-2 text-sm text-gray-600">
                         <a href="#" onclick="switchTab('services')" class="block hover:text-orange-500 transition">Windshield Replacement</a>
                         <a href="#" onclick="switchTab('services')" class="block hover:text-orange-500 transition">Leakage Repair</a>
-                        <a href="#" onclick="switchTab('services')" class="block hover:text-orange-500 transition">Side & Rear Glass</a>
                         <a href="#" onclick="switchTab('services')" class="block hover:text-orange-500 transition">Side & Rear Glass</a>
                         <a href="#" onclick="switchTab('services')" class="block hover:text-orange-500 transition">Sunroof Installation</a>
                         <a href="#" onclick="switchTab('services')" class="block hover:text-orange-500 transition">Doorstep Service</a>
                     </div>
                 </div>
 
+                <!-- Connect Column -->
                 <div>
-                    <h4 class="font-bold mb-2 md:mb-4">Connect</h4>
+                    <h4 class="font-bold text-base md:text-lg mb-4 text-gray-800">Connect</h4>
                     <p class="text-gray-600 text-sm mb-4"><i class="fas fa-phone mr-2 text-orange-500"></i> +91 9000563684</p>
                     <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 md:w-10 md:h-10 rounded-full glass flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors duration-300">
+                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors duration-300">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 md:w-10 md:h-10 rounded-full glass flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors duration-300">
+                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors duration-300">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-200 pt-8 text-center text-gray-500 text-sm font-bold">
+            
+            <div class="border-t border-gray-200 pt-8 mt-8 text-center text-gray-500 text-sm font-bold">
                 &copy; 2025 R G CAR GLASS WORRKS. All Rights Reserved.
             </div>
         </div>
     </footer>
 
     <!-- Quote Modal -->
-    <!-- FIX: Changed z-index from 999 to 1100 to ensure it sits above the navigation bar (z-1000) -->
     <div id="quote-modal" class="fixed inset-0 z-[1100] hidden items-center justify-center">
         <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeQuoteModal()"></div>
         <div class="relative glass-card w-[95%] md:max-w-5xl mx-4 rounded-2xl md:rounded-3xl p-6 md:p-10" data-aos="zoom-in">
@@ -809,7 +813,6 @@
     </div>
 
     <!-- Admin Modal -->
-    <!-- FIX: Changed z-index from 1000 to 1100 to ensure it sits above the navigation bar (z-1000) -->
     <div id="admin-modal" class="fixed inset-0 z-[1100] hidden items-center justify-center">
         <div class="absolute inset-0 bg-black/90 backdrop-blur-xl" onclick="toggleAdminModal()"></div>
         <div class="relative glass-card w-[95%] max-w-5xl mx-4 rounded-2xl md:rounded-3xl h-[85vh] md:h-[85vh] flex flex flex-col">
