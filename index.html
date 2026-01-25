@@ -97,7 +97,7 @@
         /* --- MAGIC NAV --- */
         .magic-nav {
             position: fixed;
-            top: 25px;
+            top: 10px; /* Adjusted for mobile to sit safely below notch */
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000; /* Nav z-index */
@@ -106,12 +106,26 @@
             max-width: 1200px;
         }
 
+        @media (min-width: 768px) {
+            .magic-nav {
+                top: 25px; /* Original spacing for desktop */
+            }
+        }
+
         .magic-nav.scrolled {
-            top: 10px;
+            top: 0px; /* Stick to top on scroll */
             background: rgba(255, 255, 255, 0.95);
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+
+        @media (min-width: 768px) {
+            .magic-nav.scrolled {
+                top: 10px; /* Desktop scroll stick position */
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
         }
 
         .nav-item {
@@ -311,7 +325,8 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 glass-dark z-[999] p-6 md:p-8 shadow-2xl transition-all duration-500 transform translate-x-full">
+    <!-- Increased z-index to 1050 to ensure it covers the nav when open -->
+    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 glass-dark z-[1050] p-6 md:p-8 shadow-2xl transition-all duration-500 transform translate-x-full">
         <div class="flex flex-col h-full justify-between">
             <button onclick="toggleMobileMenu()" class="absolute top-4 right-4 w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-orange-100">
                 <i class="fas fa-times text-gray-600"></i>
@@ -341,6 +356,7 @@
     </div>
 
     <!-- Main Content -->
+    <!-- Adjusted padding-top to account for fixed nav height -->
     <main class="pt-24 md:pt-28">
 
         <!-- HOME TAB -->
