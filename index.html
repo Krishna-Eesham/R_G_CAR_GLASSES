@@ -25,7 +25,6 @@
         }
 
         /* --- FONTS --- */
-        /* Primary Body Font: Open Sans (Professional, Neutral, Legible) */
         body {
             font-family: "Open Sans", sans-serif;
             overflow-x: hidden;
@@ -33,7 +32,6 @@
             color: #1a1a1a;
         }
 
-        /* Headings & Emphasis Font: Montserrat (Attractive, Geometric, Bold) */
         h1, h2, h3, h4, h5, h6, 
         .font-orbitron, 
         .font-heading, 
@@ -112,13 +110,14 @@
             top: 10px;
             background: rgba(255, 255, 255, 0.95);
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            padding-top: 15px;
-            padding-bottom: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
 
         .nav-item {
             position: relative;
             overflow: hidden;
+            white-space: nowrap;
         }
 
         .nav-item::before {
@@ -272,11 +271,11 @@
     </a>
 
     <!-- Magic Navigation -->
-    <nav class="magic-nav glass-dark rounded-full px-4 py-3 md:px-6">
-        <div class="flex items-center justify-between gap-4 md:gap-8">
+    <nav class="magic-nav glass-dark rounded-full px-2 py-2 md:px-6">
+        <div class="flex items-center justify-between gap-2 md:gap-8">
             <!-- Logo Section -->
-            <div class="flex items-center gap-3 cursor-pointer group" onclick="switchTab('home')">
-                <div class="w-12 h-12 rounded-full overflow-hidden bg-white border-2 border-orange-500 flex items-center justify-center neon-glow float-3d group-hover:scale-110 transition-transform duration-300 shadow-lg">
+            <div class="flex items-center gap-2 md:gap-3 cursor-pointer group" onclick="switchTab('home')">
+                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden bg-white border-2 border-orange-500 flex items-center justify-center neon-glow float-3d group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <img src="https://z-cdn-media.chatglm.cn/files/9d24ce01-ac10-4447-abd8-bf7a014a524f.png?auth_key=1869227923-397ea4e35ce5462cb7c1804721170666-0-e7d4883d60d7a9678703fa33172e1dc5" alt="R G CAR GLASS WORRKS Logo" class="w-full h-full object-cover">
                 </div>
                 <div class="hidden md:block leading-none">
@@ -286,40 +285,40 @@
             </div>
 
             <!-- Desktop Menu -->
-            <div class="hidden lg:flex items-center gap-4 md:gap-6">
-                <button onclick="switchTab('home')" class="nav-item active px-4 py-2 text-sm font-bold text-gray-700 hover:text-orange-600 uppercase tracking-wide transition-colors">Home</button>
-                <button onclick="switchTab('about')" class="nav-item px-4 py-2 text-sm font-bold text-gray-500 hover:text-orange-600 uppercase tracking-wide transition-colors">About</button>
-                <button onclick="switchTab('services')" class="nav-item px-4 py-2 text-sm font-bold text-gray-500 hover:text-orange-600 uppercase tracking-wide transition-colors">Services</button>
-                <button onclick="switchTab('gallery')" class="nav-item px-4 py-2 text-sm font-bold text-gray-500 hover:text-orange-600 uppercase tracking-wide transition-colors">Gallery</button>
-                <button onclick="switchTab('contact')" class="nav-item px-4 py-2 text-sm font-bold text-gray-500 hover:text-orange-600 uppercase tracking-wide transition-colors">Contact</button>
+            <div class="hidden lg:flex items-center gap-2 md:gap-6">
+                <button onclick="switchTab('home')" class="nav-item active px-2 md:px-4 py-2 text-xs md:text-sm font-bold text-gray-700 hover:text-orange-600 uppercase tracking-wide transition-colors">Home</button>
+                <button onclick="switchTab('about')" class="nav-item px-2 md:px-4 py-2 text-xs md:text-sm font-bold text-gray-500 hover:text-orange-600 uppercase tracking-wide transition-colors">About</button>
+                <button onclick="switchTab('services')" class="nav-item px-2 md:px-4 py-2 text-xs md:text-sm font-bold text-gray-500 hover:text-orange-600 uppercase tracking-wide transition-colors">Services</button>
+                <button onclick="switchTab('gallery')" class="nav-item px-2 md:px-4 py-2 text-xs md:text-sm font-bold text-gray-500 hover:text-orange-600 uppercase tracking-wide transition-colors">Gallery</button>
+                <button onclick="switchTab('contact')" class="nav-item px-2 md:px-4 py-2 text-xs md:text-sm font-bold text-gray-500 hover:text-orange-600 uppercase tracking-wide transition-colors">Contact</button>
             </div>
 
             <!-- Action Buttons -->
-            <div class="hidden lg:flex items-center gap-3">
-                <button onclick="toggleAdminModal()" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-orange-100 transition-colors">
-                    <i class="fas fa-user-lock text-sm text-gray-600"></i>
+            <div class="hidden lg:flex items-center gap-2 md:gap-3">
+                <button onclick="toggleAdminModal()" class="w-8 h-8 md:w-10 md:h-10 rounded-full glass flex items-center justify-center hover:bg-orange-100 transition-colors">
+                    <i class="fas fa-user-lock text-xs md:text-sm text-gray-600"></i>
                 </button>
-                <button onclick="openQuoteModal()" class="px-6 py-2 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-sm uppercase tracking-wide neon-glow hover:scale-105 transition-transform duration-300 shadow-lg">
+                <button onclick="openQuoteModal()" class="px-4 md:px-6 py-2 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-xs md:text-sm uppercase tracking-wide neon-glow hover:scale-105 transition-transform duration-300 shadow-lg">
                     Get Quote
                 </button>
             </div>
 
             <!-- Mobile Menu Toggle -->
-            <button onclick="toggleMobileMenu()" class="lg:hidden w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-orange-100 transition-colors">
+            <button onclick="toggleMobileMenu()" class="lg:hidden w-8 h-8 md:w-10 md:h-10 rounded-full glass flex items-center justify-center hover:bg-orange-100 transition-colors">
                 <i class="fas fa-bars text-gray-600"></i>
             </button>
         </div>
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 glass-dark z-[999] p-8 shadow-2xl transition-all duration-500 transform translate-x-full">
+    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 glass-dark z-[999] p-6 md:p-8 shadow-2xl transition-all duration-500 transform translate-x-full">
         <div class="flex flex-col h-full justify-between">
-            <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-orange-100">
+            <button onclick="toggleMobileMenu()" class="absolute top-4 right-4 w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-orange-100">
                 <i class="fas fa-times text-gray-600"></i>
             </button>
             
-            <div class="mt-8 mb-8 flex flex-col items-center">
-                <div class="w-20 h-20 rounded-full overflow-hidden bg-white border-2 border-orange-500 mb-2">
+            <div class="mt-12 mb-8 flex flex-col items-center">
+                <div class="w-20 h-20 rounded-full overflow-hidden bg-white border-2 border-orange-500 mb-4">
                     <img src="https://z-cdn-media.chatglm.cn/files/9d24ce01-ac10-4447-abd8-bf7a014a524f.png?auth_key=1869227923-397ea4e35ce5462cb7c1804721170666-0-e7d4883d60d7a9678703fa33172e1dc5" alt="Logo" class="w-full h-full object-cover">
                 </div>
                 <h2 class="font-orbitron font-bold text-xl gradient-text">R G CAR GLASS</h2>
@@ -327,92 +326,92 @@
             </div>
             
             <div class="space-y-2">
-                <button onclick="switchTab('home'); toggleMobileMenu()" class="w-full text-left px-6 py-4 rounded-xl glass hover:bg-orange-500 hover:text-white transition-all font-bold">Home</button>
-                <button onclick="switchTab('about'); toggleMobileMenu()" class="w-full text-left px-6 py-4 rounded-xl glass hover:bg-orange-500 hover:text-white transition-all font-bold">About Us</button>
-                <button onclick="switchTab('services'); toggleMobileMenu()" class="w-full text-left px-6 py-4 rounded-xl glass hover:bg-orange-500 hover:text-white transition-all font-bold">Services</button>
-                <button onclick="switchTab('gallery'); toggleMobileMenu()" class="w-full text-left px-6 py-4 rounded-xl glass hover:bg-orange-500 hover:text-white transition-all font-bold">Gallery</button>
-                <button onclick="switchTab('contact'); toggleMobileMenu()" class="w-full text-left px-6 py-4 rounded-xl glass hover:bg-orange-500 hover:text-white transition-all font-bold">Contact</button>
+                <button onclick="switchTab('home'); toggleMobileMenu()" class="w-full text-left px-4 md:px-6 py-3 md:py-4 rounded-xl glass hover:bg-orange-500 hover:text-white transition-all font-bold text-sm md:text-base">Home</button>
+                <button onclick="switchTab('about'); toggleMobileMenu()" class="w-full text-left px-4 md:px-6 py-3 md:py-4 rounded-xl glass hover:bg-orange-500 hover:text-white transition-all font-bold text-sm md:text-base">About Us</button>
+                <button onclick="switchTab('services'); toggleMobileMenu()" class="w-full text-left px-4 md:px-6 py-3 md:py-4 rounded-xl glass hover:bg-orange-500 hover:text-white transition-all font-bold text-sm md:text-base">Services</button>
+                <button onclick="switchTab('gallery'); toggleMobileMenu()" class="w-full text-left px-4 md:px-6 py-3 md:py-4 rounded-xl glass hover:bg-orange-500 hover:text-white transition-all font-bold text-sm md:text-base">Gallery</button>
+                <button onclick="switchTab('contact'); toggleMobileMenu()" class="w-full text-left px-4 md:px-6 py-3 md:py-4 rounded-xl glass hover:bg-orange-500 hover:text-white transition-all font-bold text-sm md:text-base">Contact</button>
             </div>
 
             <div class="space-y-3">
-                <button onclick="toggleAdminModal(); toggleMobileMenu()" class="w-full px-6 py-3 rounded-xl glass text-sm font-bold">Admin Login</button>
-                <button onclick="openQuoteModal(); toggleMobileMenu()" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold shadow-lg">Get Quote</button>
+                <button onclick="toggleAdminModal(); toggleMobileMenu()" class="w-full px-4 md:px-6 py-3 rounded-xl glass text-sm md:text-base font-bold">Admin Login</button>
+                <button onclick="openQuoteModal(); toggleMobileMenu()" class="w-full px-4 md:px-6 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold shadow-lg">Get Quote</button>
             </div>
         </div>
     </div>
 
     <!-- Main Content -->
-    <main class="pt-28">
+    <main class="pt-24 md:pt-28">
 
         <!-- HOME TAB -->
         <div id="tab-home" class="tab-content active">
             <!-- Hero Section -->
-            <section class="min-h-[90vh] relative flex items-center justify-center overflow-hidden">
+            <section class="min-h-[80vh] md:min-h-[90vh] relative flex items-center justify-center overflow-hidden">
                 <div class="absolute inset-0 z-0">
-                    <img src="https://carwindscreenslondon.com/wp-content/uploads/2023/02/london-windscreen-replace.jpg" class="w-full h-full object-cover filter brightness-90">
+                    <img src="https://lirp.cdn-website.com/a1c921c8/dms3rep/multi/opt/Replacing-Car-Windscreen-1920w.jpg" class="w-full h-full object-cover filter brightness-90">
                     <div class="absolute inset-0 bg-gradient-to-r from-white/80 to-white/40"></div>
                 </div>
 
                 <div class="relative z-10 text-center px-4 max-w-6xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="inline-block px-6 py-2 rounded-full glass-dark mb-6 border border-orange-200">
-                        <span class="text-orange-600 font-bold text-sm uppercase tracking-widest">#1 Auto Glass Experts</span>
+                    <div class="inline-block px-4 py-1 md:px-6 py-2 rounded-full glass-dark mb-4 md:mb-6 border border-orange-200">
+                        <span class="text-orange-600 font-bold text-xs md:text-sm uppercase tracking-widest">#1 Auto Glass Experts</span>
                     </div>
                     
-                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 text-gray-900 leading-[0.9]">
+                    <h1 class="text-4xl md:text-6xl lg:text-8xl font-bold mb-2 md:mb-4 text-gray-900 leading-[0.95]">
                         CRYSTAL CLEAR <br>
                         <span class="gradient-text">VISION</span>
                     </h1>
                     
-                    <p class="text-xl md:text-2xl text-gray-700 mb-10 max-w-3xl mx-auto font-light">
+                    <p class="text-lg md:text-xl lg:text-2xl text-gray-700 mb-6 md:mb-10 max-w-3xl mx-auto font-light">
                         Premium windshield replacement, leak solutions, and precision glass fitting for all vehicles by <strong class="text-orange-600">R G CAR GLASS WORRKS</strong>.
                     </p>
                     
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button onclick="switchTab('contact')" class="px-10 py-4 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-lg uppercase tracking-widest neon-glow hover:scale-105 transition-all shadow-xl">
+                    <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+                        <button onclick="switchTab('contact')" class="px-6 md:px-10 py-3 md:py-4 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-base md:text-lg uppercase tracking-widest neon-glow hover:scale-105 transition-all shadow-xl">
                             Book Now
                         </button>
-                        <button onclick="switchTab('services')" class="px-10 py-4 rounded-full glass-dark text-gray-800 font-bold text-lg uppercase tracking-widest hover:bg-white hover:shadow-xl transition-all border border-gray-200">
+                        <button onclick="switchTab('services')" class="px-6 md:px-10 py-3 md:py-4 rounded-full glass-dark text-gray-800 font-bold text-base md:text-lg uppercase tracking-widest hover:bg-white hover:shadow-xl transition-all border border-gray-200">
                             Our Services
                         </button>
                     </div>
                 </div>
 
-                <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-                    <i class="fas fa-chevron-down text-orange-400 text-3xl"></i>
+                <div class="absolute bottom-6 md:bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+                    <i class="fas fa-chevron-down text-orange-400 text-2xl md:text-3xl"></i>
                 </div>
             </section>
 
             <!-- Features -->
-            <section class="py-24 px-4">
+            <section class="py-12 md:py-24 px-4">
                 <div class="max-w-7xl mx-auto">
-                    <div class="text-center mb-16" data-aos="fade-up">
-                        <span class="text-orange-600 font-bold uppercase tracking-widest text-sm">Why Choose Us</span>
-                        <h2 class="text-4xl md:text-5xl font-bold mt-2 gradient-text">Excellence Guaranteed</h2>
+                    <div class="text-center mb-8 md:mb-16" data-aos="fade-up">
+                        <span class="text-orange-600 font-bold uppercase tracking-widest text-xs md:text-sm">Why Choose Us</span>
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 gradient-text">Excellence Guaranteed</h2>
                     </div>
 
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <div class="glass-card rounded-3xl p-10 relative overflow-hidden" data-aos="fade-up" data-aos-delay="0">
-                            <div class="w-20 h-20 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-6 mx-auto neon-glow">
-                                <i class="fas fa-bolt text-white text-3xl"></i>
+                    <div class="grid md:grid-cols-3 gap-4 md:gap-8">
+                        <div class="glass-card rounded-2xl md:rounded-3xl p-6 md:p-10 relative overflow-hidden" data-aos="fade-up" data-aos-delay="0">
+                            <div class="w-14 h-14 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-4 md:mb-6 mx-auto neon-glow">
+                                <i class="fas fa-bolt text-white text-xl md:text-3xl"></i>
                             </div>
-                            <h3 class="text-2xl font-bold mb-4 text-center">Lightning Fast</h3>
-                            <p class="text-gray-600 text-center leading-relaxed">30 minutes delivery service for urgent replacements. We value your time as much as your safety.</p>
+                            <h3 class="text-xl md:text-2xl font-bold mb-2 md:mb-4 text-center leading-tight">Lightning Fast</h3>
+                            <p class="text-gray-600 text-center text-xs md:text-sm leading-relaxed">30 minutes delivery service for urgent replacements. We value your time as much as your safety.</p>
                         </div>
 
-                        <div class="glass-card rounded-3xl p-10 relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                            <div class="w-20 h-20 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-6 mx-auto neon-glow">
-                                <i class="fas fa-shield-halved text-white text-3xl"></i>
+                        <div class="glass-card rounded-2xl md:rounded-3xl p-6 md:p-10 relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                            <div class="w-14 h-14 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-4 md:mb-6 mx-auto neon-glow">
+                                <i class="fas fa-shield-halved text-white text-xl md:text-3xl"></i>
                             </div>
-                            <h3 class="text-2xl font-bold mb-4 text-center">Warranty & Claims</h3>
-                            <p class="text-gray-600 text-center leading-relaxed">Premium OEM glass with Warranty and Claimable for insurances. Safety is our priority.</p>
+                            <h3 class="text-xl md:text-2xl font-bold mb-2 md:mb-4 text-center leading-tight">Warranty & Claims</h3>
+                            <p class="text-gray-600 text-center text-xs md:text-sm leading-relaxed">Premium OEM glass with Warranty and Claimable for insurances. Safety is our priority.</p>
                         </div>
 
-                        <div class="glass-card rounded-3xl p-10 relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                            <div class="w-20 h-20 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-6 mx-auto neon-glow">
-                                <i class="fas fa-tags text-white text-3xl"></i>
+                        <div class="glass-card rounded-2xl md:rounded-3xl p-6 md:p-10 relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                            <div class="w-14 h-14 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-4 md:mb-6 mx-auto neon-glow">
+                                <i class="fas fa-tags text-white text-xl md:text-3xl"></i>
                             </div>
-                            <h3 class="text-2xl font-bold mb-4 text-center">Best Pricing</h3>
-                            <p class="text-gray-600 text-center leading-relaxed">Transparent pricing with no hidden fees. Best value guaranteed in region.</p>
+                            <h3 class="text-xl md:text-2xl font-bold mb-2 md:mb-4 text-center leading-tight">Best Pricing</h3>
+                            <p class="text-gray-600 text-center text-xs md:text-sm leading-relaxed">Transparent pricing with no hidden fees. Best value guaranteed in region.</p>
                         </div>
                     </div>
                 </div>
@@ -421,37 +420,37 @@
 
         <!-- ABOUT TAB -->
         <div id="tab-about" class="tab-content">
-            <section class="py-24 px-4">
+            <section class="py-12 md:py-24 px-4">
                 <div class="max-w-7xl mx-auto">
-                    <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
                         <div data-aos="fade-right">
-                            <div class="glass-card rounded-3xl overflow-hidden float-3d">
+                            <div class="glass-card rounded-2xl md:rounded-3xl overflow-hidden float-3d">
                                 <img src="https://plus.unsplash.com/premium_photo-1661265902560-b852633b6026?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8V2luZHNjcmVlbiUyMFJlcGxhY2VtZW50fGVufDB8fDB8fHww" class="w-full h-auto object-cover">
                             </div>
                         </div>
                         
                         <div data-aos="fade-left">
-                            <span class="text-orange-600 font-bold uppercase tracking-widest text-sm mb-2">About Us</span>
-                            <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Setting Industry Standards</h2>
-                            <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                            <span class="text-orange-600 font-bold uppercase tracking-widest text-xs md:text-sm mb-2">About Us</span>
+                            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 gradient-text">Setting Industry Standards</h2>
+                            <p class="text-gray-700 text-base md:text-lg mb-4 md:mb-6 leading-relaxed">
                                 At <strong class="text-orange-600">R G CAR GLASS WORRKS</strong>, we don't just replace glass—we restore safety, clarity, and peace of mind. Located in Nehru Auto Nagar,Kurnool, Andhra Pradesh, we have built a reputation for precision and speed.
                             </p>
-                            <p class="text-gray-600 mb-8 leading-relaxed">
+                            <p class="text-gray-600 text-xs md:text-sm md:mb-8 leading-relaxed">
                                 From a small workshop to region's premier automotive glass destination, our commitment remains unchanged: perfection in every installation.
                             </p>
 
-                            <div class="grid grid-cols-2 gap-6 mb-8">
-                                <div class="glass-card p-6 rounded-2xl text-center">
-                                    <h3 class="text-4xl font-bold gradient-text mb-1">15+</h3>
-                                    <p class="text-gray-500 text-sm uppercase tracking-wide font-semibold">Years Experience</p>
+                            <div class="grid grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
+                                <div class="glass-card p-4 md:p-6 rounded-xl md:rounded-2xl text-center">
+                                    <h3 class="text-3xl md:text-4xl font-bold gradient-text mb-1">15+</h3>
+                                    <p class="text-gray-500 text-[10px] md:text-sm uppercase tracking-wide font-semibold">Years Experience</p>
                                 </div>
-                                <div class="glass-card p-6 rounded-2xl text-center">
-                                    <h3 class="text-4xl font-bold gradient-text mb-1">5000+</h3>
-                                    <p class="text-gray-500 text-sm uppercase tracking-wide font-semibold">Happy Clients</p>
+                                <div class="glass-card p-4 md:p-6 rounded-xl md:rounded-2xl text-center">
+                                    <h3 class="text-3xl md:text-4xl font-bold gradient-text mb-1">5000+</h3>
+                                    <p class="text-gray-500 text-[10px] md:text-sm uppercase tracking-wide font-semibold">Happy Clients</p>
                                 </div>
                             </div>
                             
-                            <button onclick="switchTab('contact')" class="px-8 py-4 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold uppercase tracking-widest neon-glow hover:scale-105 transition-all shadow-xl inline-flex items-center gap-2">
+                            <button onclick="switchTab('contact')" class="px-6 md:px-8 py-3 md:py-4 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold uppercase tracking-widest neon-glow hover:scale-105 transition-all shadow-xl inline-flex items-center gap-2">
                                 Get In Touch <i class="fas fa-arrow-right"></i>
                             </button>
                         </div>
@@ -462,66 +461,66 @@
 
         <!-- SERVICES TAB -->
         <div id="tab-services" class="tab-content">
-            <section class="py-24 px-4">
+            <section class="py-12 md:py-24 px-4">
                 <div class="max-w-7xl mx-auto">
-                    <div class="text-center mb-16" data-aos="fade-up">
-                        <span class="text-orange-600 font-bold uppercase tracking-widest text-sm">Our Services</span>
-                        <h2 class="text-4xl md:text-5xl font-bold mt-2 gradient-text">Complete Glass Solutions</h2>
+                    <div class="text-center mb-8 md:mb-16" data-aos="fade-up">
+                        <span class="text-orange-600 font-bold uppercase tracking-widest text-xs md:text-sm">Our Services</span>
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 gradient-text">Complete Glass Solutions</h2>
                     </div>
 
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="glass-card rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-3 transition-all duration-500" data-aos="fade-up" data-aos-delay="0">
-                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-6 neon-glow">
-                                <i class="fas fa-car text-white text-2xl"></i>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+                        <div class="glass-card rounded-2xl md:rounded-3xl p-6 md:p-8 relative overflow-hidden group hover:-translate-y-3 transition-all duration-500" data-aos="fade-up" data-aos-delay="0">
+                            <div class="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-4 md:mb-6 neon-glow">
+                                <i class="fas fa-car text-white text-xl md:text-2xl"></i>
                             </div>
-                            <h3 class="text-xl font-bold mb-3">Windshield Replacement</h3>
-                            <p class="text-gray-600 text-sm mb-6 leading-relaxed">Premium OEM glass with high-grade polyurethane adhesives for perfect sealing.</p>
-                            <button onclick="switchTab('contact')" class="text-orange-500 font-bold text-sm uppercase tracking-wide hover:text-orange-400 transition flex items-center gap-2">
-                                Learn More <i class="fas fa-chevron-right text-xs"></i>
+                            <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Windshield Replacement</h3>
+                            <p class="text-gray-600 text-xs md:text-sm mb-4 md:mb-6 leading-relaxed">Premium OEM glass with high-grade polyurethane adhesives for perfect sealing.</p>
+                            <button onclick="switchTab('contact')" class="text-orange-500 font-bold text-xs md:text-sm uppercase tracking-wide hover:text-orange-400 transition flex items-center gap-2">
+                                Learn More <i class="fas fa-chevron-right text-[10px] md:text-xs"></i>
                             </button>
                         </div>
 
-                        <div class="glass-card rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-3 transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
-                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-6 neon-glow">
-                                <i class="fas fa-droplet-slash text-white text-2xl"></i>
+                        <div class="glass-card rounded-2xl md:rounded-3xl p-6 md:p-8 relative overflow-hidden group hover:-translate-y-3 transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                            <div class="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-4 md:mb-6 neon-glow">
+                                <i class="fas fa-droplet-slash text-white text-xl md:text-2xl"></i>
                             </div>
-                            <h3 class="text-xl font-bold mb-3">Leakage Repair</h3>
-                            <p class="text-gray-600 text-sm mb-6 leading-relaxed">Advanced diagnosis and sealing for water leaks in doors, roof, and channels.</p>
-                            <button onclick="switchTab('contact')" class="text-orange-500 font-bold text-sm uppercase tracking-wide hover:text-orange-400 transition flex items-center gap-2">
-                                Learn More <i class="fas fa-chevron-right text-xs"></i>
+                            <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Leakage Repair</h3>
+                            <p class="text-gray-600 text-xs md:text-sm mb-4 md:mb-6 leading-relaxed">Advanced diagnosis and sealing for water leaks in doors, roof, and channels.</p>
+                            <button onclick="switchTab('contact')" class="text-orange-500 font-bold text-xs md:text-sm uppercase tracking-wide hover:text-orange-400 transition flex items-center gap-2">
+                                Learn More <i class="fas fa-chevron-right text-[10px] md:text-xs"></i>
                             </button>
                         </div>
 
-                        <div class="glass-card rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-3 transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
-                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-6 neon-glow">
-                                <i class="fas fa-window-maximize text-white text-2xl"></i>
+                        <div class="glass-card rounded-2xl md:rounded-3xl p-6 md:p-8 relative overflow-hidden group hover:-translate-y-3 transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                            <div class="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-4 md:mb-6 neon-glow">
+                                <i class="fas fa-window-maximize text-white text-xl md:text-2xl"></i>
                             </div>
-                            <h3 class="text-xl font-bold mb-3">Side & Rear Glass</h3>
-                            <p class="text-gray-600 text-sm mb-6 leading-relaxed">Precision cutting and fitting for all types of side windows and rear windshields.</p>
-                            <button onclick="switchTab('contact')" class="text-orange-500 font-bold text-sm uppercase tracking-wide hover:text-orange-400 transition flex items-center gap-2">
-                                Learn More <i class="fas fa-chevron-right text-xs"></i>
+                            <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Side & Rear Glass</h3>
+                            <p class="text-gray-600 text-xs md:text-sm mb-4 md:mb-6 leading-relaxed">Precision cutting and fitting for all types of side windows and rear windshields.</p>
+                            <button onclick="switchTab('contact')" class="text-orange-500 font-bold text-xs md:text-sm uppercase tracking-wide hover:text-orange-400 transition flex items-center gap-2">
+                                Learn More <i class="fas fa-chevron-right text-[10px] md:text-xs"></i>
                             </button>
                         </div>
 
-                        <div class="glass-card rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-3 transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
-                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-6 neon-glow">
-                                <i class="fas fa-sun text-white text-2xl"></i>
+                        <div class="glass-card rounded-2xl md:rounded-3xl p-6 md:p-8 relative overflow-hidden group hover:-translate-y-3 transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
+                            <div class="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-4 md:mb-6 neon-glow">
+                                <i class="fas fa-sun text-white text-xl md:text-2xl"></i>
                             </div>
-                            <h3 class="text-xl font-bold mb-3">Sunroof Installation</h3>
-                            <p class="text-gray-600 text-sm mb-6 leading-relaxed">Professional sunroof glass replacement and installations with perfect sealing.</p>
-                            <button onclick="switchTab('contact')" class="text-orange-500 font-bold text-sm uppercase tracking-wide hover:text-orange-400 transition flex items-center gap-2">
-                                Learn More <i class="fas fa-chevron-right text-xs"></i>
+                            <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Sunroof Installation</h3>
+                            <p class="text-gray-600 text-xs md:text-sm mb-4 md:mb-6 leading-relaxed">Professional sunroof glass replacement and installations with perfect sealing.</p>
+                            <button onclick="switchTab('contact')" class="text-orange-500 font-bold text-xs md:text-sm uppercase tracking-wide hover:text-orange-400 transition flex items-center gap-2">
+                                Learn More <i class="fas fa-chevron-right text-[10px] md:text-xs"></i>
                             </button>
                         </div>
 
-                        <div class="glass-card rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-3 transition-all duration-500" data-aos="fade-up" data-aos-delay="400">
-                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-6 neon-glow">
-                                <i class="fas fa-truck-pickup text-white text-2xl"></i>
+                        <div class="glass-card rounded-2xl md:rounded-3xl p-6 md:p-8 relative overflow-hidden group hover:-translate-y-3 transition-all duration-500" data-aos="fade-up" data-aos-delay="400">
+                            <div class="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-4 md:mb-6 neon-glow">
+                                <i class="fas fa-truck-pickup text-white text-xl md:text-2xl"></i>
                             </div>
-                            <h3 class="text-xl font-bold mb-3">Doorstep Service</h3>
-                            <p class="text-gray-600 text-sm mb-6 leading-relaxed">Can't come to us? We bring our expertise directly to your location.</p>
-                            <button onclick="switchTab('contact')" class="text-orange-500 font-bold text-sm uppercase tracking-wide hover:text-orange-400 transition flex items-center gap-2">
-                                Learn More <i class="fas fa-chevron-right text-xs"></i>
+                            <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Doorstep Service</h3>
+                            <p class="text-gray-600 text-xs md:text-sm mb-4 md:mb-6 leading-relaxed">Can't come to us? We bring our expertise directly to your location.</p>
+                            <button onclick="switchTab('contact')" class="text-orange-500 font-bold text-xs md:text-sm uppercase tracking-wide hover:text-orange-400 transition flex items-center gap-2">
+                                Learn More <i class="fas fa-chevron-right text-[10px] md:text-xs"></i>
                             </button>
                         </div>
                     </div>
@@ -531,23 +530,23 @@
 
         <!-- GALLERY TAB -->
         <div id="tab-gallery" class="tab-content">
-            <section class="py-24 px-4">
+            <section class="py-12 md:py-24 px-4">
                 <div class="max-w-7xl mx-auto">
-                    <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-6" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row justify-between items-center mb-8 md:mb-12 gap-4 md:gap-6" data-aos="fade-up">
                         <div>
-                            <span class="text-orange-600 font-bold uppercase tracking-widest text-sm">Our Work</span>
-                            <h2 class="text-4xl md:text-5xl font-bold mt-2 gradient-text">Project Gallery</h2>
+                            <span class="text-orange-600 font-bold uppercase tracking-widest text-xs md:text-sm">Our Work</span>
+                            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 gradient-text">Project Gallery</h2>
                         </div>
                         <div class="flex gap-2 flex-wrap">
-                            <button onclick="filterGallery('all')" class="filter-btn active px-6 py-2 rounded-full glass-dark text-sm font-bold uppercase">All</button>
-                            <button onclick="filterGallery('cars')" class="filter-btn px-6 py-2 rounded-full glass-dark text-sm font-bold uppercase hover:bg-orange-100">Cars</button>
-                            <button onclick="filterGallery('auto')" class="filter-btn px-6 py-2 rounded-full glass-dark text-sm font-bold uppercase hover:bg-orange-100">Auto</button>
-                            <button onclick="filterGallery('busses')" class="filter-btn px-6 py-2 rounded-full glass-dark text-sm font-bold uppercase hover:bg-orange-100">Busses</button>
-                            <button onclick="filterGallery('machinery')" class="filter-btn px-6 py-2 rounded-full glass-dark text-sm font-bold uppercase hover:bg-orange-100">JCB</button>
+                            <button onclick="filterGallery('all')" class="filter-btn active px-4 md:px-6 py-2 rounded-full glass-dark text-xs md:text-sm font-bold uppercase">All</button>
+                            <button onclick="filterGallery('cars')" class="filter-btn px-4 md:px-6 py-2 rounded-full glass-dark text-xs md:text-sm font-bold uppercase hover:bg-orange-100">Cars</button>
+                            <button onclick="filterGallery('auto')" class="filter-btn px-4 md:px-6 py-2 rounded-full glass-dark text-xs md:text-sm font-bold uppercase hover:bg-orange-100">Auto</button>
+                            <button onclick="filterGallery('busses')" class="filter-btn px-4 md:px-6 py-2 rounded-full glass-dark text-xs md:text-sm font-bold uppercase hover:bg-orange-100">Busses</button>
+                            <button onclick="filterGallery('machinery')" class="filter-btn px-4 md:px-6 py-2 rounded-full glass-dark text-xs md:text-sm font-bold uppercase hover:bg-orange-100">JCB</button>
                         </div>
                     </div>
 
-                    <div id="gallery-container" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div id="gallery-container" class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                         <!-- Gallery items injected by JS -->
                     </div>
                 </div>
@@ -556,79 +555,79 @@
 
         <!-- CONTACT TAB -->
         <div id="tab-contact" class="tab-content">
-            <section class="py-24 px-4">
+            <section class="py-12 md:py-24 px-4">
                 <div class="max-w-7xl mx-auto">
-                    <div class="text-center mb-12" data-aos="fade-up">
-                        <span class="text-orange-600 font-bold uppercase tracking-widest text-sm">Contact Us</span>
-                        <h2 class="text-4xl md:text-5xl font-bold mt-2 gradient-text">Book Your Service</h2>
+                    <div class="text-center mb-8 md:mb-12" data-aos="fade-up">
+                        <span class="text-orange-600 font-bold uppercase tracking-widest text-xs md:text-sm">Contact Us</span>
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 gradient-text">Book Your Service</h2>
                     </div>
 
-                    <div class="grid lg:grid-cols-2 gap-10">
+                    <div class="grid lg:grid-cols-2 gap-6 md:gap-10">
                         <!-- Appointment Form -->
-                        <div class="glass-card rounded-3xl p-8" data-aos="fade-right">
-                            <div class="text-center mb-8">
-                                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mx-auto mb-4 neon-glow">
-                                    <i class="fas fa-calendar-check text-white text-2xl"></i>
+                        <div class="glass-card rounded-2xl md:rounded-3xl p-6 md:p-8" data-aos="fade-right">
+                            <div class="text-center mb-6 md:mb-8">
+                                <div class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mx-auto mb-4 md:mb-6 neon-glow">
+                                    <i class="fas fa-calendar-check text-white text-xl md:text-2xl"></i>
                                 </div>
-                                <h3 class="text-2xl font-bold">Book Appointment</h3>
-                                <p class="text-gray-500 text-sm">Schedule your glass service with us</p>
+                                <h3 class="text-xl md:text-2xl font-bold">Book Appointment</h3>
+                                <p class="text-gray-500 text-xs md:text-sm">Schedule your glass service with us</p>
                             </div>
 
-                            <form onsubmit="handleAppointmentSubmit(event)" class="space-y-6">
+                            <form onsubmit="handleAppointmentSubmit(event)" class="space-y-4 md:space-y-6">
                                 <div class="grid md:grid-cols-2 gap-4">
-                                    <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Full Name">
-                                    <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Phone Number">
+                                    <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="Full Name">
+                                    <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="Phone Number">
                                 </div>
-                                <input type="email" name="email" class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Email Address">
+                                <input type="email" name="email" class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="Email Address">
                                 
-                                <div class="grid md:grid-cols-3 gap-4">
-                                    <input type="text" name="brand" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Vehicle Brand">
-                                    <input type="text" name="model" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Vehicle Model">
-                                    <input type="number" name="year" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Year">
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <input type="text" name="brand" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="Vehicle Brand">
+                                    <input type="text" name="model" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="Vehicle Model">
+                                    <input type="number" name="year" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="Year">
                                 </div>
 
-                                <div class="grid md:grid-cols-2 gap-4">
-                                    <select name="service" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-gray-600">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <select name="service" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-gray-600 text-xs md:text-sm">
                                         <option value="">Select Service</option>
                                         <option>Windshield Replacement</option>
                                         <option>Leakage Repair</option>
                                         <option>Side Glass</option>
                                     </select>
-                                    <input type="date" name="date" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition">
+                                    <input type="date" name="date" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base">
                                 </div>
 
-                                <button type="submit" class="w-full py-4 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold uppercase tracking-widest neon-glow hover:scale-105 transition-all shadow-xl">
+                                <button type="submit" class="w-full py-3 md:py-4 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-xs md:text-base uppercase tracking-widest neon-glow hover:scale-105 transition-all shadow-xl">
                                     Confirm Booking
                                 </button>
                             </form>
                         </div>
 
                         <!-- Contact Info -->
-                        <div class="space-y-6" data-aos="fade-left">
-                            <div class="glass-card rounded-3xl p-8 flex items-start gap-6 hover:-translate-y-2 transition-transform duration-300">
-                                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center flex-shrink-0 neon-glow">
-                                    <i class="fas fa-map-location-dot text-white text-xl"></i>
+                        <div class="space-y-4 md:space-y-6" data-aos="fade-left">
+                            <div class="glass-card rounded-2xl md:rounded-3xl p-6 md:p-8 flex items-start gap-4 md:gap-6 hover:-translate-y-2 transition-transform duration-300">
+                                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center flex-shrink-0 neon-glow">
+                                    <i class="fas fa-map-location-dot text-white text-lg md:text-xl"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-xl mb-2">Our Location</h4>
-                                    <p class="text-gray-600 leading-relaxed">
+                                    <h4 class="font-bold text-lg md:text-xl mb-2">Our Location</h4>
+                                    <p class="text-gray-600 text-xs md:text-sm leading-relaxed">
                                         Majid line, opp. Srinivasa Auto mobiles,<br>
                                         Nehru Auto Nagar, N.H-7,<br>
                                         Andhra Pradesh 518003
                                     </p>
-                                    <a href="https://maps.app.goo.gl/UcvrQxCs3UKrzY9j9" target="_blank" class="text-orange-500 font-bold text-sm uppercase tracking-wide hover:text-orange-400 mt-2 inline-block">
+                                    <a href="https://maps.app.goo.gl/UcvrQxCs3UKrzY9j9" target="_blank" class="text-orange-500 font-bold text-xs md:text-sm uppercase tracking-wide hover:text-orange-400 mt-1 md:mt-2 inline-block">
                                         Open in Maps <i class="fas fa-external-link-alt ml-1"></i>
                                     </a>
                                 </div>
                             </div>
 
-                            <div class="glass-card rounded-3xl p-8 flex items-start gap-6 hover:-translate-y-2 transition-transform duration-300">
-                                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center flex-shrink-0 neon-glow">
-                                    <i class="fas fa-clock text-white text-xl"></i>
+                            <div class="glass-card rounded-2xl md:rounded-3xl p-6 md:p-8 flex items-start gap-4 md:gap-6 hover:-translate-y-2 transition-transform duration-300">
+                                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-orange-500 to orange-600 flex items-center justify-center flex-shrink-0 neon-glow">
+                                    <i class="fas fa-clock text-white text-lg md:text-xl"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-xl mb-2">Working Hours</h4>
-                                    <p class="text-gray-600 leading-relaxed">
+                                    <h4 class="font-bold text-lg md:text-xl mb-2">Working Hours</h4>
+                                    <p class="text-gray-600 text-xs md:text-sm leading-relaxed">
                                         Monday - Saturday: 9:00 AM - 7:00 PM<br>
                                         Sunday: 9:00 AM - 2:00 PM
                                     </p>
@@ -636,13 +635,13 @@
                             </div>
 
                             <div class="grid grid-cols-2 gap-4">
-                                <a href="tel:+919000563684" class="glass-card rounded-2xl p-6 flex flex-col items-center justify-center hover:bg-orange-500 hover:text-white transition-colors duration-300">
-                                    <i class="fas fa-phone text-3xl mb-3 text-gray-800"></i>
-                                    <span class="font-bold text-sm uppercase tracking-wide">Call Now</span>
+                                <a href="tel:+919000563684" class="glass-card rounded-2xl md:rounded-2xl p-4 md:p-6 flex flex flex-col items-center justify-center hover:bg-orange-500 hover:text-white transition-colors duration-300">
+                                    <i class="fas fa-phone text-2xl md:text-3xl mb-2 md:mb-3 text-gray-800"></i>
+                                    <span class="font-bold text-xs md:text-sm uppercase tracking-wide">Call Now</span>
                                 </a>
-                                <a href="https://wa.me/919000563684" target="_blank" class="glass-card rounded-2xl p-6 flex flex-col items-center justify-center hover:bg-green-500 hover:text-white transition-colors duration-300">
-                                    <i class="fab fa-whatsapp text-3xl mb-3 text-green-500"></i>
-                                    <span class="font-bold text-sm uppercase tracking-wide">WhatsApp</span>
+                                <a href="https://wa.me/919000563684" target="_blank" class="glass-card rounded-2xl md:rounded-2xl p-4 md:p-6 flex flex flex-col items-center justify-center hover:bg-green-500 hover:text-white transition-colors duration-300">
+                                    <i class="fab fa-whatsapp text-2xl md:text-3xl mb-2 md:mb-3 text-green-500"></i>
+                                    <span class="font-bold text-xs md:text-sm uppercase tracking-wide">WhatsApp</span>
                                 </a>
                             </div>
                         </div>
@@ -651,13 +650,12 @@
             </section>
 
             <!-- MAP HOLDER SECTION -->
-            <section class="pb-24 px-4">
+            <section class="pb-12 md:pb-24 px-4">
                 <div class="max-w-7xl mx-auto">
-                    <div class="glass-card rounded-3xl overflow-hidden h-96 relative shadow-2xl" data-aos="fade-up">
+                    <div class="glass-card rounded-2xl md:rounded-3xl overflow-hidden h-64 md:h-96 relative shadow-2xl" data-aos="fade-up">
                         <!-- Google Maps Embed -->
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.4753168778707!2d78.01281587365011!3d15.83159634575868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5e0ac47c7c1f9%3A0x59bdf15abe25fd21!2sR%20G%20CAR%20GLASS%20WORRKS!5e0!3m2!1sen!2sin!4v1769264461203!5m2!1sen!2sin"                              
-
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.4753168778707!2d78.01281587365011!3d15.83159634575868!3m2!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1sen!2sin!4v1769264461203!5m2!1sen!2sin" 
                             width="100%"
                             height="100%"
                             style="border:0;"
@@ -668,7 +666,7 @@
                         <!-- Get Directions Button Overlay -->
                         <a href="https://www.google.com/maps/dir/?api=1&destination=Majid+line%2C+opp.+Srinivasa+Auto+mobiles%2C+Nehru+Auto+Nagar%2C+N.H-7%2C+Andhra+Pradesh+518003"
                            target="_blank"
-                           class="absolute bottom-6 right-6 bg-white text-gray-800 px-6 py-3 rounded-xl shadow-lg hover:bg-orange-500 hover:text-white transition-all duration-300 font-bold text-sm uppercase tracking-wide flex items-center gap-2 z-10 hover:scale-105">
+                           class="absolute bottom-4 md:bottom-6 right-4 md:right-6 bg-white text-gray-800 px-4 md:px-6 py-2 md:py-3 rounded-lg shadow-lg hover:bg-orange-500 hover:text-white transition-all duration-300 font-bold text-xs md:text-sm uppercase tracking-wide flex items-center gap-2 z-10 hover:scale-105">
                             <i class="fas fa-location-arrow"></i> Get Directions
                         </a>
                     </div>
@@ -678,27 +676,27 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-16 px-4 glass-dark border-t border-gray-200">
+    <footer class="py-12 md:py-16 px-4 glass-dark border-t border-gray-200">
         <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
                 <div>
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-12 h-12 rounded-full overflow-hidden bg-white border-2 border-orange-500 flex items-center justify-center neon-glow">
+                    <div class="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden bg-white border-2 border-orange-500 flex items-center justify-center neon-glow">
                             <img src="https://z-cdn-media.chatglm.cn/files/9d24ce01-ac10-4447-abd8-bf7a014a524f.png?auth_key=1869227923-397ea4e35ce5462cb7c1804721170666-0-e7d4883d60d7a9678703fa33172e1dc5" alt="R G CAR GLASS WORRKS Logo" class="w-full h-full object-cover">
                         </div>
-                        <div>
-                            <div class="font-bold text-xl gradient-text">R G CAR GLASS</div>
+                        <div class="hidden md:block leading-none">
+                            <div class="font-bold text-lg md:text-xl gradient-text">R G CAR GLASS</div>
                             <div class="text-[9px] text-orange-600 font-bold tracking-[0.3em] uppercase leading-none mt-1">WORRKS</div>
                         </div>
                     </div>
-                    <p class="text-gray-600 text-sm leading-relaxed">
+                    <p class="hidden md:block text-gray-600 text-xs md:text-sm leading-relaxed">
                         Expert auto glass fitting works. Trusted by fleets and individual owners across Andhra Pradesh.
                     </p>
                 </div>
 
                 <div>
-                    <h4 class="font-bold mb-4">Quick Links</h4>
-                    <div class="space-y-2 text-sm text-gray-600">
+                    <h4 class="font-bold mb-2 md:mb-4">Quick Links</h4>
+                    <div class="space-y-1 md:space-y-2 text-xs md:text-sm text-gray-600">
                         <a href="#" onclick="switchTab('home')" class="block hover:text-orange-500 transition">Home</a>
                         <a href="#" onclick="switchTab('about')" class="block hover:text-orange-500 transition">About Us</a>
                         <a href="#" onclick="switchTab('services')" class="block hover:text-orange-500 transition">Services</a>
@@ -708,8 +706,8 @@
                 </div>
 
                 <div>
-                    <h4 class="font-bold mb-4">Services</h4>
-                    <div class="space-y-2 text-sm text-gray-600">
+                    <h4 class="font-bold mb-2 md:mb-4">Services</h4>
+                    <div class="space-y-1 md:space-y-2 text-xs md:text-sm text-gray-600">
                         <a href="#" onclick="switchTab('services')" class="block hover:text-orange-500 transition">Windshield Replacement</a>
                         <a href="#" onclick="switchTab('services')" class="block hover:text-orange-500 transition">Leakage Repair</a>
                         <a href="#" onclick="switchTab('services')" class="block hover:text-orange-500 transition">Side & Rear Glass</a>
@@ -719,15 +717,15 @@
                 </div>
 
                 <div>
-                    <h4 class="font-bold mb-4">Connect</h4>
-                    <p class="text-gray-600 text-sm mb-4"><i class="fas fa-phone mr-2 text-orange-500"></i> +91 9000563684</p>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-orange-500 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-orange-500 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                    <h4 class="font-bold mb-2 md:mb-4">Connect</h4>
+                    <p class="text-gray-600 text-xs md:text-sm mb-4"><i class="fas fa-phone mr-2 text-orange-500"></i> +91 9000563684</p>
+                    <div class="flex gap-3 md:gap-4">
+                        <a href="#" class="w-8 h-8 md:w-10 md:h-10 rounded-full glass flex items-center justify-center hover:bg-orange-500 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-8 h-8 md:w-10 md:h-10 rounded-full glass flex items-center justify-center hover:bg-orange-500 hover:text-white transition"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-200 pt-8 text-center text-gray-500 text-sm font-bold">
+            <div class="border-t border-gray-200 pt-6 md:pt-8 text-center text-gray-500 text-xs md:text-sm font-bold">
                 &copy; 2025 R G CAR GLASS WORRKS. All Rights Reserved.
             </div>
         </div>
@@ -736,66 +734,67 @@
     <!-- Quote Modal -->
     <div id="quote-modal" class="fixed inset-0 z-[999] hidden items-center justify-center">
         <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeQuoteModal()"></div>
-        <div class="relative glass-card w-full max-w-2xl mx-4 rounded-3xl p-8" data-aos="zoom-in">
-            <button onclick="closeQuoteModal()" class="absolute top-4 right-4 w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-orange-500 hover:text-white transition">
-                <i class="fas fa-times"></i>
+        <!-- ADJUSTED: Decrease size (width & padding) to look "Pretty Well" -->
+        <div class="relative glass-card w-[90%] md:max-w-4xl mx-4 rounded-2xl md:rounded-3xl p-6 md:p-8" data-aos="zoom-in">
+            <button onclick="closeQuoteModal()" class="absolute top-2 md:top-4 right-2 md:right-4 w-8 h-6 md:w-10 md:h-8 rounded-full glass flex items-center justify-center hover:bg-orange-500 hover:text-white transition">
+                <i class="fas fa-times text-sm md:text-base"></i>
             </button>
-            <h3 class="text-3xl font-bold mb-1 gradient-text">Get Bulk Quote</h3>
-            <p class="text-gray-500 text-sm mb-6">Request a custom quote for your fleet or project</p>
+            <h3 class="text-2xl md:text-3xl font-bold mb-1 md:mb-1 gradient-text">Get Bulk Quote</h3>
+            <p class="text-gray-500 text-xs md:text-sm mb-4 md:mb-6">Request a custom quote for your fleet or project</p>
 
-            <form onsubmit="handleBulkQuote(event)" class="space-y-4">
+            <form onsubmit="handleBulkQuote(event)" class="space-y-2 md:space-y-4">
                 <!-- Row 1: Name & Mobile -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                     <div>
-                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Company / Person Name</label>
-                        <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Ex: R G Transport">
+                        <label class="block text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Company / Person Name</label>
+                        <input type="text" name="name" required class="w-full px-4 py-2 md:py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="Ex: R G Transport">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Mobile Number</label>
-                        <input type="tel" name="mobile" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="+91 XXXXXXXXXX">
+                        <label class="block text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Mobile Number</label>
+                        <input type="tel" name="mobile" required class="w-full px-4 py-2 md:py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="+91 XXXXXXXXXX">
                     </div>
                 </div>
 
                 <!-- Row 2: Email (Optional) & Required Date -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                     <div>
-                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Email (Optional)</label>
-                        <input type="email" name="email" class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="email@example.com">
+                        <label class="block text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Email (Optional)</label>
+                        <input type="email" name="email" class="w-full px-4 py-2 md:py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="email@example.com">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Required Date</label>
-                        <input type="date" name="date" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition">
+                        <label class="block text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Required Date</label>
+                        <input type="date" name="date" required class="w-full px-4 py-2 md:py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base">
                     </div>
                 </div>
 
                 <!-- Row 3: Total Quantity (Min 3) & Location -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                     <div>
-                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Total Quantity (Min 3)</label>
-                        <input type="number" name="quantity" min="3" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Min 3 units">
+                        <label class="block text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Total Quantity (Min 3)</label>
+                        <input type="number" name="quantity" min="3" required class="w-full px-4 py-2 md:py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="Min 3 units">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Location</label>
-                        <input type="text" name="location" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="City/Area">
+                        <label class="block text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Location</label>
+                        <input type="text" name="location" required class="w-full px-4 py-2 md:py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="City/Area">
                     </div>
                 </div>
 
                 <!-- Description -->
                 <div>
-                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Glass Requirements</label>
-                    <textarea name="description" rows="4" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm" placeholder="Details: Truck Front/Windshield, Rear/Side Glass, Cutting Laminated Glass, Vehicle Name, Brand, Model Year..."></textarea>
+                    <label class="block text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Glass Requirements</label>
+                    <textarea name="description" rows="4" required class="w-full px-4 py-2 md:py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 text-xs md:text-sm" placeholder="Details: Truck Front/Windshield, Rear/Side Glass, Cutting Laminated Glass, Vehicle Name, Brand, Model Year..."></textarea>
                 </div>
 
                 <!-- Doorstep Service -->
                 <div>
-                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Required Doorstep Service?</label>
-                    <select name="doorstep" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-gray-700">
-                        <option value="no">No - Visit Workshop</option>
-                        <option value="yes">Yes - Doorstep Installation</option>
+                    <label class="block text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Required Doorstep Service?</label>
+                    <select name="doorstep" required class="w-full px-4 py-2 md:py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-gray-700 text-sm md:text-base">
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
                     </select>
                 </div>
 
-                <button type="submit" class="w-full py-4 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold uppercase tracking-widest neon-glow hover:scale-105 transition-all shadow-xl mt-4">
+                <button type="submit" class="w-full py-3 md:py-4 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-xs md:text-base uppercase tracking-widest neon-glow hover:scale-105 transition-all shadow-xl mt-2 md:mt-4">
                     Send Quote Request
                 </button>
             </form>
@@ -805,33 +804,33 @@
     <!-- Admin Modal -->
     <div id="admin-modal" class="fixed inset-0 z-[1000] hidden items-center justify-center">
         <div class="absolute inset-0 bg-black/90 backdrop-blur-xl" onclick="toggleAdminModal()"></div>
-        <div class="relative glass-card w-full max-w-5xl mx-4 rounded-3xl h-[85vh] flex flex-col">
-            <div class="sticky top-0 glass-dark p-6 flex justify-between items-center rounded-t-3xl z-10">
-                <h3 class="text-2xl font-bold gradient-text">Admin Dashboard</h3>
+        <div class="relative glass-card w-full max-w-5xl mx-4 rounded-2xl md:rounded-3xl h-[80vh] md:h-[85vh] flex flex-col">
+            <div class="sticky top-0 glass-dark p-4 md:p-6 flex justify-between items-center rounded-t-2xl md:rounded-t-3xl z-10">
+                <h3 class="text-2xl md:text-3xl font-bold gradient-text">Admin Dashboard</h3>
                 <div class="flex gap-3">
-                    <button id="admin-logout-btn" onclick="handleAdminLogout()" class="hidden px-4 py-2 rounded-lg bg-red-500 text-white font-bold text-sm hover:bg-red-600 transition">Logout</button>
-                    <button onclick="toggleAdminModal()" class="text-gray-400 hover:text-white transition"><i class="fas fa-times text-xl"></i></button>
+                    <button id="admin-logout-btn" onclick="handleAdminLogout()" class="hidden px-3 md:px-4 py-2 rounded-lg bg-red-500 text-white font-bold text-xs md:text-sm hover:bg-red-600 transition">Logout</button>
+                    <button onclick="toggleAdminModal()" class="text-gray-400 hover:text-white transition"><i class="fas fa-times text-lg md:text-xl"></i></button>
                 </div>
             </div>
-            <div class="flex-grow p-6 overflow-y-auto">
+            <div class="flex-grow p-4 md:p-6 overflow-y-auto">
                 <!-- Login View -->
-                <div id="admin-login-view" class="flex flex-col items-center justify-center h-full">
-                    <form onsubmit="handleAdminLogin(event)" class="w-full max-w-sm space-y-4">
-                        <input type="text" id="adminUser" class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Username">
-                        <input type="password" id="adminPass" class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Password">
-                        <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold uppercase tracking-widest neon-glow">Login</button>
+                <div id="admin-login-view" class="flex flex flex-col items-center justify-center h-full">
+                    <form onsubmit="handleAdminLogin(event)" class="w-full max-w-sm space-y-3 md:space-y-4">
+                        <input type="text" id="adminUser" class="w-full px-4 py-2 md:py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Username">
+                        <input type="password" id="adminPass" class="w-full px-4 py-2 md:py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Password">
+                        <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-xs md:text-base uppercase tracking-widest neon-glow">Login</button>
                     </form>
                 </div>
 
                 <!-- Dashboard View -->
-                <div id="admin-dashboard-view" class="hidden space-y-8">
+                <div id="admin-dashboard-view" class="hidden space-y-6 md:space-y-8">
                     <!-- Add New Item Form -->
-                    <div class="bg-white/40 p-6 rounded-2xl border border-white/50">
-                        <h4 class="font-bold text-lg mb-4 text-gray-800">Add New Item</h4>
-                        <form onsubmit="handleAddGalleryItem(event)" class="space-y-4">
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <input type="text" id="newItemTitle" required class="px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Title">
-                                <select id="newItemCategory" class="px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition">
+                    <div class="bg-white/40 p-4 md:p-6 rounded-2xl border-white/50">
+                        <h4 class="font-bold text-base md:text-lg mb-3 md:mb-4 text-gray-800">Add New Item</h4>
+                        <form onsubmit="handleAddGalleryItem(event)" class="space-y-2 md:space-y-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
+                                <input type="text" id="newItemTitle" required class="w-full px-3 md:px-4 py-2 md:py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Title">
+                                <select id="newItemCategory" class="px-3 md:px-4 py-2 md:py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition">
                                     <option value="cars">Cars</option>
                                     <option value="auto">Auto</option>
                                     <option value="busses">Busses</option>
@@ -841,32 +840,32 @@
                             </div>
 
                             <!-- Media Source Toggle -->
-                            <div class="flex gap-4 mb-2">
+                            <div class="flex gap-2 mb-2">
                                 <label class="flex items-center gap-2 cursor-pointer p-2 rounded-lg hover:bg-white/50 transition">
                                     <input type="radio" name="mediaSource" value="url" checked onchange="toggleMediaInput('url')" class="text-orange-500 focus:ring-orange-500">
-                                    <span class="font-bold text-sm">Paste Link (Image/Video)</span>
+                                    <span class="font-bold text-xs md:text-sm">Paste Link (Image/Video)</span>
                                 </label>
                                 <label class="flex items-center gap-2 cursor-pointer p-2 rounded-lg hover:bg-white/50 transition">
                                     <input type="radio" name="mediaSource" value="file" onchange="toggleMediaInput('file')" class="text-orange-500 focus:ring-orange-500">
-                                    <span class="font-bold text-sm">Upload Image</span>
+                                    <span class="font-bold text-xs md:text-sm">Upload Image</span>
                                 </label>
                             </div>
 
                             <!-- URL Input -->
                             <div id="media-url-container">
-                                <input type="url" id="mediaUrl" class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="https://example.com/image.jpg">
+                                <input type="url" id="mediaUrl" class="w-full px-3 md:px-4 py-2 md:py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="https://example.com/image.jpg">
                             </div>
 
                             <!-- File Input -->
                             <div id="media-file-container" class="hidden">
-                                <div class="relative border-2 border-dashed border-orange-300 rounded-xl p-6 text-center hover:bg-orange-50/50 transition">
+                                <div class="relative border-2 border-dashed border-orange-300 rounded-xl p-4 md:p-6 text-center hover:bg-orange-50/50 transition">
                                     <input type="file" id="mediaFile" accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
-                                    <i class="fas fa-cloud-upload-alt text-3xl text-orange-400 mb-2"></i>
-                                    <p class="text-sm text-gray-600">Click to upload image (Max 2MB)</p>
+                                    <i class="fas fa-cloud-upload-alt text-2xl md:text-3xl text-orange-400 mb-1 md:mb-2"></i>
+                                    <p class="text-xs md:text-gray-600">Click to upload image (Max 2MB)</p>
                                 </div>
                             </div>
 
-                            <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-green-600 to-green-700 text-white font-bold uppercase tracking-widest neon-glow hover:scale-105 transition-all">
+                            <button type="submit" class="w-full py-3 md:py-3 rounded-xl bg-gradient-to-r from-green-600 to-green-700 text-white font-bold text-xs md:text-base uppercase tracking-widest neon-glow hover:scale-105 transition-all">
                                 Add to Gallery
                             </button>
                         </form>
@@ -874,20 +873,22 @@
 
                     <!-- Existing Items List -->
                     <div class="bg-white/50 rounded-xl overflow-hidden shadow-sm">
-                        <table class="w-full text-left">
-                            <thead class="bg-orange-100/50 text-gray-700 uppercase text-xs font-bold">
-                                <tr>
-                                    <th class="p-4 w-16">Preview</th>
-                                    <th class="p-4">Title</th>
-                                    <th class="p-4">Category</th>
-                                    <th class="p-4">Source Type</th>
-                                    <th class="p-4 text-right">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody id="admin-gallery-list" class="divide-y divide-gray-200 text-sm">
-                                <!-- JS Populated -->
-                            </tbody>
-                        </table>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left">
+                                <thead class="bg-orange-100/50 text-gray-700 uppercase text-[10px] md:text-xs font-bold">
+                                    <tr>
+                                        <th class="p-2 md:p-4 w-12 md:w-16">Preview</th>
+                                        <th class="p-2 md:p-4">Title</th>
+                                        <th class="p-2 md:p-4">Category</th>
+                                        <th class="p-2 md:p-4">Source Type</th>
+                                        <th class="p-2 md:p-4 text-right">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-gallery-list" class="divide-y divide-gray-200 text-xs md:text-sm">
+                                    <!-- JS Populated -->
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -997,7 +998,7 @@
             
             filtered.forEach((item, index) => {
                 const div = document.createElement('div');
-                div.className = 'gallery-item h-72 rounded-2xl overflow-hidden relative group shadow-lg';
+                div.className = 'gallery-item h-64 md:h-72 rounded-2xl overflow-hidden relative group shadow-lg';
                 div.setAttribute('data-aos', 'fade-up');
                 div.setAttribute('data-aos-delay', index * 50);
                 
@@ -1011,10 +1012,10 @@
 
                 div.innerHTML = `
                     ${mediaContent}
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4 md:p-6">
                         <div>
-                            <h4 class="text-white font-bold text-xl">${item.title}</h4>
-                            <p class="text-orange-400 text-xs uppercase tracking-widest font-bold mt-1">${item.category}</p>
+                            <h4 class="text-white font-bold text-lg md:text-xl">${item.title}</h4>
+                            <p class="text-orange-400 text-[10px] md:text-xs uppercase tracking-widest font-bold mt-1">${item.category}</p>
                         </div>
                     </div>
                 `;
@@ -1165,22 +1166,21 @@
                 const tr = document.createElement('tr');
                 tr.className = 'hover:bg-orange-50 transition border-b border-gray-100 last:border-0';
                 
-                // Thumbnail
                 let thumb = '';
                 if(item.type === 'video') {
-                    thumb = '<div class="w-12 h-12 bg-gray-200 rounded flex items-center justify-center"><i class="fas fa-play text-gray-500"></i></div>';
+                    thumb = '<div class="w-10 h-10 md:w-12 md:h-12 bg-gray-200 rounded flex items-center justify-center"><i class="fas fa-play text-gray-500 text-xs md:text-sm"></i></div>';
                 } else {
-                    thumb = `<img src="${item.src}" class="w-12 h-12 object-cover rounded">`;
+                    thumb = `<img src="${item.src}" class="w-10 h-10 md:w-12 md:h-12 object-cover rounded">`;
                 }
 
                 tr.innerHTML = `
-                    <td class="p-4">${thumb}</td>
-                    <td class="p-4 font-bold text-gray-700">${item.title}</td>
-                    <td class="p-4"><span class="bg-orange-100 text-orange-600 px-2 py-1 rounded text-xs uppercase font-bold">${item.category}</span></td>
-                    <td class="p-4 text-xs text-gray-500 uppercase">${item.type}</td>
-                    <td class="p-4 text-right">
-                        <button onclick="deleteItem(${item.id})" class="text-red-500 hover:text-red-700 bg-red-50 hover:bg-red-100 p-2 rounded-lg transition group" title="Delete Item">
-                            <i class="fas fa-trash-alt text-sm group-hover:scale-110 transition-transform"></i>
+                    <td class="p-2 md:p-4">${thumb}</td>
+                    <td class="p-2 md:p-4 font-bold text-gray-700 text-xs md:text-sm">${item.title}</td>
+                    <td class="p-2 md:p-4"><span class="bg-orange-100 text-orange-600 px-1 md:px-2 py-1 rounded text-[10px] md:text-xs uppercase font-bold">${item.category}</span></td>
+                    <td class="p-2 md:p-4 text-[10px] md:text-xs text-gray-500 uppercase">${item.type}</td>
+                    <td class="p-2 md:p-4 text-right">
+                        <button onclick="deleteItem(${item.id})" class="text-red-500 hover:text-red-700 bg-red-50 hover:bg-red-100 p-1 md:p-2 rounded-lg transition group" title="Delete Item">
+                            <i class="fas fa-trash-alt text-xs md:text-sm group-hover:scale-110 transition-transform"></i>
                         </button>
                     </td>
                 `;
