@@ -1,1529 +1,1006 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R G CAR GLASSES | Premium Auto Glass Solutions</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="R G Car Glasses - Premium auto glass replacement & repair in Kurnool, AP. Windshield, side glass, sunroof installation. 15+ years experience. OEM quality. Insurance claimable.">
+<meta name="keywords" content="car glass Kurnool, windshield replacement, auto glass repair, car window repair Andhra Pradesh, sunroof installation">
+<meta property="og:title" content="R G CAR GLASSES | Premium Auto Glass · Kurnool">
+<meta property="og:description" content="Trusted auto glass replacement & repair service in Kurnool. 15+ years experience. OEM quality glass. Doorstep service available.">
+<meta property="og:type" content="website">
+<title>R G CAR GLASSES | Premium Auto Glass · Kurnool</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+/* ─── TOKENS ─── */
+:root{
+  --navy:#0B1929;--navy2:#0F2037;--navy3:#162840;
+  --amber:#E8920A;--amber2:#F5A623;--amber3:#FFC84A;--amberd:#B86F05;
+  --cream:#FAF8F4;--cream2:#F3F0EA;--cream3:#E8E3D9;
+  --ink:#1C1C1E;--ink2:#3A3A3C;--ink3:#6C6C70;
+  --white:#FFFFFF;
+  --red:#D94040;
+  --shadow-sm:0 2px 8px rgba(11,25,41,.08);
+  --shadow-md:0 8px 32px rgba(11,25,41,.12);
+  --shadow-lg:0 24px 64px rgba(11,25,41,.18);
+  --shadow-xl:0 40px 96px rgba(11,25,41,.22);
+  --ease:cubic-bezier(.22,1,.36,1);
+  --r4:4px;--r8:8px;--r12:12px;--r16:16px;--r24:24px;
+}
+/* ─── RESET ─── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%;height:auto}
+button{border:none;background:none;cursor:pointer;font-family:inherit}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--cream2)}
+::-webkit-scrollbar-thumb{background:var(--amber);border-radius:2px}
 
-    <!-- Google Fonts: Montserrat (Headings) & Open Sans (Body) -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+/* ─── HELPERS ─── */
+.section{padding:100px 0}
+.container{max-width:1280px;margin:0 auto;padding:0 48px}
+.label{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:20px}
+.label::before{content:'';width:24px;height:2px;background:var(--amber);border-radius:1px;flex-shrink:0}
+.heading{font-family:'Playfair Display',serif;font-size:clamp(38px,4.5vw,64px);font-weight:600;line-height:1.1;color:var(--navy);letter-spacing:-.02em}
+.heading em{font-style:italic;color:var(--amber)}
+.heading.white{color:var(--white)}
+.heading.white em{color:var(--amber3)}
+.subtext{font-size:17px;line-height:1.75;color:var(--ink3);font-weight:300;max-width:540px}
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.vis{opacity:1;transform:none}
+.rv.from-left{transform:translateX(-32px)}
+.rv.from-right{transform:translateX(32px)}
+.rv.from-left.vis,.rv.from-right.vis{transform:none}
 
-        /* --- FONTS --- */
-        body {
-            font-family: "Open Sans", sans-serif;
-            overflow-x: hidden;
-            background: #f0f4f8;
-            color: #1a1a1a;
-        }
+/* ─── TOP UTILITY BAR ─── */
+.topbar{background:var(--navy);padding:10px 48px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.tb-items{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.tb-item{display:flex;align-items:center;gap:7px;font-size:12px;color:rgba(255,255,255,.7);font-weight:400;letter-spacing:.01em;transition:color .2s}
+.tb-item:hover{color:var(--amber3)}
+.tb-item svg{width:13px;height:13px;stroke:var(--amber);fill:none;stroke-width:2;flex-shrink:0}
+.tb-badges{display:flex;gap:8px;flex-wrap:wrap}
+.tb-badge{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.55);border-radius:2px}
 
-        h1, h2, h3, h4, h5, h6, 
-        .font-orbitron, 
-        .font-heading, 
-        .font-bold,
-        button,
-        input,
-        select,
-        textarea,
-        th {
-            font-family: "Montserrat", sans-serif;
-        }
+/* ─── NAV ─── */
+nav{position:sticky;top:0;z-index:999;background:rgba(250,248,244,.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--cream3);padding:0 48px}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:72px;gap:32px}
+.logo{display:flex;flex-direction:column;line-height:1}
+.logo-main{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--navy);letter-spacing:.04em}
+.logo-main span{color:var(--amber)}
+.logo-sub{font-size:9px;letter-spacing:.28em;color:var(--ink3);text-transform:uppercase;margin-top:3px}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none}
+.nav-links a{font-size:13px;font-weight:500;color:var(--ink2);letter-spacing:.02em;transition:color .2s;position:relative;padding:4px 0}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;background:var(--amber);transition:width .3s var(--ease)}
+.nav-links a:hover{color:var(--navy)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{padding:11px 24px;background:var(--amber);color:var(--white)!important;font-size:13px!important;font-weight:600!important;border-radius:var(--r4);transition:background .2s,transform .2s,box-shadow .2s;white-space:nowrap}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{background:var(--amberd)!important;transform:translateY(-1px);box-shadow:0 8px 24px rgba(232,146,10,.35)!important}
+.hbg{display:none;flex-direction:column;gap:5px;padding:8px;cursor:pointer}
+.hbg span{display:block;width:22px;height:1.5px;background:var(--navy);border-radius:1px;transition:.3s}
+.hbg.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hbg.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hbg.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mob-nav{display:none;position:fixed;inset:0;background:var(--white);z-index:998;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.mob-nav.open{display:flex}
+.mob-nav a{font-family:'Playfair Display',serif;font-size:36px;font-weight:600;color:var(--navy);padding:12px 32px;transition:color .2s}
+.mob-nav a:hover{color:var(--amber)}
+.mob-nav .m-cta{margin-top:20px;background:var(--amber);color:var(--white)!important;padding:16px 48px;border-radius:var(--r4)}
 
-        /* --- COLORS & TYPOGRAPHY --- */
-        .text-primary { color: #1a1a1a; }
-        .text-secondary { color: #4a4a4a; }
+/* ─── MARQUEE ─── */
+.marquee{background:var(--amber);padding:11px 0;overflow:hidden;white-space:nowrap}
+.mq-track{display:inline-flex;animation:mq 30s linear infinite;will-change:transform}
+.mq-track:hover{animation-play-state:paused}
+.mq-item{display:inline-flex;align-items:center;gap:12px;padding:0 24px;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--navy)}
+.mq-dot{width:5px;height:5px;background:rgba(11,25,41,.35);border-radius:50%;flex-shrink:0}
+@keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-        /* --- GLASSMORPHISM ENGINE --- */
-        .glass {
-            background: rgba(255, 255, 255, 0.65);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-            color: #1a1a1a;
-        }
+/* ─── BUTTONS ─── */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 32px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;letter-spacing:.01em;border-radius:var(--r4);transition:all .25s var(--ease);cursor:pointer;text-decoration:none;border:none}
+.btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .25s var(--ease);flex-shrink:0}
+.btn:hover svg{transform:translateX(3px)}
+.btn-amber{background:var(--amber);color:var(--white)}
+.btn-amber:hover{background:var(--amberd);transform:translateY(-2px);box-shadow:0 12px 32px rgba(232,146,10,.3)}
+.btn-navy{background:var(--navy);color:var(--white)}
+.btn-navy:hover{background:var(--navy2);transform:translateY(-2px);box-shadow:0 12px 32px rgba(11,25,41,.25)}
+.btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--cream3)}
+.btn-outline:hover{border-color:var(--navy);background:var(--navy);color:var(--white);transform:translateY(-2px)}
+.btn-outline-white{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.35)}
+.btn-outline-white:hover{border-color:var(--white);background:var(--white);color:var(--navy);transform:translateY(-2px)}
 
-        .glass-dark {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            color: #1a1a1a;
-        }
+/* ─── HERO ─── */
+.hero{min-height:92vh;background:var(--navy);position:relative;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://lirp.cdn-website.com/a1c921c8/dms3rep/multi/opt/Replacing-Car-Windscreen-1920w.jpg') center/cover no-repeat;opacity:.12;mix-blend-mode:luminosity}
+.hero-pattern{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.06) 1px,transparent 0);background-size:40px 40px}
+.hero-glow{position:absolute;bottom:-20%;right:-10%;width:70%;height:100%;background:radial-gradient(ellipse,rgba(232,146,10,.12) 0%,transparent 60%);pointer-events:none}
+.hero-line{position:absolute;top:0;left:50%;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.08) 30%,rgba(255,255,255,.08) 70%,transparent)}
+.hero-content{position:relative;z-index:2;padding:80px 48px;max-width:1280px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 420px;gap:80px;align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(232,146,10,.15);border:1px solid rgba(232,146,10,.3);border-radius:var(--r24);margin-bottom:28px}
+.hero-tag span{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--amber3)}
+.hero-tag svg{width:12px;height:12px;stroke:var(--amber);fill:none;stroke-width:2.5}
+.hero-h{font-family:'Playfair Display',serif;font-size:clamp(52px,7vw,96px);font-weight:700;line-height:.97;letter-spacing:-.03em;color:var(--white);margin-bottom:28px;opacity:0;animation:fadeUp .9s var(--ease) .2s forwards}
+.hero-h em{font-style:italic;color:var(--amber3);display:block}
+.hero-p{font-size:17px;color:rgba(255,255,255,.6);line-height:1.8;font-weight:300;margin-bottom:40px;max-width:480px;opacity:0;animation:fadeUp .9s var(--ease) .38s forwards}
+.hero-acts{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .9s var(--ease) .54s forwards}
+.hero-proof{display:flex;align-items:center;gap:20px;margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,.1);opacity:0;animation:fadeUp .9s var(--ease) .7s forwards}
+.hp-avatars{display:flex}
+.hp-av{width:36px;height:36px;border-radius:50%;border:2px solid var(--navy);background:var(--cream3);overflow:hidden;margin-right:-10px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--navy)}
+.hp-txt strong{display:block;color:var(--white);font-size:14px;font-weight:600}
+.hp-txt span{font-size:12px;color:rgba(255,255,255,.5)}
+.stars{display:flex;gap:2px}
+.star{color:var(--amber3);font-size:12px}
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            color: #1a1a1a;
-            transition: all 0.4s ease;
-        }
+/* HERO CARD */
+.hero-card{background:var(--white);border-radius:var(--r16);padding:36px;box-shadow:var(--shadow-xl);opacity:0;animation:fadeUp .9s var(--ease) .45s forwards}
+.hc-head{display:flex;align-items:center;gap:14px;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--cream3)}
+.hc-icon{width:44px;height:44px;border-radius:var(--r8);background:var(--amber);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hc-icon svg{width:20px;height:20px;stroke:var(--white);fill:none;stroke-width:2}
+.hc-t{font-size:17px;font-weight:600;color:var(--navy)}
+.hc-s{font-size:12px;color:var(--ink3)}
+.fg{margin-bottom:14px}
+.fl{display:block;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:6px}
+.fi,.fsel{width:100%;padding:11px 14px;background:var(--cream);border:1.5px solid var(--cream3);border-radius:var(--r8);font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);outline:none;transition:border-color .2s,box-shadow .2s;appearance:none}
+.fi:focus,.fsel:focus{border-color:var(--amber);box-shadow:0 0 0 3px rgba(232,146,10,.12)}
+.fi::placeholder{color:var(--ink3)}
+.fsel{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236C6C70' d='M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.fsel option{background:var(--white)}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fsub{width:100%;padding:14px;background:var(--amber);color:var(--white);border-radius:var(--r8);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;letter-spacing:.02em;cursor:pointer;transition:all .25s;margin-top:6px;display:flex;align-items:center;justify-content:center;gap:8px}
+.fsub:hover{background:var(--amberd);transform:translateY(-1px);box-shadow:0 8px 24px rgba(232,146,10,.35)}
+.fsub:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.fsub svg{width:16px;height:16px;stroke:var(--white);fill:none;stroke-width:2}
+.fn{font-size:11px;color:var(--ink3);text-align:center;margin-top:10px;line-height:1.6}
 
-        .glass-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(255, 92, 0, 0.15);
-            border-color: rgba(255, 215, 0, 0.5);
-        }
+/* ─── STATS ─── */
+.stats-band{background:var(--white);border-top:1px solid var(--cream3);border-bottom:1px solid var(--cream3)}
+.stats-inner{max-width:1280px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:36px 24px;text-align:center;position:relative}
+.stat::after{content:'';position:absolute;right:0;top:20%;bottom:20%;width:1px;background:var(--cream3)}
+.stat:last-child::after{display:none}
+.stat-n{font-family:'Playfair Display',serif;font-size:48px;font-weight:700;color:var(--navy);line-height:1;margin-bottom:6px}
+.stat-n span{color:var(--amber)}
+.stat-l{font-size:12px;font-weight:500;color:var(--ink3);letter-spacing:.06em}
 
-        /* --- ANIMATIONS --- */
-        @keyframes float3d {
-            0%, 100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
-            25% { transform: translateY(-15px) rotateX(3deg) rotateY(3deg); }
-            50% { transform: translateY(-10px) rotateX(-2deg) rotateY(-2deg); }
-            75% { transform: translateY(-15px) rotateX(3deg) rotateY(3deg); }
-        }
+/* ─── WHY ─── */
+.why-sec{background:var(--cream2)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:56px}
+.wc{background:var(--white);padding:44px 36px;position:relative;overflow:hidden;transition:box-shadow .35s var(--ease),transform .35s var(--ease)}
+.wc:hover{box-shadow:var(--shadow-lg);transform:translateY(-6px);z-index:1}
+.wc-num{position:absolute;top:28px;right:28px;font-family:'Playfair Display',serif;font-size:72px;font-weight:700;color:var(--cream2);line-height:1;user-select:none;transition:color .35s}
+.wc:hover .wc-num{color:var(--cream3)}
+.wc-icon{width:56px;height:56px;border-radius:var(--r12);background:rgba(232,146,10,.1);display:flex;align-items:center;justify-content:center;margin-bottom:28px;transition:background .3s}
+.wc-icon svg{width:24px;height:24px;stroke:var(--amber);fill:none;stroke-width:1.6}
+.wc:hover .wc-icon{background:var(--amber)}
+.wc:hover .wc-icon svg{stroke:var(--white)}
+.wc-t{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--navy);margin-bottom:14px}
+.wc-d{font-size:14px;color:var(--ink3);line-height:1.85;font-weight:300}
+.wc-bar{position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}
+.wc:hover .wc-bar{transform:scaleX(1)}
 
-        .float-3d {
-            animation: float3d 8s ease-in-out infinite;
-        }
+/* ─── SERVICES ─── */
+.srv-sec{background:var(--navy)}
+.srv-intro{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:64px}
+.srv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.sc{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:var(--r12);padding:28px;position:relative;overflow:hidden;transition:all .35s var(--ease);cursor:default}
+.sc:hover{background:rgba(255,255,255,.1);border-color:rgba(232,146,10,.4);transform:translateY(-6px);box-shadow:0 24px 48px rgba(0,0,0,.3)}
+.sc-num{position:absolute;top:18px;right:20px;font-size:11px;font-weight:700;letter-spacing:.16em;color:rgba(255,255,255,.18)}
+.sc-icon{width:48px;height:48px;border-radius:var(--r8);background:rgba(232,146,10,.15);display:flex;align-items:center;justify-content:center;margin-bottom:20px;transition:background .3s}
+.sc-icon svg{width:22px;height:22px;stroke:var(--amber3);fill:none;stroke-width:1.5}
+.sc:hover .sc-icon{background:var(--amber)}
+.sc:hover .sc-icon svg{stroke:var(--white)}
+.sc-t{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--white);margin-bottom:10px;line-height:1.3}
+.sc-d{font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;font-weight:300}
+.sc-link{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);transition:gap .2s}
+.sc-link:hover{gap:10px}
+.sc-link svg{width:12px;height:12px;stroke:var(--amber);fill:none;stroke-width:2.5}
+.fleet-cta{margin-top:16px;background:var(--amber);border-radius:var(--r12);padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.fc-text h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.fc-text p{font-size:14px;color:rgba(11,25,41,.7);font-weight:400}
 
-        /* --- MAGIC NAV --- */
-        .magic-nav {
-            position: fixed;
-            top: 10px; 
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000; 
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            width: 95%;
-            max-width: 1200px;
-        }
+/* ─── ABOUT ─── */
+.about-sec{background:var(--cream)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center}
+.about-img-stack{position:relative;height:600px}
+.ai-main{position:absolute;top:0;right:0;width:75%;height:88%;object-fit:cover;border-radius:var(--r16);box-shadow:var(--shadow-xl)}
+.ai-accent{position:absolute;bottom:0;left:0;width:56%;height:52%;object-fit:cover;border-radius:var(--r16);border:6px solid var(--cream);box-shadow:var(--shadow-lg)}
+.ai-badge{position:absolute;top:48%;right:-32px;background:var(--amber);border-radius:var(--r12);padding:20px 24px;text-align:center;box-shadow:0 16px 40px rgba(232,146,10,.4)}
+.ai-b-n{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--white);line-height:1}
+.ai-b-l{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.8);margin-top:4px}
+.about-text p{font-size:15px;color:var(--ink3);line-height:1.9;font-weight:300;margin-bottom:18px}
+.about-text strong{color:var(--ink);font-weight:600}
+.about-chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}
+.chip{padding:6px 16px;background:var(--cream2);border:1px solid var(--cream3);border-radius:var(--r24);font-size:12px;font-weight:500;color:var(--ink2)}
+.about-metrics{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+.am{background:var(--cream2);border-radius:var(--r12);padding:20px;border:1px solid var(--cream3)}
+.am-n{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--navy);line-height:1;margin-bottom:4px}
+.am-n span{color:var(--amber)}
+.am-l{font-size:12px;color:var(--ink3);font-weight:500}
 
-        @media (min-width: 768px) {
-            .magic-nav {
-                top: 25px; 
-                width: 90%;
-            }
-        }
+/* ─── REVIEWS ─── */
+.rev-sec{background:var(--cream2)}
+.rev-head{display:grid;grid-template-columns:1fr auto;align-items:end;margin-bottom:56px;gap:32px}
+.g-pill{display:flex;align-items:center;gap:14px;padding:16px 24px;background:var(--white);border-radius:var(--r12);box-shadow:var(--shadow-sm);border:1px solid var(--cream3)}
+.g-pill-score{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--navy);line-height:1}
+.g-pill-detail .gp-stars{display:flex;gap:3px;margin:4px 0}
+.g-pill-detail .gp-label{font-size:11px;color:var(--ink3);font-weight:500}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rc{background:var(--white);border-radius:var(--r16);padding:28px;border:1px solid var(--cream3);transition:box-shadow .3s var(--ease),transform .3s var(--ease)}
+.rc:hover{box-shadow:var(--shadow-md);transform:translateY(-4px)}
+.rc-head{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.rc-av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy2));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--white);flex-shrink:0}
+.rc-name{font-size:14px;font-weight:600;color:var(--navy)}
+.rc-date{font-size:12px;color:var(--ink3)}
+.rc-stars{display:flex;gap:2px;margin-bottom:12px}
+.rc-text{font-size:14px;color:var(--ink2);line-height:1.8;font-weight:300}
+.rc-verified{display:flex;align-items:center;gap:5px;margin-top:14px;font-size:11px;color:var(--ink3);font-weight:500}
+.rc-verified svg{width:13px;height:13px;stroke:var(--amber);fill:none;stroke-width:2.5}
 
-        .magic-nav.scrolled {
-            top: 0px; 
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            padding-top: 8px;
-            padding-bottom: 8px;
-            width: 100%;
-            border-radius: 0;
-            border-left: none;
-            border-right: none;
-        }
+/* ─── GALLERY ─── */
+.gal-sec{background:var(--white)}
+.gal-top{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;gap:20px}
+.gal-tabs{display:flex;gap:4px;background:var(--cream2);padding:4px;border-radius:var(--r8)}
+.gt-btn{padding:8px 20px;border-radius:var(--r4);font-size:13px;font-weight:500;color:var(--ink3);transition:all .2s;cursor:pointer;border:none;background:none;font-family:'DM Sans',sans-serif}
+.gt-btn.active,.gt-btn:hover{background:var(--white);color:var(--navy);box-shadow:var(--shadow-sm);font-weight:600}
+.gt-btn.active{color:var(--amber)}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gi{border-radius:var(--r12);overflow:hidden;aspect-ratio:4/3;position:relative;cursor:zoom-in}
+.gi img{width:100%;height:100%;object-fit:cover;transition:transform .65s var(--ease)}
+.gi:hover img{transform:scale(1.07)}
+.gi-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,25,41,.75) 0%,transparent 60%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:20px}
+.gi:hover .gi-ov{opacity:1}
+.gi-tag{padding:5px 14px;background:var(--amber);border-radius:var(--r24);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--white)}
 
-        @media (min-width: 768px) {
-            .magic-nav.scrolled {
-                top: 10px; 
-                padding-top: 10px;
-                padding-bottom: 10px;
-                width: 90%;
-                border-radius: 9999px;
-                border: 1px solid rgba(255, 255, 255, 0.5);
-            }
-        }
+/* ─── AREAS ─── */
+.areas-sec{background:var(--navy2)}
+.areas-intro{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:56px}
+.areas-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.area{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--r12);padding:20px;display:flex;align-items:center;gap:14px;transition:all .25s}
+.area:hover{background:rgba(232,146,10,.15);border-color:rgba(232,146,10,.35);transform:translateY(-3px)}
+.area-ico{width:38px;height:38px;border-radius:var(--r8);background:rgba(232,146,10,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .25s}
+.area-ico svg{width:16px;height:16px;stroke:var(--amber3);fill:none;stroke-width:2}
+.area:hover .area-ico{background:var(--amber)}
+.area:hover .area-ico svg{stroke:var(--white)}
+.area-n{font-size:14px;font-weight:600;color:var(--white)}
+.area-d{font-size:11px;color:rgba(255,255,255,.45);margin-top:2px}
 
-        .nav-item {
-            position: relative;
-            overflow: hidden;
-            white-space: nowrap;
-            flex-shrink: 0; /* Prevent shrinking on mobile */
-        }
+/* ─── WARRANTY ─── */
+.warr-sec{background:var(--cream)}
+.warr-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.warr-cards{display:flex;flex-direction:column;gap:16px;margin-top:48px}
+.warr-card{background:var(--white);border-radius:var(--r12);padding:24px 28px;border:1px solid var(--cream3);display:flex;gap:20px;align-items:flex-start;transition:box-shadow .25s}
+.warr-card:hover{box-shadow:var(--shadow-md)}
+.wc-ico2{width:44px;height:44px;border-radius:var(--r8);background:rgba(232,146,10,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.wc-ico2 svg{width:20px;height:20px;stroke:var(--amber);fill:none;stroke-width:1.8}
+.wc-t2{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.wc-d2{font-size:13px;color:var(--ink3);line-height:1.75;font-weight:300}
+.notice-box{background:var(--navy);border-radius:var(--r16);padding:36px;margin-top:40px}
+.nb-head{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.nb-head svg{width:20px;height:20px;stroke:var(--amber3);fill:none;stroke-width:2;flex-shrink:0}
+.nb-head span{font-size:14px;font-weight:600;color:var(--amber3);letter-spacing:.06em;text-transform:uppercase}
+.notice-box p{font-size:13px;color:rgba(255,255,255,.62);line-height:1.85;margin-bottom:12px;font-weight:300}
+.notice-box p:last-child{margin-bottom:0}
+.notice-box strong{color:rgba(255,255,255,.85);font-weight:500}
+.pay-section{margin-top:36px}
+.pay-lbl{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);margin-bottom:14px}
+.pay-row{display:flex;gap:8px;flex-wrap:wrap}
+.pay-pill{padding:8px 18px;background:var(--cream2);border:1px solid var(--cream3);border-radius:var(--r8);font-size:13px;font-weight:600;color:var(--ink)}
 
-        .nav-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 92, 0, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
+/* ─── CONTACT ─── */
+.con-sec{background:var(--navy);position:relative;overflow:hidden}
+.con-bg{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.04) 1px,transparent 0);background-size:40px 40px}
+.con-glow{position:absolute;top:-20%;left:-10%;width:60%;height:120%;background:radial-gradient(ellipse,rgba(232,146,10,.08) 0%,transparent 60%);pointer-events:none}
+.con-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.con-info{margin-top:48px}
+.ci-block{margin-bottom:28px}
+.ci-lbl{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+.ci-val{font-size:16px;color:var(--white);font-weight:400;line-height:1.7}
+.ci-val.muted{font-size:14px;color:rgba(255,255,255,.55);font-weight:300;line-height:1.75}
+.con-acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px;margin-bottom:36px}
+.map-box{border-radius:var(--r12);overflow:hidden;height:200px;filter:grayscale(.8) brightness(.6);border:1px solid rgba(255,255,255,.1);transition:filter .35s}
+.map-box:hover{filter:grayscale(.3) brightness(.8)}
+.map-box iframe{width:100%;height:100%;border:none}
+.book-card{background:var(--white);border-radius:var(--r16);padding:40px;box-shadow:var(--shadow-xl)}
+.book-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.book-sub{font-size:14px;color:var(--ink3);margin-bottom:32px}
+.fta{width:100%;padding:11px 14px;background:var(--cream);border:1.5px solid var(--cream3);border-radius:var(--r8);font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);outline:none;transition:border-color .2s,box-shadow .2s;resize:vertical;min-height:80px}
+.fta:focus{border-color:var(--amber);box-shadow:0 0 0 3px rgba(232,146,10,.12)}
+.fta::placeholder{color:var(--ink3)}
 
-        .nav-item:hover::before { left: 100%; }
+/* ─── FOOTER ─── */
+footer{background:var(--ink);padding:72px 0 0}
+.ft-grid{max-width:1280px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px}
+.ft-brand .fb-name{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--white)}
+.ft-brand .fb-name span{color:var(--amber)}
+.ft-brand .fb-sub{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:4px;margin-bottom:20px}
+.ft-brand p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.85;font-weight:300;max-width:280px}
+.ft-social{display:flex;gap:10px;margin-top:24px}
+.ft-social a{width:38px;height:38px;border-radius:var(--r8);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:all .2s}
+.ft-social a:hover{border-color:var(--amber);background:rgba(232,146,10,.15)}
+.ft-social svg{width:15px;height:15px;stroke:rgba(255,255,255,.45);fill:none;stroke-width:1.8;transition:stroke .2s}
+.ft-social a:hover svg{stroke:var(--amber)}
+.ft-col h5{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:20px}
+.ft-col ul{list-style:none}
+.ft-col li{margin-bottom:10px}
+.ft-col a{font-size:14px;color:rgba(255,255,255,.55);transition:color .2s}
+.ft-col a:hover{color:var(--amber)}
+.ft-col .ft-info{font-size:13px;color:rgba(255,255,255,.45);line-height:1.85;font-weight:300}
+.ft-mid{max-width:1280px;margin:0 auto;padding:24px 48px;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.ft-certs{display:flex;gap:8px;flex-wrap:wrap}
+.fcert{padding:6px 14px;border:1px solid rgba(255,255,255,.12);border-radius:var(--r24);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.ft-pay2{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ft-pay2 span{font-size:11px;color:rgba(255,255,255,.3);font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.fpay{font-size:12px;font-weight:700;color:rgba(255,255,255,.45);padding:5px 12px;border:1px solid rgba(255,255,255,.1);border-radius:var(--r4)}
+.ft-bot{max-width:1280px;margin:0 auto;padding:20px 48px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.ft-bot p{font-size:12px;color:rgba(255,255,255,.25)}
+.ft-bot a{color:rgba(255,255,255,.25);transition:color .2s}
+.ft-bot a:hover{color:var(--amber)}
 
-        .nav-item::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #ff5c00, #ff8a33);
-            transform: translateX(-50%);
-            transition: width 0.3s ease;
-        }
+/* ─── FLOATING BTNS ─── */
+.floats{position:fixed;right:24px;bottom:28px;z-index:900;display:flex;flex-direction:column;gap:10px}
+.fl{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.3);transition:transform .2s,box-shadow .2s}
+.fl:hover{transform:scale(1.1);box-shadow:0 14px 36px rgba(0,0,0,.35)}
+.fl.call{background:var(--amber)}
+.fl.wa{background:#25D366}
+.fl svg{width:22px;height:22px;stroke:var(--white);fill:none;stroke-width:2.2}
+.fl.call svg{stroke:var(--navy)}
 
-        .nav-item:hover::after, .nav-item.active::after { width: 80%; }
+/* ─── MOBILE NAV BAR ─── */
+.mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--white);border-top:1px solid var(--cream3);box-shadow:0 -8px 32px rgba(11,25,41,.12);padding:0;z-index:997;padding-bottom:env(safe-area-inset-bottom)}
+.mb-row{display:flex}
+.mb-a{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 4px 12px;font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);transition:color .2s;text-decoration:none;border:none;background:none;cursor:pointer;font-family:'DM Sans',sans-serif}
+.mb-a.amber{color:var(--amber)}
+.mb-a svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;transition:stroke .2s}
+.mb-a:hover,.mb-a.act{color:var(--navy)}
 
-        /* Hide Scrollbar but keep functionality */
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+/* ─── ANIMS ─── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 
-        /* Gradient Text */
-        .gradient-text {
-            background: linear-gradient(135deg, #ff5c00 0%, #ff8a33 50%, #ffd700 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Animated Background */
-        .animated-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-            background: radial-gradient(circle at 50% 50%, #ffffff, #eef2f3);
-        }
-
-        .blob {
-            position: absolute;
-            filter: blur(80px);
-            z-index: -1;
-            opacity: 0.6;
-            animation: float 20s infinite ease-in-out;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(100px, -50px) scale(1.2); }
-        }
-
-        /* Neon Glow */
-        .neon-glow {
-            box-shadow: 0 0 15px rgba(255, 92, 0, 0.4),
-                        0 0 30px rgba(255, 92, 0, 0.2);
-        }
-
-        /* Tab Transitions */
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-
-        .tab-content.active { display: block; }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #ff5c00, #ff8a33);
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #ff8a33, #ffd700); }
-        
-        /* Form Focus */
-        input:focus, textarea:focus, select:focus {
-            outline: none;
-            border-color: #ff5c00;
-            box-shadow: 0 0 15px rgba(255, 92, 0, 0.2);
-        }
-
-        /* --- TOAST NOTIFICATION --- */
-        .toast {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background: rgba(26, 26, 26, 0.95);
-            backdrop-filter: blur(10px);
-            color: white;
-            padding: 16px 32px;
-            border-radius: 50px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            z-index: 9999;
-            opacity: 0;
-            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 500;
-            pointer-events: none;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .toast.show {
-            transform: translateX(-50%) translateY(0);
-            opacity: 1;
-        }
-
-        .toast-success { border-left: 4px solid #10b981; }
-        .toast-error { border-left: 4px solid #ef4444; }
-    </style>
+/* ─── RESPONSIVE ─── */
+@media(max-width:1100px){
+  .container,.ft-grid,.stats-inner,.ft-mid,.ft-bot{padding-left:28px;padding-right:28px}
+  nav{padding:0 28px}
+  .topbar{padding:10px 28px}
+  .hero-content{padding:60px 28px;grid-template-columns:1fr;gap:48px}
+  .hero-card{max-width:480px}
+  .srv-intro{grid-template-columns:1fr;gap:24px}
+  .about-grid{grid-template-columns:1fr;gap:48px}
+  .about-img-stack{height:400px}
+  .ai-badge{right:16px}
+  .warr-grid,.con-grid,.areas-intro{grid-template-columns:1fr;gap:40px}
+  .ft-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .ft-brand{grid-column:1/-1}
+}
+@media(max-width:820px){
+  .topbar{display:none}
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  .hbg{display:flex}
+  .section{padding:72px 0}
+  .hero-content{padding:48px 20px}
+  .stats-inner{grid-template-columns:repeat(2,1fr);padding:0 20px}
+  .stat:nth-child(2)::after,.stat:nth-child(4)::after{display:none}
+  .why-grid{grid-template-columns:1fr;gap:8px}
+  .srv-grid{grid-template-columns:repeat(2,1fr)}
+  .rev-grid{grid-template-columns:1fr}
+  .gal-grid{grid-template-columns:repeat(2,1fr)}
+  .areas-grid{grid-template-columns:repeat(2,1fr)}
+  .warr-grid,.con-grid{grid-template-columns:1fr;gap:36px}
+  .ft-grid{grid-template-columns:1fr;padding:0 20px}
+  .ft-mid,.ft-bot{padding-left:20px;padding-right:20px}
+  .ft-mid{flex-direction:column;align-items:flex-start}
+  .ft-bot{flex-direction:column}
+  .floats{display:none}
+  .mob-bar{display:block}
+  footer{padding-bottom:70px}
+  .rev-head{grid-template-columns:1fr;gap:20px}
+  .section.con-sec{padding-left:0;padding-right:0}
+  .con-sec .container{padding:72px 20px}
+}
+@media(max-width:540px){
+  .srv-grid{grid-template-columns:1fr}
+  .gal-grid{grid-template-columns:1fr}
+  .areas-grid{grid-template-columns:1fr 1fr}
+  .fg-row{grid-template-columns:1fr}
+  .about-img-stack{height:320px}
+  .ai-accent{display:none}
+  .ai-badge{right:12px;top:auto;bottom:12px}
+  .hero-acts{flex-direction:column;align-items:flex-start}
+  .fleet-cta{flex-direction:column;align-items:flex-start}
+}
+</style>
 </head>
-<body class="text-gray-900">
+<body>
 
-    <!-- Toast Notification Container -->
-    <div id="toast" class="toast toast-success">
-        <i class="fas fa-check-circle text-green-400"></i>
-        <span id="toast-msg">Operation Successful</span>
-    </div>
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="tb-items">
+    <a href="tel:+919000563684" class="tb-item" aria-label="Call us at +91 90005 63684"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.88a16 16 0 0 0 6 6l.54-.54a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.07 17z"/></svg>+91 90005 63684</a>
+    <a href="https://wa.me/919000563684" class="tb-item" target="_blank" rel="noopener noreferrer" aria-label="Message us on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg>WhatsApp</a>
+    <span class="tb-item"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Mon–Sat 9AM–7PM &nbsp;·&nbsp; Sun 9AM–2PM</span>
+  </div>
+  <div class="tb-badges">
+    <span class="tb-badge">OEM & Multi Branded</span>
+    <span class="tb-badge">Insurance Claimable</span>
+    <span class="tb-badge">Doorstep Available</span>
+  </div>
+</div>
 
-    <!-- Animated Background with Blobs -->
-    <div class="animated-bg">
-        <div class="blob w-96 h-96 bg-orange-200 top-[-100px] left-[-100px]" style="animation-delay: 0s;"></div>
-        <div class="blob w-80 h-80 bg-yellow-200 top-[20%] right-[-50px]" style="animation-delay: 5s;"></div>
-        <div class="blob w-72 h-72 bg-orange-100 bottom-[-50px] left-[20%]" style="animation-delay: 10s;"></div>
-    </div>
-
-    <!-- Floating Action Buttons -->
-   <a href="tel:+919000563684" class="fixed bottom-24 right-6 z-50 bg-orange-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition duration-300 pulse-btn group">
-        <i class="fa-solid fa-phone text-2xl group-hover:rotate-12 transition"></i>
+<!-- NAV -->
+<nav role="navigation">
+  <div class="nav-inner">
+    <a href="#home" class="logo" aria-label="R G CAR GLASSES - Home">
+      <span class="logo-main">R G CAR <span>GLASSES</span></span>
+      <span class="logo-sub">Premium Auto Glass · Kurnool, A.P.</span>
     </a>
-    <a href="https://wa.me/919000563684" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300 pulse-btn group flex-col">
-        <i class="fa-brands fa-whatsapp text-3xl group-hover:rotate-12 transition"></i>
-    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#areas">Areas</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="nav-cta">Book Now</a></li>
+    </ul>
+    <button class="hbg" id="hbg" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
 
-    <!-- Magic Navigation (Updated for Horizontal Scroll on Mobile) -->
-    <nav class="magic-nav glass-dark rounded-full px-2 py-2 md:px-6">
-        <div class="flex items-center gap-2 md:gap-8">
-            
-            <!-- Logo Section -->
-            <div class="flex items-center gap-2 md:gap-3 cursor-pointer group flex-shrink-0" onclick="switchTab('home')">
-                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden bg-white border-2 border-orange-500 flex items-center justify-center neon-glow float-3d group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <img src="https://github.com/Krishna-Eesham/R_G_CAR_GLASSES/blob/main/grok-image-886e8e21-1904-4ca4-ade1-d74745cbad9e%20(1).png" alt="R G CAR GLASSES Logo" class="w-full h-full object-cover">
-                </div>
-                <div class="hidden md:block leading-none">
-                    <div class="font-orbitron font-bold text-lg md:text-xl gradient-text">R G CAR GLASSES</div>
-                    <div class="text-[8px] md:text-[9px] text-orange-600 font-bold tracking-[0.2em] uppercase leading-none mt-1">WORRKS</div>
-                </div>
-            </div>
+<!-- MOB MENU -->
+<div class="mob-nav" id="mobNav" role="dialog" aria-modal="true" aria-label="Mobile navigation menu">
+  <a href="#about" onclick="cln()">About</a>
+  <a href="#services" onclick="cln()">Services</a>
+  <a href="#reviews" onclick="cln()">Reviews</a>
+  <a href="#gallery" onclick="cln()">Gallery</a>
+  <a href="#areas" onclick="cln()">Areas</a>
+  <a href="#contact" onclick="cln()">Contact</a>
+  <a href="#contact" onclick="cln()" class="m-cta">Book Now →</a>
+</div>
 
-            <!-- Horizontal Scrollable Menu (Mobile) / Flex Menu (Desktop) -->
-            <div class="flex items-center gap-2 md:gap-6 overflow-x-auto hide-scrollbar w-full mx-2 md:mx-0 md:w-auto">
-                <button onclick="switchTab('home')" class="nav-item active px-4 py-2 text-sm font-bold text-gray-700 hover:text-orange-600 uppercase tracking-wide transition-colors">Home</button>
-                <button onclick="switchTab('about')" class="nav-item px-4 py-2 text-sm font-bold text-gray-500 hover:text-orange-600 uppercase tracking-wide transition-colors">About</button>
-                <button onclick="switchTab('services')" class="nav-item px-4 py-2 text-sm font-bold text-gray-500 hover:text-orange-600 uppercase tracking-wide transition-colors">Services</button>
-                <button onclick="switchTab('gallery')" class="nav-item px-4 py-2 text-sm font-bold text-gray-500 hover:text-orange-600 uppercase tracking-wide transition-colors">Gallery</button>
-                <button onclick="switchTab('contact')" class="nav-item px-4 py-2 text-sm font-bold text-gray-500 hover:text-orange-600 uppercase tracking-wide transition-colors">Contact</button>
-                
-                <!-- 'Get Quote' button inside scroll on mobile to ensure it's accessible without overflow hidden -->
-                <button onclick="openQuoteModal()" class="nav-item px-6 py-2 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-sm uppercase tracking-wide neon-glow hover:scale-105 transition-transform duration-300 shadow-lg md:hidden">
-                    Quote
-                </button>
-            </div>
+<!-- MARQUEE -->
+<div class="marquee" aria-label="Services marquee">
+  <div class="mq-track" id="mq">
+    <span class="mq-item"><span class="mq-dot"></span>Windshield Replacement</span>
+    <span class="mq-item"><span class="mq-dot"></span>Side Glass Repair</span>
+    <span class="mq-item"><span class="mq-dot"></span>Rear Glass Fitting</span>
+    <span class="mq-item"><span class="mq-dot"></span>Leakage Repair</span>
+    <span class="mq-item"><span class="mq-dot"></span>Sunroof Installation</span>
+    <span class="mq-item"><span class="mq-dot"></span>OEM & Multi Branded Glasses</span>
+    <span class="mq-item"><span class="mq-dot"></span>Fleet Solutions</span>
+    <span class="mq-item"><span class="mq-dot"></span>Doorstep Service</span>
+    <span class="mq-item"><span class="mq-dot"></span>Insurance Claimable</span>
+    <span class="mq-item"><span class="mq-dot"></span>30-Minute Service</span>
+    <span class="mq-item"><span class="mq-dot"></span>Side Mirror Glass</span>
+    <span class="mq-item"><span class="mq-dot"></span>Windshield Replacement</span>
+    <span class="mq-item"><span class="mq-dot"></span>Side Glass Repair</span>
+    <span class="mq-item"><span class="mq-dot"></span>Rear Glass Fitting</span>
+    <span class="mq-item"><span class="mq-dot"></span>Leakage Repair</span>
+    <span class="mq-item"><span class="mq-dot"></span>Sunroof Installation</span>
+    <span class="mq-item"><span class="mq-dot"></span>OEM & Multi Branded Glasses</span>
+    <span class="mq-item"><span class="mq-dot"></span>Fleet Solutions</span>
+    <span class="mq-item"><span class="mq-dot"></span>Doorstep Service</span>
+    <span class="mq-item"><span class="mq-dot"></span>Insurance Claimable</span>
+    <span class="mq-item"><span class="mq-dot"></span>30-Minute Service</span>
+    <span class="mq-item"><span class="mq-dot"></span>Side Mirror Glass</span>
+  </div>
+</div>
 
-            <!-- Desktop Only Action Buttons -->
-            <div class="hidden lg:flex items-center gap-2 md:gap-3 flex-shrink-0">
-                <button onclick="toggleAdminModal()" class="w-8 h-8 md:w-10 md:h-10 rounded-full glass flex items-center justify-center hover:bg-orange-100 transition-colors">
-                    <i class="fas fa-user-lock text-xs md:text-sm text-gray-600"></i>
-                </button>
-                <button onclick="openQuoteModal()" class="px-4 md:px-6 py-2 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-sm uppercase tracking-wide neon-glow hover:scale-105 transition-transform duration-300 shadow-lg">
-                    Get Quote
-                </button>
-            </div>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-line"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-tag" style="opacity:0;animation:fadeUp .8s var(--ease) .05s forwards">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Nehru Auto Nagar, Kurnool · Andhra Pradesh</span>
+      </div>
+      <h1 class="hero-h">Crystal<br>Clear<br><em>Vision.</em></h1>
+      <p class="hero-p">Premium windshield replacement, precision glass fitting &amp; leak solutions for all vehicles. Trusted by 5,000+ clients across Andhra Pradesh for over 15 years.</p>
+      <div class="hero-acts">
+        <a href="#contact" class="btn btn-amber">Book a Service <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="tel:+919000563684" class="btn btn-outline-white">Call Now</a>
+      </div>
+      <div class="hero-proof">
+        <div class="hp-avatars" aria-label="Customer avatars">
+          <div class="hp-av">RK</div>
+          <div class="hp-av">SM</div>
+          <div class="hp-av">VP</div>
+          <div class="hp-av">+</div>
         </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="pt-24 md:pt-28">
-
-        <!-- HOME TAB -->
-        <div id="tab-home" class="tab-content active">
-            <!-- Hero Section -->
-            <section class="min-h-[80vh] md:min-h-[90vh] relative flex items-center justify-center overflow-hidden">
-                <div class="absolute inset-0 z-0">
-                    <img src="https://lirp.cdn-website.com/a1c921c8/dms3rep/multi/opt/Replacing-Car-Windscreen-1920w.jpg" class="w-full h-full object-cover filter brightness-90">
-                    <div class="absolute inset-0 bg-gradient-to-r from-white/80 to-white/40"></div>
-                </div>
-
-                <div class="relative z-10 text-center px-4 max-w-6xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="inline-block px-4 py-1 md:px-6 py-2 rounded-full glass-dark mb-4 md:mb-6 border border-orange-200">
-                        <span class="text-orange-600 font-bold text-xs md:text-sm uppercase tracking-widest">#1 Auto Glass Experts</span>
-                    </div>
-                    
-                    <h1 class="text-4xl md:text-6xl lg:text-8xl font-bold mb-2 md:mb-4 text-gray-900 leading-[0.95]">
-                        CRYSTAL CLEAR <br>
-                        <span class="gradient-text">VISION</span>
-                    </h1>
-                    
-                    <p class="text-lg md:text-xl lg:text-2xl text-gray-700 mb-6 md:mb-10 max-w-3xl mx-auto font-light">
-                        Premium windshield replacement, leak solutions, and precision glass fitting for all vehicles by <strong class="text-orange-600">R G CAR GLASSES</strong>.
-                    </p>
-                    
-                    <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-                        <button onclick="switchTab('contact')" class="px-6 md:px-10 py-3 md:py-4 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-lg uppercase tracking-widest neon-glow hover:scale-105 transition-all shadow-xl">
-                            Book Now
-                        </button>
-                        <button onclick="switchTab('services')" class="px-6 md:px-10 py-3 md:py-4 rounded-full glass-dark text-gray-800 font-bold text-lg uppercase tracking-widest hover:bg-white hover:shadow-xl transition-all border border-gray-200">
-                            Our Services
-                        </button>
-                    </div>
-                </div>
-
-                <div class="absolute bottom-6 md:bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-                    <i class="fas fa-chevron-down text-orange-400 text-2xl md:text-3xl"></i>
-                </div>
-            </section>
-
-            <!-- Features -->
-            <section class="py-16 md:py-24 px-4">
-                <div class="max-w-7xl mx-auto">
-                    <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
-                        <span class="text-orange-600 font-bold uppercase tracking-widest text-xs md:text-sm">Why Choose Us</span>
-                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 gradient-text">Excellence Guaranteed</h2>
-                    </div>
-
-                    <div class="grid md:grid-cols-3 gap-4">
-                        <div class="glass-card rounded-2xl md:rounded-3xl p-6 md:p-10 relative overflow-hidden" data-aos="fade-up" data-aos-delay="0">
-                            <div class="w-14 h-14 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-6 md:mb-6 mx-auto neon-glow">
-                                <i class="fas fa-bolt text-white text-3xl"></i>
-                            </div>
-                            <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-2 md:mb-2 text-center leading-tight">Lightning Fast</h3>
-                            <p class="text-gray-600 text-center text-xs md:text-sm leading-relaxed">30 minutes delivery service for urgent replacements. We value your time as much as your safety.</p>
-                        </div>
-
-                        <div class="glass-card rounded-2xl md:rounded-3xl p-6 md:p-10 relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                            <div class="w-14 h-14 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-6 md:mb-6 mx-auto neon-glow">
-                                <i class="fas fa-shield-halved text-white text-3xl"></i>
-                            </div>
-                            <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-2 md:mb-2 text-center leading-tight">Warranty & Claims</h3>
-                            <p class="text-gray-600 text-center text-xs md:text-sm leading-relaxed">Premium OEM glass with Warranty and Claimable for insurances. Safety is our priority.</p>
-                        </div>
-
-                        <div class="glass-card rounded-2xl md:rounded-3xl p-6 md:p-10 relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                            <div class="w-14 h-14 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-6 md:mb-6 mx-auto neon-glow">
-                                <i class="fas fa-tags text-white text-3xl"></i>
-                            </div>
-                            <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-2 md:mb-2 text-center leading-tight">Best Pricing</h3>
-                            <p class="text-gray-600 text-center text-xs md:text-sm leading-relaxed">Transparent pricing with no hidden fees. Best value guaranteed in region.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <div class="hp-txt">
+          <div class="stars" role="img" aria-label="5 star rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          <strong>5,000+ Happy Clients</strong>
+          <span>Trusted across Andhra Pradesh</span>
         </div>
-
-        <!-- ABOUT TAB -->
-        <div id="tab-about" class="tab-content">
-            <section class="py-16 md:py-24 px-4">
-                <div class="max-w-7xl mx-auto">
-                    <div class="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
-                        <div data-aos="fade-right">
-                            <div class="glass-card rounded-2xl md:rounded-3xl overflow-hidden float-3d">
-                                <img src="https://plus.unsplash.com/premium_photo-1661265902560-b852633b6026?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8V2luZHNjcmVlbiUyMFJlcGxhY2VtZW50fGVufDB8fDB8fHww" class="w-full h-auto object-cover">
-                            </div>
-                        </div>
-                        
-                        <div data-aos="fade-left">
-                            <span class="text-orange-600 font-bold uppercase tracking-widest text-xs md:text-sm mb-2">About Us</span>
-                            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 gradient-text">Setting Industry Standards</h2>
-                            <p class="text-gray-700 text-lg md:text-xl mb-6 md:mb-6 leading-relaxed">
-                                At <strong class="text-orange-600">R G CAR GLASSES</strong>, we don't just replace glass—we restore safety, clarity, and peace of mind. Located in Nehru Auto Nagar,Kurnool, Andhra Pradesh, we have built a reputation for precision and speed.
-                            </p>
-                            <p class="text-gray-600 text-xs md:text-sm md:mb-8 leading-relaxed">
-                                From a small workshop to region's premier automotive glass destination, our commitment remains unchanged: perfection in every installation.
-                            </p>
-
-                            <div class="grid md:grid-cols-2 gap-4 md:gap-6">
-                                <div class="glass-card p-4 md:p-6 rounded-2xl md:rounded-2xl text-center">
-                                    <h3 class="text-3xl md:text-4xl font-bold gradient-text mb-1">15+</h3>
-                                    <p class="text-gray-500 text-[10px] md:text-xs md:text-sm uppercase tracking-wide font-semibold">Years Experience</p>
-                                </div>
-                                <div class="glass-card p-4 md:p-6 rounded-2xl md:rounded-2xl text-center">
-                                    <h3 class="text-3xl md:text-4xl font-bold gradient-text mb-1">5000+</h3>
-                                    <p class="text-gray-500 text-[10px] md:text-xs md:text-sm uppercase tracking-wide font-semibold">Happy Clients</p>
-                                </div>
-                            </div>
-                            
-                            <button onclick="switchTab('contact')" class="px-6 md:px-8 py-3 md:py-4 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold uppercase tracking-widest neon-glow hover:scale-105 transition-all shadow-xl inline-flex items-center gap-2">
-                                Get In Touch <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- SERVICES TAB -->
-        <div id="tab-services" class="tab-content">
-            <section class="py-16 md:py-24 px-4">
-                <div class="max-w-7xl mx-auto">
-                    <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
-                        <span class="text-orange-600 font-bold uppercase tracking-widest text-xs md:text-sm">Our Services</span>
-                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 gradient-text">Complete Glass Solutions</h2>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-                        <div class="glass-card rounded-2xl md:rounded-3xl p-6 md:p-8 relative overflow-hidden group hover:-translate-y-3 transition-all duration-500" data-aos="fade-up" data-aos-delay="0">
-                            <div class="w-16 h-16 md:w-20 md:h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-4 md:mb-6 neon-glow">
-                                <i class="fas fa-car text-white text-2xl"></i>
-                            </div>
-                            <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Windshield Replacement</h3>
-                            <p class="text-gray-600 text-sm md:text-sm mb-4 md:mb-6 leading-relaxed">Premium OEM glass with high-grade polyurethane adhesives for perfect sealing.</p>
-                            <button onclick="switchTab('contact')" class="text-orange-500 font-bold text-sm uppercase tracking-wide hover:text-orange-400 transition flex items-center gap-2">
-                                Learn More <i class="fas fa-chevron-right text-[10px] md:text-xs"></i>
-                            </button>
-                        </div>
-
-                        <div class="glass-card rounded-2xl md:rounded-3xl p-6 md:p-8 relative overflow-hidden group hover:-translate-y-3 transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
-                            <div class="w-16 h-16 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-4 md:mb-6 neon-glow">
-                                <i class="fas fa-droplet-slash text-white text-2xl"></i>
-                            </div>
-                            <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Leakage Repair</h3>
-                            <p class="text-gray-600 text-sm md:text-sm mb-4 md:mb-6 leading-relaxed">Advanced diagnosis and sealing for water leaks in doors, roof, and channels.</p>
-                            <button onclick="switchTab('contact')" class="text-orange-500 font-bold text-sm uppercase tracking-wide hover:text-orange-400 transition flex items-center gap-2">
-                                Learn More <i class="fas fa-chevron-right text-[10px] md:text-xs"></i>
-                            </button>
-                        </div>
-
-                        <div class="glass-card rounded-2xl md:rounded-3xl p-6 md:p-8 relative overflow-hidden group hover:-translate-y-3 transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
-                            <div class="w-16 h-16 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-4 md:mb-6 neon-glow">
-                                <i class="fas fa-window-maximize text-white text-2xl"></i>
-                            </div>
-                            <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Side & Rear Glass</h3>
-                            <p class="text-gray-600 text-sm md:text-sm mb-4 md:mb-6 leading-relaxed">Precision cutting and fitting for all types of side windows and rear windshields.</p>
-                            <button onclick="switchTab('contact')" class="text-orange-500 font-bold text-sm uppercase tracking-wide hover:text-orange-400 transition flex items-center gap-2">
-                                Learn More <i class="fas fa-chevron-right text-[10px] md:text-xs"></i>
-                            </button>
-                        </div>
-
-                        <div class="glass-card rounded-2xl md:rounded-3xl p-6 md:p-8 relative overflow-hidden group hover:-translate-y-3 transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
-                            <div class="w-16 h-16 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-4 md:mb-6 neon-glow">
-                                <i class="fas fa-sun text-white text-2xl"></i>
-                            </div>
-                            <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Sunroof Installation</h3>
-                            <p class="text-gray-600 text-sm md:text-sm mb-4 md:mb-6 leading-relaxed">Professional sunroof glass replacement and installations with perfect sealing.</p>
-                            <button onclick="switchTab('contact')" class="text-orange-500 font-bold text-sm uppercase tracking-wide hover:text-orange-400 transition flex items-center gap-2">
-                                Learn More <i class="fas fa-chevron-right text-[10px] md:text-xs"></i>
-                            </button>
-                        </div>
-
-                        <div class="glass-card rounded-2xl md:rounded-3xl p-6 md:p-8 relative overflow-hidden group hover:-translate-y-3 transition-all duration-500" data-aos="fade-up" data-aos-delay="400">
-                            <div class="w-16 h-16 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-4 md:mb-6 neon-glow">
-                                <i class="fas fa-truck-pickup text-white text-2xl"></i>
-                            </div>
-                            <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Doorstep Service</h3>
-                            <p class="text-gray-600 text-sm md:text-sm mb-4 md:mb-6 leading-relaxed">Can't come to us? We bring our expertise directly to your location.</p>
-                            <button onclick="switchTab('contact')" class="text-orange-500 font-bold text-sm uppercase tracking-wide hover:text-orange-400 transition flex items-center gap-2">
-                                Learn More <i class="fas fa-chevron-right text-[10px] md:text-xs"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- GALLERY TAB -->
-        <div id="tab-gallery" class="tab-content">
-            <section class="py-16 md:py-24 px-4">
-                <div class="max-w-7xl mx-auto">
-                    <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-6 md:gap-6" data-aos="fade-up">
-                        <div>
-                            <span class="text-orange-600 font-bold uppercase tracking-widest text-xs md:text-sm">Our Work</span>
-                            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 gradient-text">Project Gallery</h2>
-                        </div>
-                        <div class="flex gap-2 flex-wrap">
-                            <button onclick="filterGallery('all')" class="filter-btn active px-4 md:px-6 py-2 rounded-full glass-dark text-xs md:text-sm font-bold uppercase">All</button>
-                            <button onclick="filterGallery('cars')" class="filter-btn px-4 md:px-6 py-2 rounded-full glass-dark text-xs md:text-sm font-bold uppercase hover:bg-orange-100">Cars</button>
-                            <button onclick="filterGallery('auto')" class="filter-btn px-4 md:px-6 py-2 rounded-full glass-dark text-xs md:text-sm font-bold uppercase hover:bg-orange-100">Auto</button>
-                            <button onclick="filterGallery('busses')" class="filter-btn px-4 md:px-6 py-2 rounded-full glass-dark text-xs md:text-sm font-bold uppercase hover:bg-orange-100">Busses</button>
-                            <button onclick="filterGallery('machinery')" class="filter-btn px-4 md:px-6 py-2 rounded-full glass-dark text-xs md:text-sm font-bold uppercase hover:bg-orange-100">JCB</button>
-                        </div>
-                    </div>
-
-                    <div id="gallery-container" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                        <!-- Gallery items injected by JS -->
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- CONTACT TAB -->
-        <div id="tab-contact" class="tab-content">
-            <section class="py-16 md:py-24 px-4">
-                <div class="max-w-7xl mx-auto">
-                    <div class="text-center mb-8 md:mb-12" data-aos="fade-up">
-                        <span class="text-orange-600 font-bold uppercase tracking-widest text-xs md:text-sm">Contact Us</span>
-                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 gradient-text">Book Your Service</h2>
-                    </div>
-
-                    <div class="grid lg:grid-cols-2 gap-10">
-                        <!-- Appointment Form -->
-                        <div class="glass-card rounded-3xl md:rounded-3xl p-6 md:p-8" data-aos="fade-right">
-                            <div class="text-center mb-6 md:mb-8">
-                                <div class="w-16 h-16 md:w-20 md:h-16 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mx-auto mb-4 md:mb-4 neon-glow">
-                                    <i class="fas fa-calendar-check text-white text-2xl"></i>
-                                </div>
-                                <h3 class="text-xl md:text-2xl font-bold">Book Appointment</h3>
-                                <p class="text-gray-500 text-xs md:text-sm">Schedule your glass service with us</p>
-                            </div>
-
-                            <form onsubmit="handleAppointmentSubmit(event)" class="space-y-4 md:space-y-6">
-                                <div class="grid md:grid-cols-2 gap-4">
-                                    <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="Full Name">
-                                    <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="Phone Number">
-                                </div>
-                                <input type="email" name="email" class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="Email Address">
-                                
-                                <div class="grid md:grid-cols-3 gap-4">
-                                    <input type="text" name="brand" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="Vehicle Brand">
-                                    <input type="text" name="model" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="Vehicle Model">
-                                    <input type="number" name="year" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="Year">
-                                </div>
-
-                                <div class="grid md:grid-cols-2 gap-4">
-                                    <select name="service" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-gray-600 text-sm md:text-base">
-                                        <option value="">Select Service</option>
-                                        <option>Windshield Replacement</option>
-                                        <option>Leakage Repair</option>
-                                        <option>Side Glass</option>
-                                    </select>
-                                    <input type="date" name="date" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base">
-                                </div>
-
-                                <button type="submit" class="w-full py-4 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold uppercase tracking-widest neon-glow hover:scale-105 transition-all shadow-xl">
-                                    Confirm Booking
-                                </button>
-                            </form>
-                        </div>
-
-                        <!-- Contact Info -->
-                        <div class="space-y-6 md:space-y-6" data-aos="fade-left">
-                            <div class="glass-card rounded-3xl md:rounded-3xl p-8 flex items-start gap-6 hover:-translate-y-2 transition-transform duration-300">
-                                <div class="w-14 h-14 md:w-16 md:h-14 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center flex-shrink-0 neon-glow">
-                                    <i class="fas fa-map-location-dot text-white text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-xl mb-2">Our Location</h4>
-                                    <p class="text-gray-600 leading-relaxed">
-                                        Majid line, opp. Srinivasa Auto mobiles,<br>
-                                        Nehru Auto Nagar, N.H-7,<br>
-                                        Andhra Pradesh 518003
-                                    </p>
-                                    <a href="https://maps.app.goo.gl/UcvrQxCs3UKrzY9j9" target="_blank" class="text-orange-500 font-bold text-sm uppercase tracking-wide hover:text-orange-400 mt-2 inline-block">
-                                        Open in Maps <i class="fas fa-external-link-alt ml-1"></i>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="glass-card rounded-3xl md:rounded-3xl p-8 flex items-start gap-6 hover:-translate-y-2 transition-transform duration-300">
-                                <div class="w-14 h-14 md:w-16 md:h-14 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center flex-shrink-0 neon-glow">
-                                    <i class="fas fa-clock text-white text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-xl mb-2">Working Hours</h4>
-                                    <p class="text-gray-600 leading-relaxed">
-                                        Monday - Saturday: 9:00 AM - 7:00 PM<br>
-                                        Sunday: 9:00 AM - 2:00 PM
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="grid grid grid-cols-2 gap-4">
-                                <a href="tel:+919000563684" class="glass-card rounded-2xl md:rounded-2xl p-4 md:p-6 flex flex flex-col items-center justify-center hover:bg-orange-500 hover:text-white transition-colors duration-300">
-                                    <i class="fas fa-phone text-3xl mb-2 md:text-3xl"></i>
-                                    <span class="font-bold text-xs uppercase tracking-wide">Call Now</span>
-                                </a>
-                                <a href="https://wa.me/919000563684" target="_blank" class="glass-card rounded-2xl md:rounded-2xl p-6 flex flex flex-col items-center justify-center hover:bg-green-500 hover:text-white transition-colors duration-300">
-                                    <i class="fab fa-whatsapp text-3xl mb-2 md:text-3xl"></i>
-                                    <span class="font-bold text-xs uppercase tracking-wide">WhatsApp</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-               <!-- MAP HOLDER SECTION -->
-            <section class="pb-24 px-4">
-                <div class="max-w-7xl mx-auto">
-                    <div class="glass-card rounded-3xl overflow-hidden h-96 relative shadow-2xl" data-aos="fade-up">
-                        <!-- Google Maps Embed -->
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.4753168778707!2d78.01281587365011!3d15.83159634575868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5e0ac47c7c1f9%3A0x59bdf15abe25fd21!2sR%20G%20CAR%20GLASS%20WORRKS!5e0!3m2!1sen!2sin!4v1769264461203!5m2!1sen!2sin"                              
-                            width="100%"
-                            height="100%"
-                            style="border:0;"
-                            allowfullscreen=""
-                            loading="lazy">
-                        </iframe>
-                        
-                        <!-- Get Directions Button Overlay -->
-                        <a href="https://www.google.com/maps/dir/?api=1&destination=Majid+line%2C+opp.+Srinivasa+Auto+mobiles%2C+Nehru+Auto+Nagar%2C+N.H-7%2C+Andhra+Pradesh+518003"
-                           target="_blank"
-                           class="absolute bottom-6 right-6 bg-white text-gray-800 px-6 py-3 rounded-xl shadow-lg hover:bg-orange-500 hover:text-white transition-all duration-300 font-bold text-sm uppercase tracking-wide flex items-center gap-2 z-10 hover:scale-105">
-                            <i class="fas fa-location-arrow"></i> Get Directions
-                        </a>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="py-16 px-4 glass-dark border-t border-gray-200 mt-auto">
-        <div class="max-w-7xl mx-auto">
-            <!-- Grid: items-start ensures columns align to the top -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-start text-left">
-                
-                <!-- Brand Column -->
-                <div class="flex flex-col h-full">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-12 h-12 rounded-full overflow-hidden bg-white border-2 border-orange-500 flex items-center justify-center neon-glow flex-shrink-0">
-                            <img src="https://github.com/Krishna-Eesham/R_G_CAR_GLASSES/blob/main/grok-image-886e8e21-1904-4ca4-ade1-d74745cbad9e%20(1).png?raw=true" alt="R G CAR GLASSES Logo" class="w-full h-full object-cover">
-                        </div>
-                        <div class="leading-tight">
-                            <div class="font-orbitron font-bold text-lg gradient-text">R G CAR GLASSES</div>
-                            <div class="text-[9px] text-orange-600 font-bold tracking-[0.3em] uppercase leading-none mt-1">WORRKS</div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
-                        Expert auto glass fitting works. Trusted by fleets and individual owners across Andhra Pradesh.
-                    </p>
-                </div>
-
-                <!-- Quick Links Column -->
-                <div>
-                    <h4 class="font-bold text-base md:text-lg mb-4 text-gray-800">Quick Links</h4>
-                    <div class="space-y-2 text-sm text-gray-600">
-                        <a href="#" onclick="switchTab('home')" class="block hover:text-orange-500 transition">Home</a>
-                        <a href="#" onclick="switchTab('about')" class="block hover:text-orange-500 transition">About Us</a>
-                        <a href="#" onclick="switchTab('services')" class="block hover:text-orange-500 transition">Services</a>
-                        <a href="#" onclick="switchTab('gallery')" class="block hover:text-orange-500 transition">Gallery</a>
-                        <a href="#" onclick="switchTab('contact')" class="block hover:text-orange-500 transition">Contact</a>
-                    </div>
-                </div>
-
-                <!-- Services Column -->
-                <div>
-                    <h4 class="font-bold text-base md:text-lg mb-4 text-gray-800">Services</h4>
-                    <div class="space-y-2 text-sm text-gray-600">
-                        <a href="#" onclick="switchTab('services')" class="block hover:text-orange-500 transition">Windshield Replacement</a>
-                        <a href="#" onclick="switchTab('services')" class="block hover:text-orange-500 transition">Leakage Repair</a>
-                        <a href="#" onclick="switchTab('services')" class="block hover:text-orange-500 transition">Side & Rear Glass</a>
-                        <a href="#" onclick="switchTab('services')" class="block hover:text-orange-500 transition">Sunroof Installation</a>
-                        <a href="#" onclick="switchTab('services')" class="block hover:text-orange-500 transition">Doorstep Service</a>
-                    </div>
-                </div>
-
-                <!-- Connect Column -->
-                <div>
-                    <h4 class="font-bold text-base md:text-lg mb-4 text-gray-800">Connect</h4>
-                    <p class="text-gray-600 text-sm mb-4"><i class="fas fa-phone mr-2 text-orange-500"></i> +91 9000563684</p>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors duration-300">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors duration-300">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-200 pt-8 mt-8 text-center text-gray-500 text-sm font-bold">
-                &copy; 2025 R G CAR GLASSES. All Rights Reserved.
-            </div>
-        </div>
-    </footer>
-
-    <!-- Quote Modal -->
-    <div id="quote-modal" class="fixed inset-0 z-[1100] hidden items-center justify-center">
-        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeQuoteModal()"></div>
-        <div class="relative glass-card w-[95%] md:max-w-5xl mx-4 rounded-2xl md:rounded-3xl p-6 md:p-10" data-aos="zoom-in">
-            <button onclick="closeQuoteModal()" class="absolute top-4 right-4 md:right-6 w-8 h-8 md:w-10 md:h-10 rounded-full glass flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors duration-300 z-20">
-                <i class="fas fa-times text-sm md:text-base"></i>
-            </button>
-            <h3 class="text-2xl md:text-3xl font-bold mb-1 md:mb-1 gradient-text">Get Bulk Quote</h3>
-            <p class="text-gray-500 text-xs md:text-sm mb-4">Request a custom quote for your fleet or project</p>
-
-            <!-- SCROLLABLE BODY FOR QUOTE MODAL -->
-            <form onsubmit="handleBulkQuote(event)" class="flex flex-col h-full">
-                <div class="overflow-y-auto max-h-[60vh] md:max-h-[65vh] pr-2 mb-4 space-y-4 md:space-y-4">
-                    <!-- Group 1 -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-                            <div>
-                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Company / Person Name</label>
-                                <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="Ex: R G Transport">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Mobile Number</label>
-                                <input type="tel" name="mobile" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="+91 XXXXXXXXXX">
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-                            <div>
-                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Email (Optional)</label>
-                                <input type="email" name="email" class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="email@example.com">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Required Date</label>
-                                <input type="date" name="date" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Group 2 -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-                        <div>
-                            <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Total Quantity (Min 3)</label>
-                            <input type="number" name="quantity" min="3" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="Min 3 units">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Location</label>
-                            <input type="text" name="location" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="City/Area">
-                        </div>
-                    </div>
-
-                    <!-- Description -->
-                    <div>
-                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Glass Requirements</label>
-                        <textarea name="description" rows="4" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base" placeholder="Details:Vehicle Name:,Brand:, Model Year:, Glasses: Front/Rear/Side Glass,...ects"></textarea>
-                    </div>
-
-                    <!-- Doorstep Service -->
-                    <div>
-                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Required Doorstep Service?</label>
-                        <select name="doorstep" required class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition text-sm md:text-base">
-                            <option value="no">No-</option>
-                            <option value="yes">Yes</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Fixed Submit Button outside scroll area -->
-                <button type="submit" class="w-full py-3 md:py-4 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold uppercase tracking-widest neon-glow hover:scale-105 transition-all shadow-xl flex-shrink-0">
-                    Send Quote Request
-                </button>
-            </form>
-        </div>
+      </div>
     </div>
-
-    <!-- Admin Modal -->
-    <div id="admin-modal" class="fixed inset-0 z-[1100] hidden items-center justify-center">
-        <div class="absolute inset-0 bg-black/90 backdrop-blur-xl" onclick="toggleAdminModal()"></div>
-        <div class="relative glass-card w-[95%] max-w-5xl mx-4 rounded-2xl md:rounded-3xl h-[85vh] md:h-[85vh] flex flex flex-col">
-            <div class="sticky top-0 glass-dark p-4 md:p-6 flex justify-between items-center rounded-t-3xl z-10">
-                <h3 class="text-xl md:text-2xl font-bold gradient-text">Admin Dashboard</h3>
-                <div class="flex gap-3">
-                    <button id="admin-logout-btn" onclick="handleAdminLogout()" class="hidden px-4 md:px-4 py-2 rounded-lg bg-red-500 text-white font-bold text-xs md:text-sm hover:bg-red-600 transition">Logout</button>
-                    <button onclick="toggleAdminModal()" class="text-gray-400 hover:text-white transition"><i class="fas fa-times text-xl"></i></button>
-                </div>
-            </div>
-            <div class="flex-grow p-4 md:p-6 overflow-y-auto">
-                <!-- Login View -->
-                <div id="admin-login-view" class="flex flex flex-col items-center justify-center h-full">
-                    <form onsubmit="handleAdminLogin(event)" class="w-full max-w-sm space-y-4">
-                        <input type="text" id="adminUser" class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Username">
-                        <input type="password" id="adminPass" class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition placeholder="Password">
-                        <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold uppercase tracking-widest neon-glow">Login</button>
-                    </form>
-                </div>
-
-                <!-- Dashboard View -->
-                <div id="admin-dashboard-view" class="hidden space-y-6 md:space-y-8">
-                    <!-- Dashboard Tabs -->
-                    <div class="flex gap-4 border-b border-gray-200 pb-2 overflow-x-auto hide-scrollbar">
-                        <button onclick="switchAdminTab('gallery')" class="admin-tab-btn active text-orange-600 font-bold border-b-2 border-orange-600 pb-1 whitespace-nowrap">Gallery</button>
-                        <button onclick="switchAdminTab('submissions')" class="admin-tab-btn text-gray-500 font-bold hover:text-orange-500 pb-1 whitespace-nowrap">Secure Leads</button>
-                        <button onclick="switchAdminTab('data')" class="admin-tab-btn text-gray-500 font-bold hover:text-orange-500 pb-1 whitespace-nowrap">Data Sync</button>
-                    </div>
-
-                    <!-- GALLERY MANAGEMENT -->
-                    <div id="admin-tab-gallery" class="admin-tab-content">
-                        <!-- Add New Item Form -->
-                        <div class="bg-white/40 p-4 md:p-6 rounded-2xl border-white/50">
-                            <h4 class="font-bold text-lg md:text-lg mb-3 md:mb-4 text-gray-800">Add New Item</h4>
-                            <form onsubmit="handleAddGalleryItem(event)" class="space-y-4 md:space-y-4">
-                                <div class="grid md:grid-cols-2 gap-4">
-                                    <input type="text" id="newItemTitle" required class="px-4 py-3 md:px-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="Title">
-                                    <select id="newItemCategory" class="px-3 md:px-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition">
-                                        <option value="cars">Cars</option>
-                                        <option value="auto">Auto</option>
-                                        <option value="busses">Busses</option>
-                                        <option value="machinery">Machinery</option>
-                                    </select>
-                                </div>
-
-                                <!-- Media Source Toggle -->
-                                <div class="flex gap-4 mb-2">
-                                    <label class="flex items-center gap-2 cursor-pointer p-2 rounded-lg hover:bg-white/50 transition">
-                                        <input type="radio" name="mediaSource" value="url" checked onchange="toggleMediaInput('url')" class="text-orange-500 focus:ring-orange-500">
-                                        <span class="font-bold text-sm md:text-sm">Paste Link (Image/Video)</span>
-                                    </label>
-                                    <label class="flex items-center gap-2 cursor-pointer p-2 rounded-lg hover:bg-white/50 transition">
-                                        <input type="radio" name="mediaSource" value="file" onchange="toggleMediaInput('file')" class="text-orange-500 focus:ring-orange-500">
-                                        <span class="font-bold text-sm md:text-sm">Upload Image</span>
-                                    </label>
-                                </div>
-
-                                <!-- URL Input -->
-                                <div id="media-url-container">
-                                    <input type="url" id="mediaUrl" class="w-full px-4 py-3 rounded-xl glass-dark focus:ring-2 focus:ring-orange-200 transition" placeholder="https://example.com/image.jpg">
-                                </div>
-
-                                <!-- File Input -->
-                                <div id="media-file-container" class="hidden">
-                                    <div class="relative border-2 border-dashed border-orange-300 rounded-xl p-6 md:p-6 text-center hover:bg-orange-50/50 transition">
-                                        <input type="file" id="mediaFile" accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
-                                        <i class="fas fa-cloud-upload-alt text-3xl text-orange-400 mb-2"></i>
-                                        <p class="text-xs md:text-sm text-gray-600">Click to upload image (Max 2MB)</p>
-                                    </div>
-                                </div>
-
-                                <button type="submit" class="w-full py-3 md:py-4 rounded-xl bg-gradient-to-r from-green-600 to-green-700 text-white font-bold uppercase tracking-widest neon-glow hover:scale-105 transition-all">
-                                    Add to Gallery
-                                </button>
-                            </form>
-                        </div>
-
-                        <!-- Existing Items List -->
-                        <div class="bg-white/50 rounded-xl overflow-hidden shadow-sm mt-6">
-                            <div class="overflow-x-auto">
-                                <table class="w-full text-left">
-                                    <thead class="bg-orange-100/50 text-gray-700 uppercase text-xs md:text-xs font-bold">
-                                        <tr>
-                                            <th class="p-4 md:p-4 w-16">Preview</th>
-                                            <th class="p-4">Title</th>
-                                            <th class="p-4">Category</th>
-                                            <th class="p-4">Source Type</th>
-                                            <th class="p-4 text-right">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="admin-gallery-list" class="divide-y divide-gray-200 text-sm">
-                                        <!-- JS Populated -->
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SECURE SUBMISSIONS -->
-                    <div id="admin-tab-submissions" class="admin-tab-content hidden">
-                        <div class="bg-blue-50 border border-blue-200 p-4 rounded-xl mb-6 text-sm text-blue-800">
-                            <i class="fas fa-info-circle mr-2"></i> <strong>Note:</strong> Customer data is encrypted. You must be logged in to view it. Because this is a static site, data is stored in your browser's local storage.
-                        </div>
-                        <div class="bg-white/50 rounded-xl overflow-hidden shadow-sm">
-                            <div class="overflow-x-auto">
-                                <table class="w-full text-left">
-                                    <thead class="bg-orange-100/50 text-gray-700 uppercase text-xs md:text-xs font-bold">
-                                        <tr>
-                                            <th class="p-4">Date</th>
-                                            <th class="p-4">Type</th>
-                                            <th class="p-4">Customer</th>
-                                            <th class="p-4">Details</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="submissions-list" class="divide-y divide-gray-200 text-sm">
-                                        <!-- JS Populated -->
-                                    </tbody>
-                                </table>
-                                <div id="no-submissions" class="p-8 text-center text-gray-500 hidden">No secure submissions found.</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- DATA SYNC -->
-                    <div id="admin-tab-data" class="admin-tab-content hidden">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div class="glass-card p-6 rounded-2xl text-center">
-                                <i class="fas fa-download text-4xl text-orange-500 mb-4"></i>
-                                <h4 class="font-bold text-lg mb-2">Export Data</h4>
-                                <p class="text-sm text-gray-600 mb-4">Download your gallery data to transfer to another device.</p>
-                                <button onclick="exportData()" class="w-full py-3 rounded-xl bg-blue-500 text-white font-bold uppercase tracking-widest hover:bg-blue-600 transition">
-                                    Download JSON
-                                </button>
-                            </div>
-                            <div class="glass-card p-6 rounded-2xl text-center">
-                                <i class="fas fa-upload text-4xl text-green-500 mb-4"></i>
-                                <h4 class="font-bold text-lg mb-2">Import Data</h4>
-                                <p class="text-sm text-gray-600 mb-4">Upload a JSON file to update your gallery.</p>
-                                <input type="file" id="importFile" accept=".json" class="hidden" onchange="importData(this)">
-                                <button onclick="document.getElementById('importFile').click()" class="w-full py-3 rounded-xl bg-green-500 text-white font-bold uppercase tracking-widest hover:bg-green-600 transition">
-                                    Upload JSON
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- INLINE QUOTE CARD -->
+    <div class="hero-card">
+      <div class="hc-head">
+        <div class="hc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <div><div class="hc-t">Get Instant Quote</div><div class="hc-s">Reply within 30 minutes via WhatsApp</div></div>
+      </div>
+      <form onsubmit="event.preventDefault(); quickQ();" id="quickQuoteForm">
+        <div class="txt"><label class="txt" for="q-name">Your Name</label><input class="fi" id="q-name" name="name" type="text" placeholder="Full name" required aria-required="true"></div>
+        <div class="txt"><label class="txt" for="q-phone">Mobile Number</label><input class="fi" id="q-phone" name="phone" type="tel" placeholder="+91 00000 00000" pattern="[0-9+\s\-()]+" required aria-required="true"></div>
+        <div class="fg-row">
+          <div class="txt"><label class="txt" for="q-make">Car Make</label><input class="fi" id="q-make" name="make" type="text" placeholder="e.g. Maruti"></div>
+          <div class="txt"><label class="txt" for="q-model">Car Model</label><input class="fi" id="q-model" name="model" type="text" placeholder="e.g. Swift"></div>
         </div>
+        <div class="txt">
+          <label class="txt" for="q-svc">Service Required</label>
+          <select class="fsel" id="q-svc" name="service">
+            <option value="">Select a service</option>
+            <option>Windshield Replacement</option>
+            <option>Side Window Glass</option>
+            <option>Rear / Back Glass</option>
+            <option>Sunroof Glass</option>
+            <option>Side View Mirror</option>
+            <option>Quarter Glass Panel</option>
+            <option>Leakage Repair</option>
+            <option>Fleet / Bulk Quote</option>
+          </select>
+        </div>
+        <button type="submit" class="fsub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg>Send via WhatsApp</button>
+      </form>
+      <p class="fn">No spam · We'll call to confirm your appointment</p>
     </div>
+  </div>
+</section>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ once: true, duration: 800 });
+<!-- STATS -->
+<div class="stats-band">
+  <div class="stats-inner">
+    <div class="stat rv"><div class="stat-n"><span data-count="15" data-suf="+">0</span></div><div class="stat-l">Years of Experience</div></div>
+    <div class="stat rv"><div class="stat-n"><span data-count="5000" data-suf="+">0</span></div><div class="stat-l">Vehicles Served</div></div>
+    <div class="stat rv"><div class="stat-n">30 <small style="font-size:.5em;color:var(--ink3)">min</small></div><div class="stat-l">Average Service Time</div></div>
+    <div class="stat rv"><div class="stat-n">OEM</div><div class="stat-l">Quality Every Fit</div></div>
+  </div>
+</div>
 
-        // --- SECURITY MANAGER (ENCRYPTION & HASHING) ---
-        const SecurityManager = {
-            async sha256(message) {
-                const msgBuffer = new TextEncoder().encode(message);
-                const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-                const hashArray = Array.from(new Uint8Array(hashBuffer));
-                return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-            },
+<!-- WHY -->
+<section class="section why-sec" id="why">
+  <div class="container">
+    <div class="label rv">Why Choose Us</div>
+    <h2 class="heading rv">Excellence <em>Guaranteed,</em><br>Every Time</h2>
+    <div class="why-grid" style="margin-top:48px">
+      <div class="wc rv"><div class="wc-num">01</div><div class="wc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg></div><h3 class="wc-t">Lightning Fast</h3><p class="wc-d">30-minute service delivery for urgent replacements. We value your time and safety equally — professional, efficient, never rushed on quality.</p><div class="wc-bar"></div></div>
+      <div class="wc rv"><div class="wc-num">02</div><div class="wc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3 class="wc-t">Warranty & Insurance</h3><p class="wc-d">Premium OEM glass with warranty coverage. All installations are fully insurance-claimable — we help with the paperwork so you don't have to worry.</p><div class="wc-bar"></div></div>
+      <div class="wc rv"><div class="wc-num">03</div><div class="wc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3 class="wc-t">Transparent Pricing</h3><p class="wc-d">No hidden fees, no surprises. You receive a clear quote before any work begins — best value guaranteed in the region, every single time.</p><div class="wc-bar"></div></div>
+    </div>
+  </div>
+</section>
 
-            async verifyPassword(password) {
-                const inputHash = await this.sha256(password);
-                // CORRECT SHA-256 for 'Rg*1984#'
-                const correctHash = "946075090258d8900f0443d8d8d8d8d8d8d8d8d8d8d8d8d8d8d8d8d8d8d8d8d8d8d8d8d8d"; 
-                return inputHash === "946075090258d8900f0443d8d8d8d8d8d8d8d8d8d8d8d8d8d8d8d8d8d8d8d8d8d8d8d8d"; 
-            },
+<!-- SERVICES -->
+<section class="section srv-sec" id="services">
+  <div class="container">
+    <div class="srv-intro">
+      <div>
+        <div class="label rv" style="color:var(--amber3)"><span style="background:var(--amber3)"></span>What We Do</div>
+        <h2 class="heading white rv">Complete Glass <em>Solutions</em></h2>
+      </div>
+      <div style="display:flex;flex-direction:column;justify-content:flex-end;gap:16px">
+        <p class="rv" style="color:rgba(255,255,255,.5);font-size:15px;line-height:1.75;font-weight:300">All domestic &amp; foreign vehicle makes and models. Cars, autos, buses, trucks &amp; heavy machinery.</p>
+        <a href="#contact" class="btn btn-amber rv" style="align-self:flex-start">Get a Quote <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+    <div class="srv-grid">
+      <div class="sc rv"><div class="sc-num">01</div><div class="sc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 3l-2 3M17 3l2 3"/></svg></div><h3 class="sc-t">Windshield Replacement</h3><p class="sc-d">Premium OEM glass with polyurethane adhesives for perfect optical clarity and lasting seal.</p><a href="#contact" class="sc-link">Book Now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      <div class="sc rv"><div class="sc-num">02</div><div class="sc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3 class="sc-t">Side Window Glass</h3><p class="sc-d">Precision custom cutting and fitting for all side windows — every make &amp; model.</p><a href="#contact" class="sc-link">Book Now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      <div class="sc rv"><div class="sc-num">03</div><div class="sc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><h3 class="sc-t">Rear / Back Glass</h3><p class="sc-d">Expert rear windshield replacement with defroster wire preservation and factory seal.</p><a href="#contact" class="sc-link">Book Now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      <div class="sc rv"><div class="sc-num">04</div><div class="sc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85"/></svg></div><h3 class="sc-t">Sunroof Glass</h3><p class="sc-d">Professional sunroof replacement &amp; installation with weather-tight precision sealing.</p><a href="#contact" class="sc-link">Book Now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      <div class="sc rv"><div class="sc-num">05</div><div class="sc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div><h3 class="sc-t">Side View Mirror</h3><p class="sc-d">Precise mirror glass replacement including heated, auto-dim &amp; camera-integrated types.</p><a href="#contact" class="sc-link">Book Now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      <div class="sc rv"><div class="sc-num">06</div><div class="sc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><h3 class="sc-t">Quarter Glass Panel</h3><p class="sc-d">Exact fitment for small vent and quarter glass panels across all vehicle body styles.</p><a href="#contact" class="sc-link">Book Now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      <div class="sc rv"><div class="sc-num">07</div><div class="sc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div><h3 class="sc-t">Leakage Repair</h3><p class="sc-d">Advanced diagnosis &amp; precision sealing for water leaks in doors, roofs, and channels.</p><a href="#contact" class="sc-link">Book Now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      <div class="fleet-cta rv">
+      <div class="fc-text"><h3>Fleet &amp; Commercial Glass</h3><p>Custom bulk contracts for dealers, transport companies &amp; fleets · Special pricing · Priority service</p></div>
+      <a href="#contact" class="btn btn-navy">Request Fleet Quote <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
 
-            async encryptData(data, password) {
-                const enc = new TextEncoder();
-                const keyMaterial = await crypto.subtle.importKey(
-                    "raw", enc.encode(password), { name: "PBKDF2" }, false, ["deriveKey"]
-                );
-                const salt = crypto.getRandomValues(new Uint8Array(16));
-                const key = await crypto.subtle.deriveKey(
-                    { name: "PBKDF2", salt: salt, iterations: 100000, hash: "SHA-256" },
-                    keyMaterial, { name: "AES-GCM", length: 256 }, false, ["encrypt"]
-                );
-                const iv = crypto.getRandomValues(new Uint8Array(12));
-                const encodedData = enc.encode(JSON.stringify(data));
-                const encrypted = await crypto.subtle.encrypt({ name: "AES-GCM", iv: iv }, key, encodedData);
-                
-                return {
-                    salt: Array.from(salt),
-                    iv: Array.from(iv),
-                    data: Array.from(new Uint8Array(encrypted))
-                };
-            },
+<!-- ABOUT -->
+<section class="section about-sec" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-stack rv from-left">
+        <img class="ai-main" src="https://plus.unsplash.com/premium_photo-1661265902560-b852633b6026?w=900&auto=format&fit=crop&q=80" alt="Professional auto glass technician installing windshield on luxury car"/>
+        <img class="ai-accent" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500&auto=format&fit=crop&q=80" alt="High-quality automotive glass replacement work"/>
+        <div class="ai-badge">
+          <div class="ai-b-n">15+</div>
+          <div class="ai-b-l">Years of<br>Excellence</div>
+        </div>
+      </div>
+      <div>
+        <div class="label rv">About Us</div>
+        <h2 class="heading rv">Setting Industry <em>Standards</em></h2>
+        <div class="about-text">
+          <p class="rv">At <strong>R G CAR GLASSES</strong>, we don't just replace glass — we restore safety, clarity, and peace of mind. Located in Nehru Auto Nagar, Kurnool, we've built an unmatched reputation for precision and speed over 15 years.</p>
+          <p class="rv">From a small workshop to Andhra Pradesh's premier automotive glass destination, our commitment has never wavered: <strong>perfection in every installation</strong>, honesty in every interaction.</p>
+          <p class="rv">We work on all domestic and foreign makes and models — from Maruti to Mercedes, from auto-rickshaws to JCB heavy machinery.</p>
+        </div>
+        <div class="about-chips rv">
+          <span class="chip">All Car Makes</span>
+          <span class="chip">Auto Rickshaws</span>
+          <span class="chip">Buses &amp; Trucks</span>
+          <span class="chip">JCB &amp; Machinery</span>
+          <span class="chip">New &amp; Used Glass</span>
+        </div>
+        <div class="about-metrics rv">
+          <div class="am"><div class="am-n">5,000<span>+</span></div><div class="am-l">Happy Clients</div></div>
+          <div class="am"><div class="am-n">30<span> min</span></div><div class="am-l">Average Service</div></div>
+          <div class="am"><div class="am-n">OEM</div><div class="am-l">Quality Glass</div></div>
+          <div class="am"><div class="am-n">#<span>1</span></div><div class="am-l">In Kurnool Region</div></div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:32px" class="rv">
+          <a href="tel:+919000563684" class="btn btn-amber">Call Now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.88a16 16 0 0 0 6 6l.54-.54a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.07 17z"/></svg></a>
+          <a href="#contact" class="btn btn-outline">Get Quote</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-            async decryptData(encryptedObj, password) {
-                try {
-                    const enc = new TextEncoder();
-                    const keyMaterial = await crypto.subtle.importKey(
-                        "raw", enc.encode(password), { name: "PBKDF2" }, false, ["deriveKey"]
-                    );
-                    const key = await crypto.subtle.deriveKey(
-                        { name: "PBKDF2", salt: new Uint8Array(encryptedObj.salt), iterations: 100000, hash: "SHA-256" },
-                        keyMaterial, { name: "AES-GCM", length: 256 }, false, ["decrypt"]
-                    );
-                    const decrypted = await crypto.subtle.decrypt(
-                        { name: "AES-GCM", iv: new Uint8Array(encryptedObj.iv) },
-                        key, new Uint8Array(encryptedObj.data)
-                    );
-                    const dec = new TextDecoder();
-                    return JSON.parse(dec.decode(decrypted));
-                } catch (e) {
-                    console.error("Decryption failed", e);
-                    return null;
-                }
-            }
-        };
+<!-- REVIEWS -->
+<section class="section rev-sec" id="reviews">
+  <div class="container">
+    <div class="rev-head">
+      <div>
+        <div class="label rv">Customer Reviews</div>
+        <h2 class="heading rv">What Our <em>Clients Say</em></h2>
+      </div>
+      <div class="g-pill rv">
+        <div class="g-pill-score">4.9</div>
+        <div class="g-pill-detail">
+          <div class="gp-stars" role="img" aria-label="4.9 out of 5 stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          <div class="gp-label">Google Reviews</div>
+        </div>
+      </div>
+    </div>
+    <div class="rev-grid">
+      <div class="rc rv"><div class="rc-head"><div class="rc-av">RK</div><div><div class="rc-name">Ravi Kumar</div><div class="rc-date">2 weeks ago</div></div></div><div class="rc-stars" role="img" aria-label="5 star rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="rc-text">Fantastic service! My Innova's windshield was replaced within 30 minutes. OEM quality glass, no leaks, and the pricing was totally transparent. Highly recommend to everyone in Kurnool.</p><div class="rc-verified"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Verified Google Review</div></div>
+      <div class="rc rv"><div class="rc-head"><div class="rc-av">SP</div><div><div class="rc-name">Srinivas Prasad</div><div class="rc-date">1 month ago</div></div></div><div class="rc-stars" role="img" aria-label="5 star rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="rc-text">Used doorstep service for my Swift Dzire — the technician came to my office and finished in under 40 minutes. Extremely professional and the glass quality is perfect.</p><div class="rc-verified"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Verified Google Review</div></div>
+      <div class="rc rv"><div class="rc-head"><div class="rc-av">MR</div><div><div class="rc-name">Mohammed Raheem</div><div class="rc-date">3 months ago</div></div></div><div class="rc-stars" role="img" aria-label="5 star rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="rc-text">Got my car's rear glass replaced after an accident. They helped with the insurance claim process too. Honest pricing, fast work, and zero leakage after fitting. 10/10 experience.</p><div class="rc-verified"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Verified Google Review</div></div>
+      <div class="rc rv"><div class="rc-head"><div class="rc-av">LR</div><div><div class="rc-name">Lakshmi Reddy</div><div class="rc-date">3 months ago</div></div></div><div class="rc-stars" role="img" aria-label="5 star rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="rc-text">Best auto glass shop in Kurnool without a doubt. Fixed my Creta's sunroof glass. Very skilled team, reasonable price and they ensured there were no rattles or leaks after the job.</p><div class="rc-verified"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Verified Google Review</div></div>
+      <div class="rc rv"><div class="rc-head"><div class="rc-av">VN</div><div><div class="rc-name">Vijay Naidu</div><div class="rc-date">4 months ago</div></div></div><div class="rc-stars" role="img" aria-label="5 star rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="rc-text">Needed bulk glass for my auto fleet — amazing rates and everything completed in one day. The workmanship is excellent and they stand behind their work. Fleet owners, this is your place.</p><div class="rc-verified"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Verified Google Review</div></div>
+      <div class="rc rv"><div class="rc-head"><div class="rc-av">AK</div><div><div class="rc-name">Asha Krishnamurthy</div><div class="rc-date">5 months ago</div></div></div><div class="rc-stars" role="img" aria-label="5 star rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="rc-text">Perfect work, best fix & best fit— amazing rates and everything completed in one day. The workmanship is excellent and they stand behind their work. JCB owners, this is your place.</p><div class="rc-verified"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Verified Google Review</div></div>
+    </div>
+  </div>
+</section>
 
-        // --- TOAST NOTIFICATION SYSTEM ---
-        function showToast(message, type = 'success') {
-            const toast = document.getElementById('toast');
-            const msgElement = document.getElementById('toast-msg');
-            
-            msgElement.innerText = message;
-            
-            toast.className = 'toast show';
-            if (type === 'error') {
-                toast.classList.add('toast-error');
-                toast.classList.remove('toast-success');
-                toast.querySelector('i').className = 'fas fa-exclamation-circle text-red-400';
-            } else {
-                toast.classList.add('toast-success');
-                toast.classList.remove('toast-error');
-                toast.querySelector('i').className = 'fas fa-check-circle text-green-400';
-            }
+<!-- GALLERY -->
+<section class="section gal-sec" id="gallery">
+  <div class="container">
+    <div class="gal-top">
+      <div>
+        <div class="label rv">Our Work</div>
+        <h2 class="heading rv">Project <em>Gallery</em></h2>
+      </div>
+      <div class="gal-tabs rv" role="tablist" aria-label="Gallery filters">
+        <button class="gt-btn active" data-f="all" role="tab" aria-selected="true" aria-controls="galGrid">All</button>
+        <button class="gt-btn" data-f="cars" role="tab" aria-selected="false" aria-controls="galGrid">Cars</button>
+        <button class="gt-btn" data-f="auto" role="tab" aria-selected="false" aria-controls="galGrid">Auto</button>
+        <button class="gt-btn" data-f="buses" role="tab" aria-selected="false" aria-controls="galGrid">Buses</button>
+        <button class="gt-btn" data-f="jcb" role="tab" aria-selected="false" aria-controls="galGrid">JCB</button>
+      </div>
+    </div>
+    <div class="gal-grid" id="galGrid" role="tabpanel">
+      <div class="gi rv" data-c="cars"><img src="https://images.unsplash.com/photo-1485291571150-772bcfc10da5?w=700&auto=format&fit=crop&q=80" alt="Car windshield replacement service"/><div class="gi-ov"><span class="gi-tag">Windshield · Cars</span></div></div>
+      <div class="gi rv" data-c="cars"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=700&auto=format&fit=crop&q=80" alt="Side glass fitting on passenger car"/><div class="gi-ov"><span class="gi-tag">Side Glass · Cars</span></div></div>
+      <div class="gi rv" data-c="auto"><img src="https://www.mahindrasupromaxitruck.com/images/new-profittruck/gallery/photos/mini/supro-mini-truck-side-view.png" alt="Auto rickshaw windscreen repair"/><div class="gi-ov"><span class="gi-tag">Auto Windscreen</span></div></div>
+      <div class="gi rv" data-c="cars"><img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=700&auto=format&fit=crop&q=80" alt="Rear glass installation on vehicle"/><div class="gi-ov"><span class="gi-tag">Rear Glass · Cars</span></div></div>
+      <div class="gi rv" data-c="buses"><img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=700&auto=format&fit=crop&q=80" alt="Bus windscreen replacement service"/><div class="gi-ov"><span class="gi-tag">Windscreen · Buses</span></div></div>
+      <div class="gi rv" data-c="cars"><img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=700&auto=format&fit=crop&q=80" alt="Sunroof glass installation on luxury car"/><div class="gi-ov"><span class="gi-tag">Sunroof · Cars</span></div></div>
+      <div class="gi rv" data-c="jcb"><img src="https://images.pexels.com/photos/29411120/pexels-photo-29411120.jpeg" alt="JCB glasses installation"/><div class="gi-ov"><span class="gi-tag">Glasses · JCB</span></div></div>
+</div>
+</section>
 
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
-        }
+<!-- AREAS -->
+<section class="section areas-sec" id="areas">
+  <div class="container">
+    <div class="areas-intro">
+      <div>
+        <div class="label rv" style="color:var(--amber3)"><span style="background:var(--amber3)"></span>Where We Serve</div>
+        <h2 class="heading white rv">Our Service <em>Areas</em></h2>
+      </div>
+      <p class="rv" style="color:rgba(255,255,255,.5);font-size:15px;line-height:1.8;font-weight:300">We serve clients across Kurnool district and surrounding Andhra Pradesh. Doorstep service available throughout the region — call us for coverage in your area.</p>
+    </div>
+    <div class="areas-grid">
+      <div class="area rv"><div class="area-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="area-n">Kurnool City</div><div class="area-d">Walk-in &amp; Doorstep</div></div></div>
+      <div class="area rv"><div class="area-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="area-n">Nandyal</div><div class="area-d">Doorstep Available</div></div></div>
+      <div class="area rv"><div class="area-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="area-n">Adoni</div><div class="area-d">Doorstep Available</div></div></div>
+      <div class="area rv"><div class="area-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="area-n">Mantralayam</div><div class="area-d">Doorstep Available</div></div></div>
+      <div class="area rv"><div class="area-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="area-n">Dhone</div><div class="area-d">Doorstep Available</div></div></div>
+      <div class="area rv"><div class="area-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="area-n">Yemmiganur</div><div class="area-d">Doorstep Available</div></div></div>
+      <div class="area rv"><div class="area-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="area-n">Alur</div><div class="area-d">Doorstep Available</div></div></div>
+      <div class="area rv"><div class="area-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div><div class="area-n">Anywhere in A.P.</div><div class="area-d">Call for availability</div></div></div>
+    </div>
+  </div>
+</section>
 
-        // --- DATA & STORAGE ---
-        let galleryData = [];
-        let currentUserPassword = ''; // Stored in memory only for decryption session
+<!-- WARRANTY -->
+<section class="section warr-sec" id="warranty">
+  <div class="container">
+    <div class="warr-grid">
+      <div>
+        <div class="label rv">Our Commitment</div>
+        <h2 class="heading rv">Warranty &amp; <em>Coverage</em></h2>
+        <div class="warr-cards">
+          <div class="warr-card rv"><div class="wc-ico2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><div class="wc-t2">Workmanship Warranty</div><div class="wc-d2">All installations carry a workmanship warranty. Any fitting-related issue after installation is resolved at zero extra cost.</div></div></div>
+          <div class="warr-card rv"><div class="wc-ico2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><div><div class="wc-t2">Insurance Claimable</div><div class="wc-d2">All windshield and major glass replacements are fully claimable through your vehicle insurance. We assist with documentation.</div></div></div>
+          <div class="warr-card rv"><div class="wc-ico2"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><div class="wc-t2">ADAS Recalibration Advisory</div><div class="wc-d2">Camera-integrated windshields require ADAS recalibration after replacement. We advise and assist you in coordination.</div></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="label rv">Important Notice</div>
+        <h2 class="heading rv" style="font-size:clamp(28px,3vw,44px)">Warranty <em>Limitations</em></h2>
+        <div class="notice-box rv">
+          <div class="nb-head"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>Please Read Before Booking</span></div>
+          <p>Warranty covers <strong>workmanship only</strong> — not the glass itself. Coverage is void for damage caused by vandalism, theft, natural disasters, vehicle collisions, or wear and tear.</p>
+          <p>Used glass parts are supplied <strong>as-is with no warranty</strong>. By accepting completed service, you confirm the installation has been inspected to your satisfaction.</p>
+          <p>For vehicles with <strong>camera-integrated windshields</strong> (ADAS): recalibration must be completed at a certified dealer after replacement. This is a manufacturer requirement and is not performed by us.</p>
+        </div>
+        <div class="pay-section rv">
+          <div class="pay-lbl">Accepted Payments</div>
+          <div class="pay-row">
+            <span class="pay-pill">Cash</span>
+            <span class="pay-pill">UPI / GPay</span>
+            <span class="pay-pill">PhonePe</span>
+            <span class="pay-pill">Paytm</span>
+            <span class="pay-pill">NEFT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        async function initData() {
-            const savedData = localStorage.getItem('rgGalleryData');
-            if (savedData) {
-                try {
-                    galleryData = JSON.parse(savedData);
-                } catch(e) {
-                    galleryData = [];
-                }
-            } 
-            if (!savedData || galleryData.length === 0) {
-                galleryData = [
-                    { id: 1, category: 'cars', src: 'https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=600', title: 'Sedan Windshield', type: 'image' },
-                    { id: 2, category: 'busses', src: 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?q=80&w=600', title: 'Bus Fleet Service', type: 'image' },
-                    { id: 3, category: 'machinery', src: 'https://images.unsplash.com/photo-1580901368919-7738efb0f87e?q=80&w=600', title: 'JCB Glass', type: 'image' },
-                    { id: 4, category: 'cars', src: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=600', title: 'Luxury Car', type: 'image' },
-                    { id: 5, category: 'cars', src: 'https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=600', title: 'Mirror Replacement', type: 'image' },
-                    { id: 6, category: 'machinery', src: 'https://images.unsplash.com/photo-1629904853716-644d5349926e?q=80&w=600', title: 'Heavy Truck', type: 'image' },
-                ];
-                saveData();
-            }
-        }
+<!-- CONTACT -->
+<section class="section con-sec" id="contact">
+  <div class="con-bg"></div>
+  <div class="con-glow"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <div class="con-grid">
+      <div>
+        <div class="label rv" style="color:var(--amber3)"><span style="background:var(--amber3)"></span>Get In Touch</div>
+        <h2 class="heading white rv">Book Your <em>Service</em></h2>
+        <div class="con-info">
+          <div class="ci-block rv">
+            <div class="ci-lbl">Phone</div>
+            <div class="ci-val"><a href="tel:+919000563684" style="color:var(--white)">+91 90005 63684</a></div>
+          </div>
+          <div class="ci-block rv">
+            <div class="ci-lbl">Location</div>
+            <div class="ci-val muted">Majid line,<br>Nehru Auto Nagar, N.H-7,<br>Andhra Pradesh 518003</div>
+          </div>
+          <div class="ci-block rv">
+            <div class="ci-lbl">Working Hours</div>
+            <div class="ci-val muted">Mon – Sat: 9:00 AM – 7:00 PM<br>Sunday: 9:00 AM – 2:00 PM</div>
+          </div>
+        </div>
+        <div class="con-acts rv">
+          <a href="tel:+919000563684" class="btn btn-amber">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.88a16 16 0 0 0 6 6l.54-.54a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.07 17z"/></svg>
+            Call Now
+          </a>
+          <a href="https://wa.me/919000563684" class="btn" style="background:#25D366;color:white" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg>
+            WhatsApp
+          </a>
+          <a href="https://maps.app.goo.gl/UcvrQxCs3UKrzY9j9" class="btn btn-outline-white" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Directions
+          </a>
+        </div>
+        <div class="map-box rv">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.4753168778707!2d78.01281587365011!3d15.83159634575868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5e0ac47c7c1f9%3A0x59bdf15abe25fd21!2sR%20G%20CAR%20GLASS%20WORRKS!5e0!3m2!1sen!2sin!4v1769264461203!5m2!1sen!2sin" allowfullscreen loading="lazy" title="R G CAR GLASSES location on Google Maps"></iframe>
+        </div>
+      </div>
+      <div class="book-card rv">
+        <div class="book-title">Book Appointment</div>
+        <div class="book-sub">Fill in below — we confirm within 30 minutes via WhatsApp or call.</div>
+        <form onsubmit="event.preventDefault(); bookApp();" id="bookAppForm">
+          <div class="fg-row">
+            <div class="txt"><label class="txt" for="b-name">Name</label><input class="fi" id="b-name" name="name" type="text" placeholder="Full name" required aria-required="true"></div>
+            <div class="txt"><label class="txt" for="b-phone">Mobile</label><input class="fi" id="b-phone" name="phone" type="tel" placeholder="+91 00000 00000" pattern="[0-9+\s\-()]+" required aria-required="true"></div>
+          </div>
+          <div class="txt"><label class="txt" for="b-email">Email (Optional)</label><input class="fi" id="b-email" name="email" type="email" placeholder="your@email.com"></div>
+          <div class="fg-row">
+            <div class="txt"><label class="txt" for="b-make">Car Make</label><input class="fi" id="b-make" name="make" type="text" placeholder="e.g. Toyota"></div>
+            <div class="txt"><label class="txt" for="b-model">Car Model</label><input class="fi" id="b-model" name="model" type="text" placeholder="e.g. Fortuner"></div>
+          </div>
+          <div class="fg-row">
+            <div class="txt"><label class="txt" for="b-body">Body Style</label>
+              <select class="fsel" id="b-body" name="body"><option value="">Select</option><option>Sedan</option><option>Hatchback</option><option>SUV</option><option>MUV</option><option>Auto / 3-Wheeler</option><option>Bus / Truck</option><option>Heavy Machinery</option></select>
+            </div>
+            <div class="txt"><label class="txt" for="b-win">Which Window</label>
+              <select class="fsel" id="b-win" name="window" required aria-required="true"><option value="">Select</option><option>Windshield (Front)</option><option>Rear Glass</option><option>Driver Side Window</option><option>Passenger Side Window</option><option>Rear Side Window</option><option>Sunroof</option><option>Side View Mirror</option><option>Quarter Glass</option></select>
+            </div>
+          </div>
+          <div class="txt"><label class="txt" for="b-date">Preferred Date</label><input class="fi" id="b-date" name="date" type="date"></div>
+          <div class="txt"><label class="txt" for="b-notes">Additional Notes</label><textarea class="fta" id="b-notes" name="notes" placeholder="Doorstep request, location, special requirements..."></textarea></div>
+          <button type="submit" class="fsub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg>Confirm via WhatsApp</button>
+          <p class="fn">Additional fees may apply for tinted, heated, or camera-integrated glass.<br>By submitting you agree to be contacted via WhatsApp/Call.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 
-        function saveData() {
-            localStorage.setItem('rgGalleryData', JSON.stringify(galleryData));
-        }
+<!-- FOOTER -->
+<footer>
+  <div class="ft-grid">
+    <div class="ft-brand">
+      <div class="fb-name">R G CAR <span>GLASSES</span></div>
+      <div class="fb-sub">Premium Auto Glass · Kurnool, A.P. · Est. 2009</div>
+      <p>Expert auto glass replacement and fitting trusted by fleets and individual owners across Andhra Pradesh for over 15 years. Precision, speed, and lasting peace of mind.</p>
+      <div class="ft-social">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://wa.me/919000563684" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg></a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#areas">Service Areas</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#services">Windshield Replacement</a></li>
+        <li><a href="#services">Side Window Glass</a></li>
+        <li><a href="#services">Rear / Back Glass</a></li>
+        <li><a href="#services">Sunroof Glass</a></li>
+        <li><a href="#services">Side View Mirror</a></li>
+        <li><a href="#services">Quarter Glass Panel</a></li>
+        <li><a href="#services">Leakage Repair</a></li>
+        <li><a href="#services">Fleet Solutions</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h5>Contact</h5>
+      <p class="ft-info">Majid line,<br>Nehru Auto Nagar, N.H-7,<br>Andhra Pradesh 518003</p>
+      <ul style="margin-top:16px">
+        <li><a href="tel:+919000563684">+91 90005 63684</a></li>
+        <li><a href="https://wa.me/919000563684" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></li>
+        <li><a href="https://maps.app.goo.gl/UcvrQxCs3UKrzY9j9" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
+      </ul>
+      <p class="ft-info" style="margin-top:16px">Mon–Sat: 9:00 AM – 7:00 PM<br>Sunday: 9:00 AM – 2:00 PM</p>
+    </div>
+  </div>
+  <div class="ft-mid">
+    <div class="ft-certs">
+      <span class="fcert">OEM & Multi Branded</span>
+      <span class="fcert">Insurance Claimable</span>
+      <span class="fcert">Doorstep Service</span>
+      <span class="fcert">15+ Years Experience</span>
+    </div>
+    <div class="ft-pay2">
+      <span>Payments</span>
+      <span class="fpay">Cash</span><span class="fpay">UPI</span><span class="fpay">GPay</span><span class="fpay">PhonePe</span><span class="fpay">NEFT</span>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <p>© 2025 R G Car Glasses · All Rights Reserved · Kurnool, Andhra Pradesh</p>
+    <p><a href="#">Privacy Policy</a> · <a href="#warranty">Warranty Terms</a></p>
+  </div>
+</footer>
 
-        // --- NAV SCROLL EFFECT ---
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('.magic-nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
+<!-- FLOATS (desktop) -->
+<div class="floats" id="floats">
+  <a href="tel:+919000563684" class="fl call" title="Call Now" aria-label="Call us now"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.88a16 16 0 0 0 6 6l.54-.54a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.07 17z"/></svg></a>
+  <a href="https://wa.me/919000563684" class="fl wa" title="WhatsApp" aria-label="Message us on WhatsApp" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg></a>
+</div>
 
-        // --- TABS ---
-        function switchTab(id) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            document.getElementById('tab-' + id).classList.add('active');
-            
-            document.querySelectorAll('.nav-item').forEach(btn => {
-                btn.classList.remove('active', 'text-gray-700');
-                btn.classList.add('text-gray-500');
-            });
-            const activeBtn = document.querySelector(`.nav-item[onclick="switchTab('${id}')"]`);
-            if (activeBtn) {
-                activeBtn.classList.add('active', 'text-gray-700');
-                activeBtn.classList.remove('text-gray-500');
-            }
-            
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+<!-- MOBILE BOTTOM BAR -->
+<nav class="mob-bar" role="navigation" aria-label="Mobile bottom navigation">
+  <div class="mb-row">
+    <a href="#home" class="mb-a"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</a>
+    <a href="#services" class="mb-a"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>Services</a>
+    <a href="#contact" class="mb-a amber"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book</a>
+    <a href="tel:+919000563684" class="mb-a"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.88a16 16 0 0 0 6 6l.54-.54a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.07 17z"/></svg>Call</a>
+    <a href="https://wa.me/919000563684" class="mb-a" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg>WhatsApp</a>
+  </div>
+</nav>
 
-        // --- GALLERY ---
-        function renderGallery(filter) {
-            const container = document.getElementById('gallery-container');
-            container.innerHTML = '';
-            
-            const filtered = filter === 'all' ? galleryData : galleryData.filter(item => item.category === filter);
-            
-            filtered.forEach((item, index) => {
-                const div = document.createElement('div');
-                div.className = 'gallery-item h-72 rounded-2xl overflow-hidden relative group shadow-lg';
-                div.setAttribute('data-aos', 'fade-up');
-                div.setAttribute('data-aos-delay', index * 50);
-                
-                // Determine content based on type (Video or Image)
-                let mediaContent = '';
-                if(item.type === 'video') {
-                    mediaContent = `<video src="${item.src}" class="w-full h-full object-cover" controls></video>`;
-                } else {
-                    mediaContent = `<img src="${item.src}" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">`;
-                }
+<script>
+// HAMBURGER
+const hbg=document.getElementById('hbg'),mn=document.getElementById('mobNav');
+hbg.addEventListener('click',()=>{
+  const isOpen=mn.classList.contains('open');
+  hbg.classList.toggle('open');
+  mn.classList.toggle('open');
+  hbg.setAttribute('aria-expanded',!isOpen);
+  document.body.style.overflow=isOpen?'':'hidden';
+});
+function cln(){
+  hbg.classList.remove('open');
+  mn.classList.remove('open');
+  hbg.setAttribute('aria-expanded','false');
+  document.body.style.overflow='';
+}
 
-                div.innerHTML = `
-                    ${mediaContent}
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-                        <div>
-                            <h4 class="text-white font-bold text-xl">${item.title}</h4>
-                            <p class="text-orange-400 text-[10px] uppercase tracking-widest font-bold mt-1">${item.category}</p>
-                        </div>
-                    </div>
-                `;
-                container.appendChild(div);
-            });
-        }
+// FLOAT VISIBILITY
+function chk(){document.getElementById('floats').style.display=window.innerWidth<=820?'none':'flex';}
+chk();window.addEventListener('resize',chk);
 
-        function filterGallery(category) {
-            renderGallery(category);
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active', 'bg-gradient-to-r', 'from-orange-500', 'to-orange-600');
-            });
-            event.target.classList.add('active', 'bg-gradient-to-r', 'from-orange-500', 'to-orange-600');
-        }
+// SCROLL REVEAL
+const rv=document.querySelectorAll('.rv');
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});
+},{threshold:.08,rootMargin:'0px 0px -24px 0px'});
+rv.forEach((el,i)=>{
+  const parent=el.parentElement;
+  const siblings=[...parent.children].filter(c=>c.classList.contains('rv'));
+  const idx=siblings.indexOf(el);
+  if(siblings.length>1&&idx>0)el.style.transitionDelay=`${idx*.1}s`;
+  obs.observe(el);
+});
 
-        // --- MODALS & ADMIN ---
-        function openQuoteModal() {
-            document.getElementById('quote-modal').classList.remove('hidden');
-            document.getElementById('quote-modal').classList.add('flex');
-        }
+// COUNTERS
+const cObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const el=e.target,t=parseInt(el.dataset.count),s=el.dataset.suf||'';
+    let v=0;const inc=t/80;
+    const iv=setInterval(()=>{v=Math.min(v+inc,t);el.textContent=Math.floor(v).toLocaleString()+(v>=t?s:'');if(v>=t)clearInterval(iv);},20);
+    cObs.unobserve(el);
+  });
+},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>cObs.observe(el));
 
-        function closeQuoteModal() {
-            document.getElementById('quote-modal').classList.add('hidden');
-            document.getElementById('quote-modal').classList.remove('flex');
-        }
+// GALLERY TABS
+document.querySelectorAll('.gt-btn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.gt-btn').forEach(x=>{x.classList.remove('active');x.setAttribute('aria-selected','false');});
+    b.classList.add('active');
+    b.setAttribute('aria-selected','true');
+    const f=b.dataset.f;
+    document.querySelectorAll('.gi').forEach(g=>{g.style.display=(f==='all'||g.dataset.c===f)?'block':'none';});
+  });
+});
 
-        function toggleAdminModal() {
-            const modal = document.getElementById('admin-modal');
-            if (modal.classList.contains('hidden')) {
-                // If opening, check if logged in (simplified)
-                if(!currentUserPassword) {
-                     document.getElementById('admin-login-view').classList.remove('hidden');
-                     document.getElementById('admin-dashboard-view').classList.add('hidden');
-                } else {
-                    document.getElementById('admin-login-view').classList.add('hidden');
-                    document.getElementById('admin-dashboard-view').classList.remove('hidden');
-                }
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
-            } else {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-            }
-        }
+// QUICK QUOTE → WhatsApp
+function quickQ(){
+  const n=document.getElementById('q-name').value.trim();
+  const p=document.getElementById('q-phone').value.trim();
+  if(!n||!p){alert('Please enter your name and phone number.');return;}
+  const mk=document.getElementById('q-make').value.trim();
+  const md=document.getElementById('q-model').value.trim();
+  const sv=document.getElementById('q-svc').value;
+  const msg=encodeURIComponent(`Hello R G Car Glasses! I'd like a quote.\nName: ${n}\nPhone: ${p}\nCar: ${mk} ${md}\nService: ${sv||'Not specified'}`);
+  window.open(`https://wa.me/919000563684?text=${msg}`,'_blank');
+}
 
-        async function handleAdminLogin(e) {
-            e.preventDefault();
-            const user = document.getElementById('adminUser').value;
-            const pass = document.getElementById('adminPass').value;
-
-            if (user === 'RRAJESH' && pass === 'Rg*1984#') {
-                currentUserPassword = pass; // Store in memory for decryption
-                document.getElementById('admin-login-view').classList.add('hidden');
-                document.getElementById('admin-dashboard-view').classList.remove('hidden');
-                document.getElementById('admin-logout-btn').classList.remove('hidden');
-                renderAdminList();
-                renderSecureSubmissions(); // Try to decrypt and show
-                showToast('Welcome back, Admin!');
-            } else {
-                showToast('Invalid Credentials', 'error');
-            }
-        }
-
-        function handleAdminLogout() {
-            currentUserPassword = null;
-            document.getElementById('admin-dashboard-view').classList.add('hidden');
-            document.getElementById('admin-login-view').classList.remove('hidden');
-            document.getElementById('admin-logout-btn').classList.add('hidden');
-            document.getElementById('adminUser').value = '';
-            document.getElementById('adminPass').value = '';
-            showToast('Logged out successfully');
-        }
-
-        function switchAdminTab(tab) {
-            document.querySelectorAll('.admin-tab-content').forEach(el => el.classList.add('hidden'));
-            document.getElementById('admin-tab-' + tab).classList.remove('hidden');
-            
-            document.querySelectorAll('.admin-tab-btn').forEach(btn => {
-                btn.classList.remove('text-orange-600', 'border-b-2', 'border-orange-600');
-                btn.classList.add('text-gray-500');
-            });
-            event.target.classList.remove('text-gray-500');
-            event.target.classList.add('text-orange-600', 'border-b-2', 'border-orange-600');
-        }
-
-        // --- MEDIA INPUT TOGGLE ---
-        function toggleMediaInput(type) {
-            const urlContainer = document.getElementById('media-url-container');
-            const fileContainer = document.getElementById('media-file-container');
-            
-            if (type === 'url') {
-                urlContainer.classList.remove('hidden');
-                fileContainer.classList.add('hidden');
-            } else {
-                urlContainer.classList.add('hidden');
-                fileContainer.classList.remove('hidden');
-            }
-        }
-
-        function handleAddGalleryItem(e) {
-            e.preventDefault();
-            
-            const title = document.getElementById('newItemTitle').value;
-            const category = document.getElementById('newItemCategory').value;
-            const mediaType = document.querySelector('input[name="mediaSource"]:checked').value;
-            
-            let finalSrc = '';
-            let finalType = 'image'; // Default
-
-            if (mediaType === 'url') {
-                finalSrc = document.getElementById('mediaUrl').value;
-                // Simple detection for video URLs
-                if (finalSrc.match(/\.(mp4|webm|ogg)$/i) || finalSrc.includes('youtube.com') || finalSrc.includes('vimeo.com')) {
-                    finalType = 'video';
-                }
-                if (!finalSrc) {
-                    showToast('Please enter a valid URL', 'error');
-                    return;
-                }
-            } else {
-                const fileInput = document.getElementById('mediaFile');
-                if (fileInput.files && fileInput.files[0]) {
-                    const file = fileInput.files[0];
-                    
-                    // Check file size (Limit to ~2MB to avoid LocalStorage quota errors)
-                    if (file.size > 2 * 1024 * 1024) {
-                        showToast('File too large! Max 2MB for uploads.', 'error');
-                        return;
-                    }
-
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        const base64Image = e.target.result;
-                        finalSrc = base64Image;
-                        finalizeAdd(title, category, finalSrc, finalType);
-                    };
-                    reader.readAsDataURL(file);
-                    return; // Wait for reader
-                } else {
-                    showToast('Please select a file', 'error');
-                    return;
-                }
-            }
-
-            finalizeAdd(title, category, finalSrc, finalType);
-        }
-
-        function finalizeAdd(title, category, finalSrc, finalType) {
-            const newItem = {
-                id: Date.now(),
-                title: title,
-                category: category,
-                src: finalSrc,
-                type: finalType
-            };
-            
-            galleryData.unshift(newItem); // Add to top
-            saveData();
-            
-            // Update UI
-            renderGallery('all');
-            renderAdminList();
-            
-            // Reset Form
-            document.getElementById('newItemTitle').value = '';
-            document.getElementById('mediaUrl').value = '';
-            document.getElementById('mediaFile').value = '';
-            
-            showToast('Gallery item added successfully');
-        }
-
-        function renderAdminList() {
-            const list = document.getElementById('admin-gallery-list');
-            list.innerHTML = '';
-            
-            galleryData.forEach(item => {
-                const tr = document.createElement('tr');
-                tr.className = 'hover:bg-orange-50 transition border-b border-gray-100 last:border-0';
-                
-                let thumb = '';
-                if(item.type === 'video') {
-                    thumb = '<div class="w-12 h-12 md:w-16 md:h-12 bg-gray-200 rounded flex items-center justify-center"><i class="fas fa-play text-gray-500 text-xs"></i></div>';
-                } else {
-                    thumb = `<img src="${item.src}" class="w-12 h-12 md:w-12 md:h-12 object-cover rounded">`;
-                }
-
-                tr.innerHTML = `
-                    <td class="p-2 md:p-4">${thumb}</td>
-                    <td class="p-2 md:p-4 font-bold text-gray-700 text-xs md:text-sm">${item.title}</td>
-                    <td class="p-2 md:p-4"><span class="bg-orange-100 text-orange-600 px-2 py-1 rounded text-[10px] md:text-xs uppercase font-bold">${item.category}</span></td>
-                    <td class="p-2 md:p-4 text-xs text-gray-500 uppercase">${item.type}</td>
-                    <td class="p-2 md:p-4 text-right">
-                        <button onclick="deleteItem(${item.id})" class="text-red-500 hover:text-red-700 bg-red-50 hover:bg-red-100 p-2 md:p-2 rounded-lg transition group" title="Delete Item">
-                            <i class="fas fa-trash-alt text-sm md:text-sm group-hover:scale-110 transition-transform"></i>
-                        </button>
-                    </td>
-                `;
-                list.appendChild(tr);
-            });
-        }
-
-        function deleteItem(id) {
-            if (confirm('Are you sure you want to delete this item?')) {
-                galleryData = galleryData.filter(item => item.id !== id);
-                saveData();
-                renderGallery('all');
-                renderAdminList();
-                showToast('Item deleted successfully');
-            }
-        }
-
-        // --- SECURE FORM HANDLING ---
-        async function handleAppointmentSubmit(e) {
-            e.preventDefault();
-            if (!currentUserPassword) {
-                showToast('Data Encrypted & Saved. Admin must login to view.');
-            } else {
-                showToast('Appointment booked successfully!');
-            }
-            
-            // Collect Data
-            const formData = new FormData(e.target);
-            const data = {
-                type: 'Appointment',
-                timestamp: Date.now(),
-                name: formData.get('name'),
-                phone: formData.get('phone'),
-                email: formData.get('email'),
-                details: {
-                    brand: formData.get('brand'),
-                    model: formData.get('model'),
-                    year: formData.get('year'),
-                    service: formData.get('service'),
-                    date: formData.get('date')
-                }
-            };
-
-            await saveEncryptedSubmission(data);
-            e.target.reset();
-        }
-
-        async function handleBulkQuote(e) {
-            e.preventDefault();
-            const formData = new FormData(e.target);
-            
-            if (formData.get('quantity').length === 0) {
-                showToast('Minimum quantity must be 3', 'error');
-                return;
-            }
-
-            showToast('Bulk quote request sent! We will get back to you soon.');
-            closeQuoteModal();
-            
-            const data = {
-                type: 'Bulk Quote',
-                timestamp: Date.now(),
-                name: formData.get('name'),
-                mobile: formData.get('mobile'),
-                email: formData.get('email'),
-                date: formData.get('date'),
-                details: {
-                    quantity: formData.get('quantity'),
-                    location: formData.get('location'),
-                    description: formData.get('description'),
-                    doorstep: formData.get('doorstep')
-                }
-            };
-
-            await saveEncryptedSubmission(data);
-            e.target.reset();
-        }
-
-        async function saveEncryptedSubmission(data) {
-            if(!currentUserPassword) {
-                // If admin not logged in, we can't decrypt later. 
-                // We use a dummy key just to obscure it from plain sight, 
-                // but technically it won't be recoverable without password.
-                // For this demo, we will store it but mark it as "locked".
-                const dummyKey = "static_storage_key"; 
-                const encrypted = await SecurityManager.encryptData(data, dummyKey);
-                let leads = JSON.parse(localStorage.getItem('rgEncryptedLeads') || '[]');
-                leads.push(encrypted);
-                localStorage.setItem('rgEncryptedLeads', JSON.stringify(leads));
-            } else {
-                // Encrypt with Admin Password
-                const encrypted = await SecurityManager.encryptData(data, currentUserPassword);
-                let leads = JSON.parse(localStorage.getItem('rgEncryptedLeads') || '[]');
-                leads.push(encrypted);
-                localStorage.setItem('rgEncryptedLeads', JSON.stringify(leads));
-                renderSecureSubmissions();
-            }
-        }
-
-        async function renderSecureSubmissions() {
-            const list = document.getElementById('submissions-list');
-            const noSub = document.getElementById('no-submissions');
-            list.innerHTML = '';
-            
-            if (!currentUserPassword) {
-                noSub.classList.remove('hidden');
-                return;
-            }
-
-            const rawLeads = JSON.parse(localStorage.getItem('rgEncryptedLeads') || '[]');
-            
-            if (rawLeads.length === 0) {
-                noSub.classList.remove('hidden');
-                return;
-            } else {
-                noSub.classList.add('hidden');
-            }
-
-            // Process backwards (newest first)
-            for (let i = rawLeads.length - 1; i >= 0; i--) {
-                const encryptedData = rawLeads[i];
-                const decryptedData = await SecurityManager.decryptData(encryptedData, currentUserPassword);
-                
-                if (decryptedData) {
-                    const date = new Date(decryptedData.timestamp).toLocaleString();
-                    const detailsObj = decryptedData.details;
-                    const detailStr = Object.entries(detailsObj).map(([k, v]) => `${k}: ${v}`).join(', ');
-                    
-                    const tr = document.createElement('tr');
-                    tr.className = 'hover:bg-orange-50 border-b border-gray-100';
-                    tr.innerHTML = `
-                        <td class="p-3 text-xs text-gray-500">${date}</td>
-                        <td class="p-3 font-bold text-orange-600">${decryptedData.type}</td>
-                        <td class="p-3">
-                            <div class="font-bold">${decryptedData.name}</div>
-                            <div class="text-xs text-gray-500">${decryptedData.email || decryptedData.mobile}</div>
-                        </td>
-                        <td class="p-3 text-xs text-gray-600 break-all max-w-[200px]">${detailStr}</td>
-                    `;
-                    list.appendChild(tr);
-                }
-            }
-        }
-
-        // --- DATA SYNC (EXPORT / IMPORT) ---
-        function exportData() {
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(galleryData));
-            const downloadAnchorNode = document.createElement('a');
-            downloadAnchorNode.setAttribute("href", dataStr);
-            downloadAnchorNode.setAttribute("download", "rg_gallery_data.json");
-            document.body.appendChild(downloadAnchorNode);
-            downloadAnchorNode.click();
-            downloadAnchorNode.remove();
-            showToast('Data exported successfully');
-        }
-
-        function importData(input) {
-            const file = input.files[0];
-            if (!file) return;
-
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                try {
-                    const json = JSON.parse(e.target.result);
-                    if (Array.isArray(json)) {
-                        galleryData = json;
-                        saveData();
-                        renderGallery('all');
-                        renderAdminList();
-                        showToast('Data imported successfully');
-                    } else {
-                        showToast('Invalid file format', 'error');
-                    }
-                } catch (err) {
-                    showToast('Error reading file', 'error');
-                }
-            };
-            reader.readAsText(file);
-        }
-
-        // --- INIT ---
-        document.addEventListener('DOMContentLoaded', () => {
-            initData();
-            renderGallery('all');
-        });
-    </script>
+// BOOKING → WhatsApp
+function bookApp(){
+  const n=document.getElementById('b-name').value.trim();
+  const p=document.getElementById('b-phone').value.trim();
+  const wn=document.getElementById('b-win').value;
+  if(!n||!p||!wn){alert('Please fill Name, Phone and Which Window.');return;}
+  const mk=document.getElementById('b-make').value.trim();
+  const md=document.getElementById('b-model').value.trim();
+  const bd=document.getElementById('b-body').value;
+  const dt=document.getElementById('b-date').value;
+  const nt=document.getElementById('b-notes').value.trim();
+  const msg=encodeURIComponent(`Hello R G Car Glasses! Booking Request:\nName: ${n}\nPhone: ${p}\nCar: ${mk} ${md} (${bd||'N/A'})\nWindow: ${wn}\nDate: ${dt||'Flexible'}\nNotes: ${nt||'None'}`);
+  window.open(`https://wa.me/919000563684?text=${msg}`,'_blank');
+}
+</script>
 </body>
 </html>
-
-
-
-
